@@ -1,0 +1,41 @@
+:root {
+  --color-primary-accent: #0D46F2;
+  --color-background: #FFFFFF;
+  --color-surface: #F2F2F0;
+  --color-text: #0A0A0A;
+  --color-text-secondary: #8C8C8C;
+  
+  --font-body: 'Instrument Sans', sans-serif;
+  --font-display: 'Instrument Sans', sans-serif; 
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+/* Base utility classes for Display fonts */
+.display-text {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-style: italic;
+}
