@@ -9,9 +9,6 @@ const html = `<!-- TopAppBar -->
 <span class="material-symbols-outlined text-on-background cursor-pointer hover:opacity-80 transition-opacity" data-icon="menu">menu</span>
 <h1 class="font-['Manrope'] italic font-black uppercase tracking-tighter text-3xl text-on-background">LOOP</h1>
 </div>
-<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container active:scale-95 transition-transform duration-200">
-<img alt="User Profile" class="w-full h-full object-cover" data-alt="portrait of a smiling woman with a clean minimal aesthetic background, soft high-end editorial lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSpc0AdWIPFWu9ib9z3Uua_Z6RHtFLJlvjdNrvxLPqlG8F1isdfXwBA8UdzU6wz37PaGB-OBO-C21Bkx8aTqvXx1k7mNIOTAVcQlNgTjuvJjaIY62ARwIpVYCp9rj1N6MDUU9z13psMkaOJ3yRuYmCuuyMsGi1gxcywEsbN9djQzBGrnGV9RLNKUFX8eOCoyuPQo6yEq2HxnLvHYvz8D27ZT1LOWl1HFqgPXVt_AtF8FyzGj1e0eYG30VbhgNj-GelyzqxSoXRGkg"/>
-</div>
 </div>
 </header>
 <main class="pt-24 px-6 max-w-7xl mx-auto">

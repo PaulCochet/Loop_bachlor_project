@@ -59,10 +59,6 @@ const html = `<!-- Top Navigation Anchor (Manual suppressing for focused legal j
 </div>
 </section>
 </div>
-<!-- Decorative Image Integration -->
-<div class="relative w-full aspect-[16/9] rounded-xl overflow-hidden grayscale opacity-40 mix-blend-multiply">
-<img alt="abstract technical detail" class="w-full h-full object-cover" data-alt="close-up of industrial machinery and polished steel components with sharp shadows and high contrast editorial lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrxv0Vlw8py1Bpq371rP85hA4jsYTJD7lgmETMr20Wo1qIzCJ6aDemLDQ5L4ePNIw3OC2CN_AaSFQB7GL6i9o-Ncpp0lOmEgOxnB4v7qWIDax9BIQ7czr6p69xx9cxWee9QQEfsnliBGHus4obhhiPRyjl8KyEZAK-yJ3cjF0tUOkxfzx7wP59K-IArMgZSetRvmpI2kvHXn71NEIz6xz-U-TmkYfOtg061d-Qwt_jeDuL-JGMb3zQb9EsLQDAkNyfeK5n98E4eYI"/>
-</div>
 </main>
 <!-- Footer Actions -->
 <footer class="fixed bottom-0 w-full bg-background/90 backdrop-blur-md px-8 pt-4 pb-10 space-y-4">

@@ -5,9 +5,6 @@ import React from "react";
 const html = `<!-- TopAppBar Shell -->
 <header class="bg-zinc-50/80 backdrop-blur-3xl text-zinc-900 font-manrope italic font-extrabold tracking-tighter uppercase docked full-width top-0 z-50 sticky bg-zinc-200/50 flat no shadows flex justify-between items-center w-full px-6 py-4">
 <div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-highest">
-<img alt="User profile photo" class="w-full h-full object-cover" data-alt="Close-up portrait of a young professional woman with a friendly expression in soft, natural studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAneAvnY12s9y_9tTP0nYXR3w774fQewc5r6DGBN0prta_JyVJVGBkcFoaLbOkuJyR0lrjeVFQbk-cNTqgtbKccv50Kpvs4g55-R1RpaAaJX1tJWNUh0TgnH_EQHPUDv7HTYb3n1PXT52BKEoqCskqIgJDN1cJa2qi55SrrOs11qL-hOwgkU0kX5KEoWXyL_jYudOBpnIGVdPMxCChewmqh2mJFFQVnzisaxQMCNWjlFmtIuzfNU4Bq_h_m7dYr5geLTvBzkyms0pE"/>
-</div>
 <span class="text-xl italic font-black text-zinc-900">Bonjour</span>
 </div>
 <button class="active:scale-95 transition-transform duration-200">
