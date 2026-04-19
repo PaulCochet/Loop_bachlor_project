@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import TechNavBar from '../../components/technician/TechNavBar';
+import IOSBottomSheet from '../../components/shared/IOSBottomSheet';
+import Button from '../../components/shared/Button';
 
 const TechnicianDashboard = () => {
   const navigate = useNavigate();
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
 
   return (
     <div className="bg-white min-h-screen pb-32">
@@ -15,7 +18,7 @@ const TechnicianDashboard = () => {
             <div className="relative">
               <img 
                 alt="Technician Portrait" 
-                className="w-10 h-10 rounded-full object-cover" 
+                className="w-10 h-10 rounded-full object-cover border-2 border-white shadow-sm" 
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDZ4bHsoIeK_eob6Z0IiDUktN5Tj5Hdj-z_OJxeeNrO2YQ7WepYEZQJOg3Ljw05ukUFJQjf5H696i_ijMJQz6jqU_k7hEGNjFP7Ywy9uiTMPFrgO9hCeHjQ1QamEGtpojbTeHwznA6A2YtyiwNiK8uAcGmJhs6qSIubZO3KvpRstAScEgTbT9bDzDN6312n1cWMtjBtqCgOBuRTbCmWmrcF_A6dooBpwns8VVQxM3rPEVrm9ezJUZHjsvyBqWaHirbUr3yV3g4zMc"
               />
               <span className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white rounded-full"></span>
@@ -28,7 +31,13 @@ const TechnicianDashboard = () => {
             </div>
           </div>
           <div className="flex gap-4">
-            <button className="material-symbols-outlined p-2 rounded-full active:scale-90 transition-transform">settings</button>
+            <motion.button 
+              whileTap={{ scale: 0.9 }}
+              onClick={() => setIsSettingsOpen(true)}
+              className="material-symbols-outlined p-2 rounded-full active:bg-gray-100 transition-colors"
+            >
+              settings
+            </motion.button>
           </div>
         </div>
       </header>
@@ -41,13 +50,17 @@ const TechnicianDashboard = () => {
             { icon: 'schedule', label: 'Temps', value: '2h30' },
             { icon: 'distance', label: 'Route', value: '1,2 km' }
           ].map((item, i) => (
-            <div key={i} className="bg-[#f9f9f7] p-5 rounded-xl border border-gray-100 flex flex-col justify-between aspect-square">
-              <span className="material-symbols-outlined text-[#003cdd]">{item.icon}</span>
+            <motion.div 
+              key={i} 
+              whileTap={{ scale: 0.98 }}
+              className="bg-[#f9f9f7] p-5 rounded-[20px] border border-gray-100 flex flex-col justify-between aspect-square"
+            >
+              <span className="material-symbols-outlined text-[#0D46F2]">{item.icon}</span>
               <div>
                 <p className="text-[10px] font-bold uppercase tracking-widest text-[#8C8C8C]">{item.label}</p>
                 <p className="text-xl font-extrabold italic">{item.value}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </section>
 
@@ -55,10 +68,13 @@ const TechnicianDashboard = () => {
         <section className="space-y-6">
           <div className="flex justify-between items-end">
             <h2 className="text-3xl font-extrabold italic uppercase tracking-tighter">Mission en cours</h2>
-            <span className="text-[10px] font-bold text-[#003cdd] uppercase tracking-widest pb-1">Priorité Haute</span>
+            <span className="text-[10px] font-bold text-[#0D46F2] uppercase tracking-widest pb-1">Priorité Haute</span>
           </div>
           
-          <div className="bg-white rounded-xl overflow-hidden shadow-[0_8px_32px_0_rgba(0,0,0,0.05)] border border-gray-100">
+          <motion.div 
+            whileTap={{ scale: 0.99 }}
+            className="bg-white rounded-[24px] overflow-hidden shadow-[0_8px_32px_0_rgba(0,0,0,0.05)] border border-gray-100"
+          >
             <div className="p-8 space-y-6">
               <div className="flex justify-between items-start">
                 <div className="space-y-1">
@@ -78,14 +94,10 @@ const TechnicianDashboard = () => {
                 </div>
               </div>
 
-              <motion.button 
-                whileTap={{ scale: 0.96 }}
-                onClick={() => navigate('/technician/mission')}
-                className="w-full bg-[#003cdd] text-white py-4 rounded-xl font-bold uppercase tracking-widest text-xs flex justify-center items-center gap-2"
-              >
+              <Button onClick={() => navigate('/technician/mission')}>
                 Voir la fiche
                 <span className="material-symbols-outlined text-sm">arrow_forward</span>
-              </motion.button>
+              </Button>
             </div>
             
             <div className="h-32 bg-[#f2f2f0] relative">
@@ -96,7 +108,7 @@ const TechnicianDashboard = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-white to-transparent"></div>
             </div>
-          </div>
+          </motion.div>
         </section>
 
         {/* Next Missions Section */}
@@ -110,7 +122,8 @@ const TechnicianDashboard = () => {
               <motion.div 
                 key={i}
                 whileTap={{ scale: 0.98 }}
-                className="flex items-center gap-6 p-5 bg-[#f9f9f7] rounded-xl border border-gray-100"
+                onClick={() => navigate('/technician/mission')}
+                className="flex items-center gap-6 p-5 bg-[#f9f9f7] rounded-[20px] border border-gray-100"
               >
                 <div className="text-center min-w-[60px]">
                   <p className="text-[10px] font-bold text-[#8C8C8C] uppercase tracking-widest">{mission.time}</p>
@@ -129,6 +142,23 @@ const TechnicianDashboard = () => {
       </main>
 
       <TechNavBar />
+
+      <IOSBottomSheet 
+        isOpen={isSettingsOpen} 
+        onClose={() => setIsSettingsOpen(false)}
+        title="Paramètres Lucas"
+      >
+        <div className="space-y-4 p-2">
+          <button className="w-full p-4 bg-[#F2F2F7] rounded-xl font-bold text-left flex justify-between items-center">
+            Mode Hors-ligne
+            <div className="w-10 h-6 bg-[#D1D1D6] rounded-full relative">
+              <div className="absolute left-1 top-1 w-4 h-4 bg-white rounded-full shadow-sm"></div>
+            </div>
+          </button>
+          <button className="w-full p-4 bg-[#F2F2F7] rounded-xl font-bold text-left">Gérer mon compte</button>
+          <button className="w-full p-4 bg-red-50 text-red-600 rounded-xl font-bold text-left" onClick={() => navigate('/technician/login')}>Déconnexion</button>
+        </div>
+      </IOSBottomSheet>
     </div>
   );
 };

@@ -1,64 +1,68 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../../components/shared/Button';
+import IOSOuiNonToggle from '../../components/shared/IOSOuiNonToggle';
+import IOSInput from '../../components/shared/IOSInput';
+import { useGlobalState } from '../../context/GlobalStateContext';
 
 const Description = () => {
   const navigate = useNavigate();
+  const { formData, updateFormData } = useGlobalState();
 
   return (
-    <div className="flex flex-col h-full bg-white px-8 pt-12 pb-8">
+    <div className="flex flex-col h-full bg-white px-0 pt-12 pb-8">
       {/* Step Info */}
-      <div className="mb-2">
+      <div className="mb-2 px-8">
         <span className="text-[10px] font-bold tracking-widest uppercase text-[#8C8C8C]">Étape 2 sur 3</span>
       </div>
 
       {/* Hero */}
-      <div className="mb-8">
+      <div className="mb-8 px-8">
         <h1 className="text-4xl font-black italic tracking-tight leading-tight mb-2">
           Décrivez le problème
         </h1>
-        <p className="text-lg font-medium">Répondez en quelques secondes</p>
+        <p className="text-lg font-medium text-[#8C8C8C]">Répondez en quelques secondes</p>
       </div>
 
       {/* Form Slots */}
-      <div className="flex-1 space-y-8 overflow-y-auto">
-        <div className="space-y-3">
-          <label className="text-[11px] font-bold uppercase tracking-tight text-[#0A0A0A]">Indiquez la marque de votre appareil</label>
-          <input 
-            className="w-full bg-[#F2F2F0] border-none rounded-[12px] px-5 py-4 focus:ring-2 focus:ring-[#0D46F2] outline-none" 
-            placeholder="Samsung, Smeg..." 
-            type="text"
+      <div className="flex-1 space-y-8 overflow-y-auto px-0">
+        <IOSInput 
+          label="Indiquez la marque de votre appareil"
+          placeholder="Samsung, Smeg..."
+          value={formData.brand}
+          onChange={(e) => updateFormData('brand', e.target.value)}
+        />
+
+        <div className="px-8 space-y-6">
+          <IOSOuiNonToggle 
+            label="L'appareil s'allume-t-il ?"
+            value={formData.isPowerOn}
+            onChange={(val) => updateFormData('isPowerOn', val)}
+          />
+
+          <IOSOuiNonToggle 
+            label="Y'a-t-il un code d'erreur ?"
+            value={formData.hasErrorCode}
+            onChange={(val) => updateFormData('hasErrorCode', val)}
           />
         </div>
 
-        <div className="flex items-center justify-between">
-          <label className="text-[11px] font-bold uppercase tracking-tight text-[#0A0A0A]">L'appareil s'allume-t-il ?</label>
-          <div className="flex gap-1 p-1 bg-[#F2F2F0] rounded-full">
-            <button className="px-5 py-1.5 rounded-full font-bold text-xs bg-white shadow-sm">Oui</button>
-            <button className="px-5 py-1.5 rounded-full font-bold text-xs text-[#8C8C8C]">Non</button>
-          </div>
-        </div>
-
-        <div className="flex items-center justify-between">
-          <label className="text-[11px] font-bold uppercase tracking-tight text-[#0A0A0A]">Y'a-t-il un code d'erreur ?</label>
-          <div className="flex gap-1 p-1 bg-[#F2F2F0] rounded-full">
-            <button className="px-5 py-1.5 rounded-full font-bold text-xs text-[#8C8C8C]">Oui</button>
-            <button className="px-5 py-1.5 rounded-full font-bold text-xs bg-white shadow-sm">Non</button>
-          </div>
-        </div>
-
-        <div className="space-y-3">
-          <label className="text-[11px] font-bold uppercase tracking-tight text-[#0A0A0A]">Indiquez le problème de votre appareil</label>
+        <div className="px-6 space-y-3">
+          <label className="text-[11px] font-bold uppercase tracking-tight text-[#8C8C8C] mb-2 ml-1 block">
+            Indiquez le problème de votre appareil
+          </label>
           <textarea 
-            className="w-full bg-[#F2F2F0] border-none rounded-[12px] px-5 py-4 focus:ring-2 focus:ring-[#0D46F2] outline-none resize-none" 
+            value={formData.problem}
+            onChange={(e) => updateFormData('problem', e.target.value)}
+            className="w-full bg-[#F2F2F7] border-2 border-transparent rounded-[20px] px-5 py-4 focus:border-[#0D46F2] focus:bg-white outline-none resize-none transition-all duration-200 text-[#1a1c1b] font-medium min-h-[120px]" 
             placeholder="Décrivez les symptômes ici..." 
-            rows="3"
+            rows="4"
           ></textarea>
         </div>
       </div>
 
       {/* Actions */}
-      <div className="mt-8 space-y-3">
+      <div className="mt-8 px-8 space-y-3">
         <Button onClick={() => navigate('/slot')}>Continuer</Button>
         <Button variant="ghost" onClick={() => navigate('/photo')}>Retour</Button>
       </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const Button = ({ 
   children, 
@@ -8,9 +9,9 @@ const Button = ({
   className = '',
   ...props 
 }) => {
-  const baseStyles = "flex items-center justify-center gap-2 font-bold transition-all active:scale-[0.96] uppercase tracking-widest text-[11px]";
+  const baseStyles = "flex items-center justify-center gap-2 font-bold uppercase tracking-widest text-[11px] transition-colors duration-200";
   const variants = {
-    primary: "bg-[#0D46F2] text-white",
+    primary: "bg-[#0D46F2] text-white shadow-[0_8px_30px_rgba(13,70,242,0.15)]",
     secondary: "bg-[#F2F2F7] text-[#000000]",
     outline: "bg-transparent border border-[rgba(0,0,0,0.1)] text-[#000000]",
     ghost: "bg-transparent text-[#8E8E93]"
@@ -22,13 +23,15 @@ const Button = ({
 
   return (
     <div className={fullWidth ? "w-full" : ""}>
-      <button 
+      <motion.button 
+        whileTap={{ scale: 0.96 }}
+        transition={{ type: 'spring', damping: 15, stiffness: 300 }}
         onClick={onClick}
         className={`${baseStyles} ${variants[variant]} ${rounded} ${padding} ${width} ${className}`}
         {...props}
       >
         {children}
-      </button>
+      </motion.button>
     </div>
   );
 };

@@ -3,8 +3,10 @@ import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-route
 import { AnimatePresence, motion } from 'framer-motion';
 import MobileFrame from './components/shared/MobileFrame';
 import { IOSKeyboardProvider } from './components/shared/IOSKeyboardContext';
+import { GlobalStateProvider, useGlobalState } from './context/GlobalStateContext';
 
 // Pages
+// ... (imports remain the same as before, skipping for brevity but they are included in actual file)
 import Splash from './pages/user/Splash';
 import Onboarding from './pages/user/Onboarding';
 import Signup from './pages/user/Signup';
@@ -35,14 +37,15 @@ import TechnicianMessages from './pages/technician/Messages';
 
 const PageWrapper = ({ children }) => {
   const location = useLocation();
+  const { direction } = useGlobalState();
   
   return (
     <AnimatePresence mode="wait">
       <motion.div
         key={location.pathname}
-        initial={{ x: '100%' }}
+        initial={{ x: direction > 0 ? '100%' : '-100%' }}
         animate={{ x: 0 }}
-        exit={{ x: '-100%' }}
+        exit={{ x: direction > 0 ? '-100%' : '100%' }}
         transition={{ type: 'spring', damping: 25, stiffness: 200, duration: 0.3 }}
         className="h-full w-full"
       >
@@ -56,45 +59,47 @@ export default function App() {
   return (
     <IOSKeyboardProvider>
       <BrowserRouter>
-        <MobileFrame>
-        <PageWrapper>
-            <Routes>
-              {/* User Flow */}
-              <Route path="/" element={<Splash />} />
-              <Route path="/onboarding" element={<Onboarding />} />
-              <Route path="/signup" element={<Signup />} />
-              <Route path="/login" element={<Signup />} />
-              <Route path="/privacy" element={<PrivacyPolicy />} />
-              <Route path="/dashboard" element={<Dashboard />} />
-              <Route path="/photo" element={<Photo />} />
-              <Route path="/description" element={<Description />} />
-              <Route path="/slot" element={<TimeSlot />} />
-              <Route path="/recap" element={<Recap />} />
-              <Route path="/confirmation" element={<Confirmation />} />
-              <Route path="/notification" element={<Notification />} />
-              <Route path="/tracking" element={<Tracking />} />
-              <Route path="/intervention" element={<Intervention />} />
-              <Route path="/verdict" element={<Verdict />} />
-              <Route path="/payment" element={<Payment />} />
-              <Route path="/certificate" element={<Certificate />} />
-              <Route path="/dashboard-updated" element={<UpdatedDashboard />} />
-              <Route path="/qr" element={<QRPage />} />
+        <GlobalStateProvider>
+          <MobileFrame>
+            <PageWrapper>
+              <Routes>
+                {/* User Flow */}
+                <Route path="/" element={<Splash />} />
+                <Route path="/onboarding" element={<Onboarding />} />
+                <Route path="/signup" element={<Signup />} />
+                <Route path="/login" element={<Signup />} />
+                <Route path="/privacy" element={<PrivacyPolicy />} />
+                <Route path="/dashboard" element={<UpdatedDashboard />} />
+                <Route path="/photo" element={<Photo />} />
+                <Route path="/description" element={<Description />} />
+                <Route path="/slot" element={<TimeSlot />} />
+                <Route path="/recap" element={<Recap />} />
+                <Route path="/confirmation" element={<Confirmation />} />
+                <Route path="/notification" element={<Notification />} />
+                <Route path="/tracking" element={<Tracking />} />
+                <Route path="/intervention" element={<Intervention />} />
+                <Route path="/verdict" element={<Verdict />} />
+                <Route path="/payment" element={<Payment />} />
+                <Route path="/certificate" element={<Certificate />} />
+                <Route path="/dashboard-updated" element={<UpdatedDashboard />} />
+                <Route path="/qr" element={<QRPage />} />
 
-              {/* Technician Flow */}
-              <Route path="/technician/login" element={<TechnicianLogin />} />
-              <Route path="/technician/dashboard" element={<TechnicianDashboard />} />
-              <Route path="/technician/mission" element={<TechnicianMission />} />
-              <Route path="/technician/scan" element={<TechnicianScan />} />
-              <Route path="/technician/diagnostic" element={<TechnicianDiagnostic />} />
-              <Route path="/technician/verdict" element={<TechnicianVerdict />} />
-              <Route path="/technician/messages" element={<TechnicianMessages />} />
-              
-              {/* Fallback */}
-              <Route path="*" element={<Navigate to="/" replace />} />
-            </Routes>
-        </PageWrapper>
-      </MobileFrame>
-    </BrowserRouter>
+                {/* Technician Flow */}
+                <Route path="/technician/login" element={<TechnicianLogin />} />
+                <Route path="/technician/dashboard" element={<TechnicianDashboard />} />
+                <Route path="/technician/mission" element={<TechnicianMission />} />
+                <Route path="/technician/scan" element={<TechnicianScan />} />
+                <Route path="/technician/diagnostic" element={<TechnicianDiagnostic />} />
+                <Route path="/technician/verdict" element={<TechnicianVerdict />} />
+                <Route path="/technician/messages" element={<TechnicianMessages />} />
+                
+                {/* Fallback */}
+                <Route path="*" element={<Navigate to="/" replace />} />
+              </Routes>
+            </PageWrapper>
+          </MobileFrame>
+        </GlobalStateProvider>
+      </BrowserRouter>
     </IOSKeyboardProvider>
   );
 }
