@@ -25,7 +25,7 @@ const TechnicianLogin = () => {
       {/* Header: Brand Identity */}
       <header className="flex items-center gap-2 mb-16 mt-12">
         <div className="flex items-center">
-          <span className="text-[#1a1c1b] font-black italic tracking-tighter text-2xl uppercase">LOOP</span>
+          <img src="/logo.svg" alt="Loop" className="h-6 w-auto" />
         </div>
         <div className="h-4 w-[1px] bg-gray-200 mx-1" />
         <div className="flex items-center gap-1.5 text-[#0D46F2] font-semibold text-sm">

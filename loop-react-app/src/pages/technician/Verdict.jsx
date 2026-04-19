@@ -19,7 +19,7 @@ const TechnicianVerdict = () => {
           </button>
           <h1 className="font-bold italic uppercase tracking-tight text-[#1a1c1b]">Saisir le verdict</h1>
         </div>
-        <div className="text-xl italic font-black text-[#1a1c1b]">LOOP</div>
+        <img src="/logo.svg" alt="Loop" className="h-6 w-auto" />
       </header>
 
       <main className="pt-24 px-6 max-w-2xl mx-auto">

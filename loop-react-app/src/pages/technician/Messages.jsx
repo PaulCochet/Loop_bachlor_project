@@ -17,7 +17,7 @@ const TechnicianMessages = () => {
           >
             <span className="material-symbols-outlined text-[#1a1c1b]">chevron_left</span>
           </button>
-          <span className="text-lg font-black italic text-[#1a1c1b] tracking-tighter uppercase">LOOP</span>
+          <img src="/logo.svg" alt="Loop" className="h-6 w-auto" />
         </div>
         <div className="w-8 h-8 rounded-full bg-gray-100 overflow-hidden">
           <img 

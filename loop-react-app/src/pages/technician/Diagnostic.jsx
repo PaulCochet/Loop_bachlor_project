@@ -18,7 +18,7 @@ const TechnicianDiagnostic = () => {
           >
             <span className="material-symbols-outlined">chevron_left</span>
           </button>
-          <span className="text-2xl font-black italic text-[#1a1c1b] uppercase tracking-widest leading-none">LOOP</span>
+          <img src="/logo.svg" alt="Loop" className="h-6 w-auto" />
         </div>
         <button className="material-symbols-outlined text-[#464545] hover:opacity-70 active:scale-95 transition-all">
           settings

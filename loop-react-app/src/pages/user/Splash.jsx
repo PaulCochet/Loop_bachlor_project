@@ -18,28 +18,18 @@ const Splash = () => {
 
       {/* Center Section: Brand Identity */}
       <div className="relative z-10 flex flex-col items-center justify-center text-center mt-20">
-        {/* Geometric Logo Icon */}
         <motion.div 
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.5, type: 'spring' }}
-          className="w-24 h-24 mb-6 flex items-center justify-center bg-[#003cdd] rounded-[1.5rem] shadow-[0px_20px_40px_-12px_rgba(0,60,221,0.25)]"
-        >
-          <span className="material-symbols-outlined text-white text-6xl" style={{ fontVariationSettings: "'FILL' 1" }}>
-            all_inclusive
-          </span>
-        </motion.div>
-
-        {/* Logotype */}
-        <motion.h1 
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.5 }}
-          className="text-6xl font-extrabold italic tracking-tighter text-[#1a1c1b] mb-4"
-          style={{ fontFamily: "'Manrope', sans-serif" }}
+          transition={{ duration: 0.6, type: 'spring' }}
+          className="mb-8"
         >
-          Loop
-        </motion.h1>
+          <img 
+            src="/logo.svg" 
+            alt="Loop Logo" 
+            className="w-48 h-auto"
+          />
+        </motion.div>
 
         {/* Tagline */}
         <motion.p 
