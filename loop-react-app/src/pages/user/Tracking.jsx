@@ -2,8 +2,8 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
-import Button from '../components/Button';
-import NavBar from '../components/NavBar';
+import Button from '../../components/shared/Button';
+import NavBar from '../../components/user/UserNavBar';
 
 // Fix for default marker icons in Leaflet with React
 const blueIcon = new L.Icon({

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Button from '../components/Button';
-import IOSInput from '../components/IOSInput';
+import Button from '../../components/shared/Button';
+import IOSInput from '../../components/shared/IOSInput';
 
 const Signup = () => {
   const navigate = useNavigate();

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 
-const NavBar = () => {
+const UserNavBar = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -12,7 +12,7 @@ const NavBar = () => {
   const inactiveColor = '#8C8C8C';
 
   return (
-    <div className="absolute bottom-0 left-0 right-0 bg-white border-t border-[#E5E5E5] px-12 py-4 flex justify-between items-center z-[100]">
+    <div className="absolute bottom-0 left-0 right-0 bg-white border-t border-[rgba(0,0,0,0.1)] px-12 py-4 flex justify-between items-center z-[100] pb-[34px]">
       <button 
         onClick={() => navigate('/dashboard')}
         className="flex flex-col items-center gap-1"
@@ -34,4 +34,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default UserNavBar;

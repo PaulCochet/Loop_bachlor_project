@@ -1,28 +1,28 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
-import MobileFrame from './components/MobileFrame';
-import { IOSKeyboardProvider } from './components/IOSKeyboardContext';
+import MobileFrame from './components/shared/MobileFrame';
+import { IOSKeyboardProvider } from './components/shared/IOSKeyboardContext';
 
 // Pages
-import Splash from './pages/Splash';
-import Onboarding from './pages/Onboarding';
-import Signup from './pages/Signup';
-import PrivacyPolicy from './pages/PrivacyPolicy';
-import Dashboard from './pages/Dashboard';
-import Photo from './pages/Photo';
-import Description from './pages/Description';
-import TimeSlot from './pages/TimeSlot';
-import Recap from './pages/Recap';
-import Confirmation from './pages/Confirmation';
-import Notification from './pages/Notification';
-import Tracking from './pages/Tracking';
-import Intervention from './pages/Intervention';
-import Verdict from './pages/Verdict';
-import Payment from './pages/Payment';
-import Certificate from './pages/Certificate';
-import UpdatedDashboard from './pages/UpdatedDashboard';
-import QRPage from './pages/QRPage';
+import Splash from './pages/user/Splash';
+import Onboarding from './pages/user/Onboarding';
+import Signup from './pages/user/Signup';
+import PrivacyPolicy from './pages/user/PrivacyPolicy';
+import Dashboard from './pages/user/Dashboard';
+import Photo from './pages/user/Photo';
+import Description from './pages/user/Description';
+import TimeSlot from './pages/user/TimeSlot';
+import Recap from './pages/user/Recap';
+import Confirmation from './pages/user/Confirmation';
+import Notification from './pages/user/Notification';
+import Tracking from './pages/user/Tracking';
+import Intervention from './pages/user/Intervention';
+import Verdict from './pages/user/Verdict';
+import Payment from './pages/user/Payment';
+import Certificate from './pages/user/Certificate';
+import UpdatedDashboard from './pages/user/UpdatedDashboard';
+import QRPage from './pages/user/QRPage';
 
 const PageWrapper = ({ children }) => {
   const location = useLocation();

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Button from '../components/Button';
-import NavBar from '../components/NavBar';
+import Button from '../../components/shared/Button';
+import NavBar from '../../components/user/UserNavBar';
 
 const Verdict = () => {
   const navigate = useNavigate();
