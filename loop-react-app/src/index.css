@@ -3,43 +3,75 @@
 @tailwind utilities;
 
 :root {
-  --color-primary-accent: #0D46F2;
-  --color-background: #FFFFFF;
-  --color-surface: #F2F2F0;
-  --color-text: #0A0A0A;
-  --color-text-secondary: #8C8C8C;
-  
-  --font-body: 'Instrument Sans', sans-serif;
-  --font-display: 'Instrument Sans', sans-serif; 
+  /* Design Tokens */
+  --bg-color: #FFFFFF;
+  --primary-accent: #0D46F2;
+  --text-primary: #0A0A0A;
+  --surface-color: #F2F2F0;
+  --text-secondary: #8C8C8C;
+  --border-style: 1px solid #E5E5E5;
+  --radius-card: 16px;
+  --radius-button: 12px;
+  --font-family: 'Instrument Sans', sans-serif;
+
+  /* App Dimensions */
+  --app-width: 390px;
+  --app-height: 844px;
 }
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
-  font-family: var(--font-body);
-  background-color: var(--color-background);
-  color: var(--color-text);
+  font-family: var(--font-family);
+  background-color: #f3f4f6; /* Light gray background outside the frame */
+  color: var(--text-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 #root {
   width: 100%;
-  min-height: 100vh;
+  height: 100%;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
+/* Typography Utilities */
 h1, h2, h3, h4, h5, h6 {
-  margin: 0;
+  color: var(--text-primary);
+  font-weight: 700;
+  line-height: 1.2;
 }
 
-/* Base utility classes for Display fonts */
-.display-text {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-style: italic;
+p {
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Card Utility */
+.card {
+  background: var(--surface-color);
+  border-radius: var(--radius-card);
+  border: var(--border-style);
+  padding: 16px;
+}
+
+/* Button Reset & Global */
+button {
+  font-family: var(--font-family);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:active {
+  transform: scale(0.98);
 }
