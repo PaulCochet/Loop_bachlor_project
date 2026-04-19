@@ -2,19 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+@import 'leaflet/dist/leaflet.css';
+
 :root {
-  /* Design Tokens */
+  /* iOS Design Tokens */
   --bg-color: #FFFFFF;
   --primary-accent: #0D46F2;
-  --text-primary: #0A0A0A;
-  --surface-color: #F2F2F0;
-  --text-secondary: #8C8C8C;
-  --border-style: 1px solid #E5E5E5;
-  --radius-card: 16px;
-  --radius-button: 12px;
-  --font-family: 'Instrument Sans', sans-serif;
+  --text-primary: #000000;
+  --surface-color: #F2F2F7; /* iOS System Gray 6 */
+  --text-secondary: #8E8E93; /* iOS System Gray */
+  --border-style: 0.5px solid rgba(0, 0, 0, 0.1);
+  --radius-card: 20px;
+  --radius-button: 14px;
+  /* SF Pro System stack */
+  --font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", sans-serif;
 
-  /* App Dimensions */
+  /* iOS Safe Areas */
+  --safe-top: 44px;
+  --safe-bottom: 34px;
+  
+  /* App Dimensions (Desktop view) */
   --app-width: 390px;
   --app-height: 844px;
 }
@@ -23,55 +30,78 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  -webkit-tap-highlight-color: transparent; /* Disable browser tap highlight */
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: fixed;
 }
 
 body {
   font-family: var(--font-family);
-  background-color: #f3f4f6; /* Light gray background outside the frame */
+  background-color: #000000;
   color: var(--text-primary);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-#root {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Typography Utilities */
-h1, h2, h3, h4, h5, h6 {
-  color: var(--text-primary);
-  font-weight: 700;
   line-height: 1.2;
 }
 
-p {
-  color: var(--text-secondary);
-  line-height: 1.5;
+/* Scroll Container with Momentum */
+.scroll-container {
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  height: 100%;
+  padding-bottom: var(--safe-bottom);
 }
 
-/* Card Utility */
-.card {
-  background: var(--surface-color);
-  border-radius: var(--radius-card);
-  border: var(--border-style);
-  padding: 16px;
+/* Hide Scrollbar for clean iOS look */
+.scroll-container::-webkit-scrollbar {
+  display: none;
 }
 
-/* Button Reset & Global */
-button {
-  font-family: var(--font-family);
-  cursor: pointer;
-  transition: all 0.2s ease;
+/* Typography */
+h1, h2, h3 {
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
-button:active {
+/* Global Micro-Interactions */
+button, .ios-tappable {
+  transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  background: none;
+  outline: none;
+}
+
+button:active, .ios-tappable:active {
+  transform: scale(0.96);
+}
+
+.card:active {
   transform: scale(0.98);
+  transition: transform 0.15s ease;
+}
+
+/* Input Styles */
+input, textarea {
+  font-family: var(--font-family);
+  border: none;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom-color 0.2s ease;
+  background: transparent;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-bottom-color: var(--primary-accent);
+}
+
+/* iOS Shadow */
+.ios-shadow {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
 }

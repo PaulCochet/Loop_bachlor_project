@@ -1,11 +1,40 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import StatusBar from './StatusBar';
+import HomeIndicator from './HomeIndicator';
+import IOSKeyboard from './IOSKeyboard';
+import { useIOSKeyboard } from './IOSKeyboardContext';
 
 const MobileFrame = ({ children }) => {
+  const { isKeyboardVisible, hideKeyboard } = useIOSKeyboard();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 450);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  if (isMobile) {
+    return (
+      <div className="relative w-full h-screen bg-white overflow-hidden flex flex-col">
+        <StatusBar />
+        <div className="flex-1 overflow-y-auto no-scrollbar pt-[44px] pb-[34px]">
+          {children}
+        </div>
+        <HomeIndicator />
+        <IOSKeyboard isVisible={isKeyboardVisible} onDismiss={hideKeyboard} />
+      </div>
+    );
+  }
+
   return (
-    <div className="flex items-center justify-center min-h-screen w-full bg-[#f3f4f6]">
+    <div className="flex items-center justify-center min-h-screen w-full bg-[#1a1a1a]">
       <div 
         id="mobile-frame"
-        className="relative bg-white shadow-2xl overflow-hidden"
+        className="relative bg-white shadow-[0_0_100px_rgba(0,0,0,0.5)] overflow-hidden"
         style={{
           width: '390px',
           height: '844px',
@@ -15,19 +44,19 @@ const MobileFrame = ({ children }) => {
           maxHeight: '844px',
           display: 'flex',
           flexDirection: 'column',
-          borderRadius: '40px', // Premium rounded corners for the frame
-          border: '8px solid #000', // Mocking a phone bezel
+          borderRadius: '50px', 
+          border: '12px solid #333', 
         }}
       >
-        {/* Notch / Dynamic Island */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 mt-2 w-32 h-8 bg-black rounded-3xl z-50 flex items-center justify-center">
-            <div className="w-2 h-2 rounded-full bg-[#1a1a1a] border border-[#333]"></div>
-        </div>
-
+        <StatusBar />
+        
         {/* Content area */}
-        <div className="flex-1 overflow-y-auto overflow-x-hidden pt-10">
+        <div className="flex-1 overflow-y-auto no-scrollbar pt-[44px] pb-[34px]">
           {children}
         </div>
+
+        <HomeIndicator />
+        <IOSKeyboard isVisible={isKeyboardVisible} onDismiss={hideKeyboard} />
       </div>
     </div>
   );
