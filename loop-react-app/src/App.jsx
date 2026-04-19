@@ -36,22 +36,10 @@ import TechnicianVerdict from './pages/technician/Verdict';
 import TechnicianMessages from './pages/technician/Messages';
 
 const PageWrapper = ({ children }) => {
-  const location = useLocation();
-  const { direction } = useGlobalState();
-  
   return (
-    <AnimatePresence mode="wait">
-      <motion.div
-        key={location.pathname}
-        initial={{ x: direction > 0 ? '100%' : '-100%' }}
-        animate={{ x: 0 }}
-        exit={{ x: direction > 0 ? '-100%' : '100%' }}
-        transition={{ type: 'spring', damping: 25, stiffness: 200, duration: 0.3 }}
-        className="h-full w-full"
-      >
-        {children}
-      </motion.div>
-    </AnimatePresence>
+    <div className="h-full w-full">
+      {children}
+    </div>
   );
 };
 
