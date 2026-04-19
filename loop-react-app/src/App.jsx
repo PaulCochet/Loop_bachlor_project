@@ -24,6 +24,15 @@ import Certificate from './pages/user/Certificate';
 import UpdatedDashboard from './pages/user/UpdatedDashboard';
 import QRPage from './pages/user/QRPage';
 
+// Technician Pages
+import TechnicianLogin from './pages/technician/Login';
+import TechnicianDashboard from './pages/technician/Dashboard';
+import TechnicianMission from './pages/technician/Mission';
+import TechnicianScan from './pages/technician/Scan';
+import TechnicianDiagnostic from './pages/technician/Diagnostic';
+import TechnicianVerdict from './pages/technician/Verdict';
+import TechnicianMessages from './pages/technician/Messages';
+
 const PageWrapper = ({ children }) => {
   const location = useLocation();
   
@@ -49,29 +58,40 @@ export default function App() {
       <BrowserRouter>
         <MobileFrame>
         <PageWrapper>
-          <Routes>
-            <Route path="/" element={<Splash />} />
-            <Route path="/onboarding" element={<Onboarding />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/privacy" element={<PrivacyPolicy />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/photo" element={<Photo />} />
-            <Route path="/description" element={<Description />} />
-            <Route path="/slot" element={<TimeSlot />} />
-            <Route path="/recap" element={<Recap />} />
-            <Route path="/confirmation" element={<Confirmation />} />
-            <Route path="/notification" element={<Notification />} />
-            <Route path="/tracking" element={<Tracking />} />
-            <Route path="/intervention" element={<Intervention />} />
-            <Route path="/verdict" element={<Verdict />} />
-            <Route path="/payment" element={<Payment />} />
-            <Route path="/certificate" element={<Certificate />} />
-            <Route path="/dashboard-updated" element={<UpdatedDashboard />} />
-            <Route path="/qr" element={<QRPage />} />
-            
-            {/* Fallback */}
-            <Route path="*" element={<Navigate to="/" replace />} />
-          </Routes>
+            <Routes>
+              {/* User Flow */}
+              <Route path="/" element={<Splash />} />
+              <Route path="/onboarding" element={<Onboarding />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/login" element={<Signup />} />
+              <Route path="/privacy" element={<PrivacyPolicy />} />
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/photo" element={<Photo />} />
+              <Route path="/description" element={<Description />} />
+              <Route path="/slot" element={<TimeSlot />} />
+              <Route path="/recap" element={<Recap />} />
+              <Route path="/confirmation" element={<Confirmation />} />
+              <Route path="/notification" element={<Notification />} />
+              <Route path="/tracking" element={<Tracking />} />
+              <Route path="/intervention" element={<Intervention />} />
+              <Route path="/verdict" element={<Verdict />} />
+              <Route path="/payment" element={<Payment />} />
+              <Route path="/certificate" element={<Certificate />} />
+              <Route path="/dashboard-updated" element={<UpdatedDashboard />} />
+              <Route path="/qr" element={<QRPage />} />
+
+              {/* Technician Flow */}
+              <Route path="/technician/login" element={<TechnicianLogin />} />
+              <Route path="/technician/dashboard" element={<TechnicianDashboard />} />
+              <Route path="/technician/mission" element={<TechnicianMission />} />
+              <Route path="/technician/scan" element={<TechnicianScan />} />
+              <Route path="/technician/diagnostic" element={<TechnicianDiagnostic />} />
+              <Route path="/technician/verdict" element={<TechnicianVerdict />} />
+              <Route path="/technician/messages" element={<TechnicianMessages />} />
+              
+              {/* Fallback */}
+              <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
         </PageWrapper>
       </MobileFrame>
     </BrowserRouter>

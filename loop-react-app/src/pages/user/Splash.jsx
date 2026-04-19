@@ -1,53 +1,95 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Button from '../../components/shared/Button';
+import { motion } from 'framer-motion';
 
 const Splash = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col h-full bg-white">
-      {/* Brand Header */}
-      <div className="flex flex-col items-center pt-12 pb-12">
-        <div className="w-20 h-20 bg-[#0D46F2] flex items-center justify-center rounded-[24px] shadow-lg mb-4">
-          <span className="material-symbols-outlined text-white text-5xl" style={{ fontVariationSettings: "'FILL' 1" }}>all_inclusive</span>
-        </div>
-        <h1 className="text-5xl font-black italic tracking-tighter text-[#0A0A0A]">LOOP</h1>
+    <main className="relative min-h-screen flex flex-col justify-between items-center px-8 py-16 bg-white overflow-hidden">
+      {/* Background Subtle Texture */}
+      <div 
+        className="absolute inset-0 z-0 opacity-20 pointer-events-none" 
+        style={{ 
+          backgroundImage: 'radial-gradient(#eeeeec 1px, transparent 1px)', 
+          backgroundSize: '40px 40px' 
+        }}
+      />
+
+      {/* Center Section: Brand Identity */}
+      <div className="relative z-10 flex flex-col items-center justify-center text-center mt-20">
+        {/* Geometric Logo Icon */}
+        <motion.div 
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.5, type: 'spring' }}
+          className="w-24 h-24 mb-6 flex items-center justify-center bg-[#003cdd] rounded-[1.5rem] shadow-[0px_20px_40px_-12px_rgba(0,60,221,0.25)]"
+        >
+          <span className="material-symbols-outlined text-white text-6xl" style={{ fontVariationSettings: "'FILL' 1" }}>
+            all_inclusive
+          </span>
+        </motion.div>
+
+        {/* Logotype */}
+        <motion.h1 
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+          className="text-6xl font-extrabold italic tracking-tighter text-[#1a1c1b] mb-4"
+          style={{ fontFamily: "'Manrope', sans-serif" }}
+        >
+          Loop
+        </motion.h1>
+
+        {/* Tagline */}
+        <motion.p 
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.3, duration: 0.5 }}
+          className="text-[#747688] text-lg max-w-[280px] leading-relaxed font-medium"
+        >
+          Donnez une seconde vie à vos appareils
+        </motion.p>
       </div>
 
-      {/* Steps List */}
-      <div className="flex-1 px-8 space-y-10">
-        <div className="flex items-start gap-5">
-          <div className="shrink-0 w-10 h-10 flex items-center justify-center bg-[#F2F2F0] text-[#0A0A0A] font-black italic rounded-lg">1</div>
-          <div className="flex flex-col">
-            <h2 className="text-lg italic uppercase tracking-tight">Scanner</h2>
-            <p className="text-sm">Scannez votre appareil pour un diagnostic instantané.</p>
-          </div>
-        </div>
+      {/* Bottom Section: Actions */}
+      <div className="relative z-10 w-full max-w-sm space-y-4 mb-8">
+        {/* Primary Action */}
+        <motion.button 
+          whileTap={{ scale: 0.96 }}
+          onClick={() => navigate('/onboarding')}
+          className="w-full h-16 bg-[#1a1c1b] text-white font-semibold text-base rounded-xl flex items-center justify-center shadow-lg"
+        >
+          Créer un compte
+        </motion.button>
 
-        <div className="flex items-start gap-5">
-          <div className="shrink-0 w-10 h-10 flex items-center justify-center bg-[#F2F2F0] text-[#0A0A0A] font-black italic rounded-lg">2</div>
-          <div className="flex flex-col">
-            <h2 className="text-lg italic uppercase tracking-tight">Prendre RV</h2>
-            <p className="text-sm">Choisissez un créneau avec un technicien certifié.</p>
-          </div>
-        </div>
+        {/* Secondary Action */}
+        <motion.button 
+          whileTap={{ scale: 0.96 }}
+          onClick={() => navigate('/login')}
+          className="w-full h-16 bg-transparent border-2 border-[#1a1c1b] text-[#1a1c1b] font-semibold text-base rounded-xl flex items-center justify-center"
+        >
+          Se connecter
+        </motion.button>
 
-        <div className="flex items-start gap-5">
-          <div className="shrink-0 w-10 h-10 flex items-center justify-center bg-[#F2F2F0] text-[#0A0A0A] font-black italic rounded-lg">3</div>
-          <div className="flex flex-col">
-            <h2 className="text-lg italic uppercase tracking-tight">Attendre le Feed</h2>
-            <p className="text-sm">Suivez l'arrivée de votre expert en temps réel.</p>
-          </div>
+        {/* Tertiary Action */}
+        <div className="pt-4 flex justify-center">
+          <button 
+            onClick={() => navigate('/technician/login')}
+            className="inline-flex items-center gap-2 text-[#747688] text-sm font-medium hover:text-[#1a1c1b] transition-colors group"
+          >
+            Accès technicien
+            <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">
+              arrow_forward
+            </span>
+          </button>
         </div>
       </div>
 
-      {/* Actions */}
-      <div className="p-8 space-y-3">
-        <Button onClick={() => navigate('/onboarding')}>Démarrer</Button>
-        <Button variant="ghost" onClick={() => navigate('/signup')}>J'ai déjà un compte</Button>
-      </div>
-    </div>
+      {/* Background Decorative Gradient */}
+      <div className="fixed -bottom-[20%] -left-[10%] w-[60%] h-[60%] bg-[#003cdd]/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="fixed -top-[10%] -right-[10%] w-[40%] h-[40%] bg-[#003cdd]/5 rounded-full blur-[100px] pointer-events-none" />
+    </main>
   );
 };
 

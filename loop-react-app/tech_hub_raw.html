@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:ital,wght@0,400;0,700;0,800;1,700;1,800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#747688",
+                    "on-secondary": "#ffffff",
+                    "background": "#f9f9f7",
+                    "tertiary-fixed-dim": "#c7c6c6",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-container": "#d7d6d6",
+                    "on-background": "#1a1c1b",
+                    "primary-fixed-dim": "#c9c6c5",
+                    "secondary-fixed-dim": "#b9c3ff",
+                    "tertiary-container": "#5c5d5d",
+                    "surface-dim": "#dadad8",
+                    "error": "#ba1a1a",
+                    "inverse-on-surface": "#f1f1ef",
+                    "tertiary-fixed": "#e3e2e2",
+                    "primary-container": "#5e5c5c",
+                    "surface-container-lowest": "#ffffff",
+                    "primary": "#464545",
+                    "surface-bright": "#f9f9f7",
+                    "on-secondary-container": "#eaebff",
+                    "on-primary-fixed-variant": "#474646",
+                    "tertiary": "#454546",
+                    "on-tertiary-fixed": "#1b1c1c",
+                    "on-secondary-fixed": "#001257",
+                    "inverse-surface": "#2f3130",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed": "#1c1b1b",
+                    "surface-variant": "#e2e3e1",
+                    "surface-tint": "#5f5e5e",
+                    "outline-variant": "#c4c5d9",
+                    "on-tertiary-fixed-variant": "#464747",
+                    "surface-container-highest": "#e2e3e1",
+                    "surface-container": "#eeeeec",
+                    "secondary-container": "#2b57ff",
+                    "on-surface": "#1a1c1b",
+                    "primary-fixed": "#e5e2e1",
+                    "on-secondary-fixed-variant": "#0033c1",
+                    "on-primary-container": "#d8d5d5",
+                    "surface-container-low": "#f4f4f2",
+                    "on-surface-variant": "#434656",
+                    "secondary-fixed": "#dde1ff",
+                    "on-primary": "#ffffff",
+                    "inverse-primary": "#c9c6c5",
+                    "surface-container-high": "#e8e8e6",
+                    "error-container": "#ffdad6",
+                    "surface": "#f9f9f7",
+                    "secondary": "#003cdd",
+                    "on-tertiary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="bg-[#f9f9f7] opacity-80 backdrop-blur-xl text-[#1a1c1b] docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center px-6 py-4 max-w-full">
+<div class="flex items-center gap-3">
+<div class="relative">
+<img alt="Technician Portrait" class="w-10 h-10 rounded-full object-cover" data-alt="Professional portrait of a friendly male technician in a clean uniform, modern studio lighting, neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDZ4bHsoIeK_eob6Z0IiDUktN5Tj5Hdj-z_OJxeeNrO2YQ7WepYEZQJOg3Ljw05ukUFJQjf5H696i_ijMJQz6jqU_k7hEGNjFP7Ywy9uiTMPFrgO9hCeHjQ1QamEGtpojbTeHwznA6A2YtyiwNiK8uAcGmJhs6qSIubZO3KvpRstAScEgTbT9bDzDN6312n1cWMtjBtqCgOBuRTbCmWmrcF_A6dooBpwns8VVQxM3rPEVrm9ezJUZHjsvyBqWaHirbUr3yV3g4zMc"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-surface rounded-full"></span>
+</div>
+<div>
+<h1 class="font-headline font-bold italic uppercase tracking-tighter text-2xl">Bonjour Lucas</h1>
+<span class="text-[10px] font-bold uppercase tracking-widest text-green-600 flex items-center gap-1">
+<span class="w-1 h-1 bg-green-600 rounded-full"></span> En service
+                    </span>
+</div>
+</div>
+<div class="flex gap-4">
+<button class="material-symbols-outlined hover:bg-[#eeeeec]/50 transition-all p-2 rounded-full scale-95 active:duration-75 transition-transform" data-icon="settings">settings</button>
+</div>
+</div>
+<div class="bg-[#eeeeec] h-[1px] opacity-10"></div>
+</header>
+<main class="px-6 mt-8 space-y-12">
+<!-- Metrics Section - Bento Style -->
+<section class="grid grid-cols-3 gap-4">
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-[0_4px_20px_0_rgba(26,28,27,0.03)] flex flex-col justify-between aspect-square border border-outline-variant/10">
+<span class="material-symbols-outlined text-secondary" data-icon="task">task</span>
+<div>
+<p class="text-[10px] font-bold uppercase tracking-widest text-outline">Missions</p>
+<p class="text-xl font-extrabold italic">3</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-[0_4px_20px_0_rgba(26,28,27,0.03)] flex flex-col justify-between aspect-square border border-outline-variant/10">
+<span class="material-symbols-outlined text-secondary" data-icon="schedule">schedule</span>
+<div>
+<p class="text-[10px] font-bold uppercase tracking-widest text-outline">Temps</p>
+<p class="text-xl font-extrabold italic">2h30</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-[0_4px_20px_0_rgba(26,28,27,0.03)] flex flex-col justify-between aspect-square border border-outline-variant/10">
+<span class="material-symbols-outlined text-secondary" data-icon="distance">distance</span>
+<div>
+<p class="text-[10px] font-bold uppercase tracking-widest text-outline">Route</p>
+<p class="text-xl font-extrabold italic">1,2 km</p>
+</div>
+</div>
+</section>
+<!-- Current Mission Section -->
+<section class="space-y-6">
+<div class="flex justify-between items-end">
+<h2 class="font-headline text-3xl font-extrabold italic uppercase tracking-tighter">Mission en cours</h2>
+<span class="text-[10px] font-bold text-secondary uppercase tracking-widest pb-1">Priorité Haute</span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_8px_32px_0_rgba(26,28,27,0.05)] border border-outline-variant/20">
+<div class="p-8 space-y-6">
+<div class="flex justify-between items-start">
+<div class="space-y-1">
+<h3 class="text-2xl font-black italic">Sophie M.</h3>
+<p class="text-outline font-medium">Lave-linge Samsung EcoBubble</p>
+</div>
+<div class="bg-surface-container-low px-3 py-1 rounded-full">
+<p class="text-[11px] font-bold text-on-surface">9h00 — 11h00</p>
+</div>
+</div>
+<div class="flex items-start gap-3 py-4 border-y border-surface-container">
+<span class="material-symbols-outlined text-outline mt-0.5" data-icon="location_on">location_on</span>
+<div class="space-y-0.5">
+<p class="text-sm font-bold">12 rue des Lilas</p>
+<p class="text-xs text-outline font-medium uppercase tracking-wider">44000 Nantes</p>
+</div>
+</div>
+<button class="w-full bg-secondary text-white py-4 rounded-xl font-bold uppercase tracking-widest text-xs flex justify-center items-center gap-2 active:scale-[0.98] transition-transform">
+                        Voir la fiche
+                        <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="h-32 bg-surface-container relative">
+<img alt="Location Map" class="w-full h-full object-cover grayscale opacity-50" data-alt="Minimalist grey and white digital map showing a residential street in Nantes with a blue location pin" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMB_Aar1tbylxuA12JqgTBhvQCiW2eL9DXbyjaWwrUTfP1EPVBif2qJ1VLlmPuVhUm03dACMLODM6aqAHf999TttWaDyHB6HnhUOZMONGThF_DkgFizoe_6qV9kVbtkWweKccrO2xGqEpeWIr-OMCrBqKVuZzzdbdAHniQCgr1xQE7Wc2uioGI6j7DlDI1z7RMqpWJr2JKvPcgTSpqRBmWvRpmB0DNuZtwA-0y7vNhm3PcNYb2K2K3IVHbyZCfW5USp0KJ1axduOE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest to-transparent"></div>
+</div>
+</div>
+</section>
+<!-- Next Missions Section -->
+<section class="space-y-6">
+<h2 class="font-headline text-2xl font-extrabold italic uppercase tracking-tighter">Missions suivantes</h2>
+<div class="space-y-4">
+<!-- Mission Card 2 -->
+<div class="flex items-center gap-6 p-5 bg-surface-container-low rounded-xl active:scale-[0.98] transition-transform">
+<div class="text-center min-w-[60px]">
+<p class="text-[10px] font-bold text-outline uppercase tracking-widest">13:30</p>
+<p class="text-lg font-black italic">MARC D.</p>
+</div>
+<div class="h-8 w-[1px] bg-outline-variant/30"></div>
+<div class="flex-1">
+<p class="text-sm font-bold">Lave-vaisselle Bosch</p>
+<p class="text-[10px] text-outline font-medium uppercase tracking-widest">24 Bd des Belges</p>
+</div>
+<span class="material-symbols-outlined text-outline/40" data-icon="chevron_right">chevron_right</span>
+</div>
+<!-- Mission Card 3 -->
+<div class="flex items-center gap-6 p-5 bg-surface-container-low rounded-xl active:scale-[0.98] transition-transform">
+<div class="text-center min-w-[60px]">
+<p class="text-[10px] font-bold text-outline uppercase tracking-widest">15:45</p>
+<p class="text-lg font-black italic">JULIE L.</p>
+</div>
+<div class="h-8 w-[1px] bg-outline-variant/30"></div>
+<div class="flex-1">
+<p class="text-sm font-bold">Four Whirlpool</p>
+<p class="text-[10px] text-outline font-medium uppercase tracking-widest">5 Place Royale</p>
+</div>
+<span class="material-symbols-outlined text-outline/40" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-[#ffffff] shadow-[0_-8px_32px_0_rgba(26,28,27,0.06)] flex justify-around items-center pt-3 pb-8 px-4 border-t-0">
+<!-- Accueil (Active) -->
+<a class="flex flex-col items-center text-[#003cdd] font-black after:content-[''] after:w-1 after:h-1 after:bg-[#003cdd] after:rounded-full after:mt-1 active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="home_repair_service" style="font-variation-settings: 'FILL' 1;">home_repair_service</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-widest mt-1">Accueil</span>
+</a>
+<!-- Scan -->
+<a class="flex flex-col items-center text-[#464545] opacity-50 hover:text-[#1a1c1b] transition-colors active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="qr_code_scanner">qr_code_scanner</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-widest mt-1">Scan</span>
+</a>
+<!-- Messages -->
+<a class="flex flex-col items-center text-[#464545] opacity-50 hover:text-[#1a1c1b] transition-colors active:scale-90 transition-all duration-200 relative" href="#">
+<span class="material-symbols-outlined" data-icon="forum">forum</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-widest mt-1">Messages</span>
+<span class="absolute top-0 right-1/4 w-2 h-2 bg-secondary rounded-full border-2 border-white"></span>
+</a>
+<!-- Diagnostic -->
+<a class="flex flex-col items-center text-[#464545] opacity-50 hover:text-[#1a1c1b] transition-colors active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-widest mt-1">Diagnostic</span>
+</a>
+</nav>
+</body></html>

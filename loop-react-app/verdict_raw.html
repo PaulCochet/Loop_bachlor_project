@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#ffffff",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed": "#e3e2e2",
+                    "on-surface-variant": "#434656",
+                    "primary-fixed-dim": "#c9c6c5",
+                    "outline": "#747688",
+                    "inverse-on-surface": "#f1f1ef",
+                    "surface-container-low": "#f4f4f2",
+                    "secondary-container": "#2b57ff",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed": "#1c1b1b",
+                    "surface-variant": "#e2e3e1",
+                    "on-background": "#1a1c1b",
+                    "background": "#f9f9f7",
+                    "primary": "#464545",
+                    "on-tertiary-fixed": "#1b1c1c",
+                    "outline-variant": "#c4c5d9",
+                    "on-error-container": "#93000a",
+                    "surface-container": "#eeeeec",
+                    "primary-fixed": "#e5e2e1",
+                    "tertiary-container": "#5c5d5d",
+                    "secondary": "#003cdd",
+                    "tertiary": "#454546",
+                    "on-secondary": "#ffffff",
+                    "surface": "#f9f9f7",
+                    "secondary-fixed-dim": "#b9c3ff",
+                    "inverse-surface": "#2f3130",
+                    "surface-tint": "#5f5e5e",
+                    "surface-bright": "#f9f9f7",
+                    "on-secondary-fixed": "#001257",
+                    "surface-dim": "#dadad8",
+                    "surface-container-highest": "#e2e3e1",
+                    "on-tertiary-fixed-variant": "#464747",
+                    "on-secondary-container": "#eaebff",
+                    "on-tertiary": "#ffffff",
+                    "inverse-primary": "#c9c6c5",
+                    "secondary-fixed": "#dde1ff",
+                    "on-secondary-fixed-variant": "#0033c1",
+                    "on-primary-container": "#d8d5d5",
+                    "primary-container": "#5e5c5c",
+                    "on-tertiary-container": "#d7d6d6",
+                    "tertiary-fixed-dim": "#c7c6c6",
+                    "on-primary-fixed-variant": "#474646",
+                    "on-surface": "#1a1c1b",
+                    "surface-container-high": "#e8e8e6",
+                    "error-container": "#ffdad6",
+                    "on-primary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .filled-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="bg-[#f9f9f7]/80 backdrop-blur-xl shadow-[0_32px_64px_rgba(26,28,27,0.06)] fixed top-0 w-full z-50 flex items-center px-6 py-4 justify-between">
+<div class="flex items-center gap-4">
+<button class="active:scale-95 transition-transform hover:opacity-80">
+<span class="material-symbols-outlined text-[#1a1c1b]" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-['Manrope'] italic font-black uppercase tracking-tight text-[#1a1c1b]">Saisir le verdict</h1>
+</div>
+<div class="text-xl italic font-black text-[#1a1c1b]">LOOP</div>
+</header>
+<main class="pt-24 px-6 max-w-2xl mx-auto">
+<!-- Subtitle & Header Area -->
+<section class="mb-10">
+<p class="text-[#8C8C8C] font-medium tracking-wide body-lg">Lave-linge Samsung — Sophie M.</p>
+</section>
+<!-- Verdict Cards Selection -->
+<section class="space-y-4 mb-12">
+<!-- Option 1: Réparable (Selected) -->
+<div class="group cursor-pointer rounded-xl p-5 bg-surface-container-lowest border-2 border-[#003cdd] flex items-center gap-4 shadow-sm transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined text-[#003cdd] filled-icon text-3xl" data-icon="radio_button_checked" style="font-variation-settings: 'FILL' 1;">radio_button_checked</span>
+<div class="flex-1">
+<p class="font-bold text-lg leading-tight">Réparable</p>
+<p class="text-sm text-outline opacity-80">L'appareil peut être remis en état</p>
+</div>
+</div>
+<!-- Option 2: À reprendre -->
+<div class="group cursor-pointer rounded-xl p-5 bg-surface-container-low border border-outline-variant flex items-center gap-4 hover:bg-surface-container-lowest transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined text-outline text-3xl" data-icon="radio_button_unchecked">radio_button_unchecked</span>
+<div class="flex-1">
+<p class="font-bold text-lg leading-tight">À reprendre</p>
+<p class="text-sm text-outline opacity-80">Valeur de revente ou reconditionnement</p>
+</div>
+</div>
+<!-- Option 3: À recycler -->
+<div class="group cursor-pointer rounded-xl p-5 bg-surface-container-low border border-outline-variant flex items-center gap-4 hover:bg-surface-container-lowest transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined text-outline text-3xl" data-icon="radio_button_unchecked">radio_button_unchecked</span>
+<div class="flex-1">
+<p class="font-bold text-lg leading-tight">À recycler</p>
+<p class="text-sm text-outline opacity-80">Non réparable, orienter vers filière DEEE</p>
+</div>
+</div>
+</section>
+<!-- Intervention Details -->
+<section class="mb-12">
+<h2 class="text-xs font-black uppercase tracking-[0.2em] text-outline mb-6">Détail de l'intervention</h2>
+<div class="bg-surface-container-low rounded-xl p-6 mb-6">
+<div class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-secondary" data-icon="build">build</span>
+<span class="font-bold">Pièce remplacée: <span class="font-medium text-outline">Pompe de vidange</span></span>
+</div>
+</div>
+<div class="relative">
+<label class="block text-[10px] font-bold uppercase tracking-widest text-secondary mb-2 ml-1">Observations</label>
+<textarea class="w-full bg-surface-container-low border-none rounded-xl p-5 text-on-surface placeholder:text-outline/40 focus:ring-2 focus:ring-secondary/20 focus:bg-surface-container-lowest min-h-[140px] transition-all resize-none" placeholder="Précisez les tests effectués, l'état général de la cuve ou tout point d'attention particulier..."></textarea>
+</div>
+</section>
+<!-- Primary CTA -->
+<section class="mb-12">
+<button class="w-full bg-on-background text-surface py-5 rounded-xl font-bold text-base tracking-wide flex items-center justify-center gap-2 hover:opacity-90 active:scale-95 transition-all shadow-[0_20px_40px_rgba(26,28,27,0.15)]">
+                Valider &amp; générer le certificat
+                <span class="material-symbols-outlined text-lg" data-icon="verified">verified</span>
+</button>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe bg-[#ffffff] shadow-[0_-8px_32px_rgba(26,28,27,0.04)] rounded-t-3xl">
+<!-- Accueil -->
+<a class="flex flex-col items-center justify-center text-[#464545] opacity-40 hover:opacity-100 transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-['Manrope'] text-[10px] font-bold tracking-widest uppercase">Accueil</span>
+</a>
+<!-- Scan -->
+<a class="flex flex-col items-center justify-center text-[#464545] opacity-40 hover:opacity-100 transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="qr_code_scanner">qr_code_scanner</span>
+<span class="font-['Manrope'] text-[10px] font-bold tracking-widest uppercase">Scan</span>
+</a>
+<!-- Messages -->
+<a class="flex flex-col items-center justify-center text-[#464545] opacity-40 hover:opacity-100 transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-['Manrope'] text-[10px] font-bold tracking-widest uppercase">Messages</span>
+</a>
+<!-- Diagnostic (Active) -->
+<a class="flex flex-col items-center justify-center text-[#003cdd] relative after:content-[''] after:absolute after:-bottom-1 after:w-1 after:h-1 after:bg-[#003cdd] after:rounded-full transition-all active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="construction">construction</span>
+<span class="font-['Manrope'] text-[10px] font-bold tracking-widest uppercase">Diagnostic</span>
+</a>
+</nav>
+</body></html>

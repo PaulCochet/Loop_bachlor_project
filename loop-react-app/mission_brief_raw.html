@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed-dim": "#b9c3ff",
+                    "on-primary-fixed": "#1c1b1b",
+                    "tertiary-container": "#5c5d5d",
+                    "secondary-fixed": "#dde1ff",
+                    "outline-variant": "#c4c5d9",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed": "#e5e2e1",
+                    "on-secondary-container": "#eaebff",
+                    "inverse-primary": "#c9c6c5",
+                    "secondary": "#003cdd",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed-variant": "#474646",
+                    "primary": "#464545",
+                    "on-error": "#ffffff",
+                    "on-surface": "#1a1c1b",
+                    "error": "#ba1a1a",
+                    "background": "#f9f9f7",
+                    "on-tertiary-fixed-variant": "#464747",
+                    "on-primary": "#ffffff",
+                    "on-primary-container": "#d8d5d5",
+                    "tertiary": "#454546",
+                    "surface-container-high": "#e8e8e6",
+                    "surface": "#f9f9f7",
+                    "on-secondary-fixed-variant": "#0033c1",
+                    "inverse-on-surface": "#f1f1ef",
+                    "surface-dim": "#dadad8",
+                    "tertiary-fixed-dim": "#c7c6c6",
+                    "outline": "#747688",
+                    "on-error-container": "#93000a",
+                    "surface-container": "#eeeeec",
+                    "on-tertiary-container": "#d7d6d6",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-tint": "#5f5e5e",
+                    "primary-fixed-dim": "#c9c6c5",
+                    "primary-container": "#5e5c5c",
+                    "surface-bright": "#f9f9f7",
+                    "on-tertiary-fixed": "#1b1c1c",
+                    "on-background": "#1a1c1b",
+                    "surface-variant": "#e2e3e1",
+                    "surface-container-low": "#f4f4f2",
+                    "surface-container-highest": "#e2e3e1",
+                    "on-surface-variant": "#434656",
+                    "secondary-container": "#2b57ff",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed": "#001257",
+                    "tertiary-fixed": "#e3e2e2",
+                    "inverse-surface": "#2f3130"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="bg-[#f9f9f7]/80 dark:bg-[#1a1c1b]/80 backdrop-blur-xl docked full-width top-0 sticky z-50 shadow-[0_0_32px_0_rgba(26,28,27,0.06)] flex items-end justify-between w-full px-6 pb-4 h-32">
+<div class="flex items-center gap-3">
+<h1 class="font-['Manrope'] italic font-black uppercase tracking-tighter text-4xl text-left text-[#1a1c1b] dark:text-[#f9f9f7]">
+                Mission Brief
+            </h1>
+</div>
+<div class="flex items-center">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container border border-outline-variant/20 active:scale-95 duration-200 cursor-pointer">
+<img class="w-full h-full object-cover" data-alt="professional portrait of a male technician with a clean, focused look, neutral lighting, studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJWL7jlAwWsISMOzhM4cfU0kVM-Qo7ufIfiTe5Pev-zx1HtXt6jNc3UZxnx2YCLmxKjiCUQ9KjVZSrH2BfHNUCSakDnHHMkj0j2QAuu9Hre_5Wl08Tym-ExCkkRKFEtLFpQQIpIQgn4DYgjA0_UspimfDQ4TN_y8zYePet0tJ8xCNynpGpFjl3obaE8jCBIUyI3NPJRmnlVAJUQhS-0h_k048jvhqM1ShdCbrM2SvEjwemD8HgTM0M2CZq6vtlojH0i5qd8Jn1N5A"/>
+</div>
+</div>
+</header>
+<main class="px-6 pt-8 max-w-2xl mx-auto">
+<!-- Title & Badge Section -->
+<div class="flex items-center gap-4 mb-10">
+<h2 class="text-3xl font-black italic uppercase tracking-tighter text-on-surface">Fiche mission</h2>
+<span class="px-3 py-1 bg-surface-container text-outline text-[10px] font-bold uppercase tracking-widest rounded-full">À venir</span>
+</div>
+<div class="space-y-6">
+<!-- Card 1: Usager -->
+<section class="bg-surface-container-lowest p-6 rounded-xl shadow-[0_0_32px_0_rgba(26,28,27,0.04)] relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-6xl">person</span>
+</div>
+<h3 class="text-[10px] font-bold uppercase tracking-widest text-outline mb-6">Usager</h3>
+<div class="flex items-center gap-4 mb-6">
+<div class="w-14 h-14 rounded-full overflow-hidden border-2 border-surface-container">
+<img class="w-full h-full object-cover" data-alt="portrait of a middle-aged woman with a friendly expression, soft natural indoor lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAL4__o4qZMZpV-t4oNiVNLbs9dYnsyAMFENMkUTZ1dZgUPlYL4PGl_UgawNbB5qlNjjQ7B3-CAV-u3AX6m7OM9ABY_8kJ0ZCTmmfOyorAsJwTwVl5xAAM39KZR9PyVZDr1RgCHW42Mrv_KRY0hdgzbsK6nOB0GwlbWx_0Y5NJHuAJi27bafnzYekvuygKU7qmEjqmOki606i1soPqBoB7qAGvYxEiDvj4lroujduqC6hLq7IoWnNDkamufBKICTC39nUaeIs6fXuQ"/>
+</div>
+<div>
+<p class="text-lg font-extrabold text-on-background">Sophie M.</p>
+<p class="text-sm text-outline font-medium">12 rue des Lilas Nantes</p>
+</div>
+</div>
+<div class="pt-4 border-t border-surface-container flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">schedule</span>
+<p class="text-sm font-bold text-on-surface">Demain 9h00 à 11h00</p>
+</div>
+</section>
+<!-- Card 2: Appareil -->
+<section class="bg-surface-container-low p-6 rounded-xl relative overflow-hidden">
+<h3 class="text-[10px] font-bold uppercase tracking-widest text-outline mb-6">Appareil</h3>
+<div class="flex gap-6">
+<div class="w-24 h-24 bg-surface-container-lowest rounded-lg overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="front view of a modern silver washing machine against a clean white wall, cinematic lighting, sharp details" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8S8Dr0r_4OpGBc7BLhqEv9Jy76X0meRhQZJkomxF4AoGERzrYJqvixXRY7ljakocC5jO8XVN1N9j5I9W3U3BxbyCR1T7ZiEtc9jQaUNtpcbZut59BjVI9oX1NnexbbnNa50xN4Cr62h4N45rh6DmwhxStpHPl47MqY9Qa95zTBrLOKP2J_0PbXAYeVX3_yenoW945UsBkSDox4-cQJoS6BQR9b6pYmL1v9V1_7XjS3opkr4Ib3kT0DMpaCLyeL-kpKrd-GzAYoUs"/>
+</div>
+<div class="space-y-2">
+<p class="text-lg font-extrabold text-on-background">Lave-linge Samsung WW90</p>
+<div class="space-y-1">
+<p class="text-xs text-outline uppercase font-bold tracking-wider">Problème</p>
+<p class="text-sm font-medium text-on-surface-variant">S'arrête en cours de cycle</p>
+</div>
+<div class="inline-flex items-center gap-2 px-2 py-1 bg-error-container text-on-error-container rounded text-[10px] font-black uppercase tracking-tighter italic">
+                            Error Code: E21
+                        </div>
+</div>
+</div>
+</section>
+<!-- Card 3: Pièces suggérées -->
+<section class="bg-surface-container p-6 rounded-xl">
+<h3 class="text-[10px] font-bold uppercase tracking-widest text-outline mb-4">Pièces suggérées à embarquer</h3>
+<ul class="space-y-3">
+<li class="flex items-start gap-3 group">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary mt-1.5 flex-shrink-0"></span>
+<span class="text-sm font-medium text-on-surface group-hover:text-secondary transition-colors cursor-default">Pompe de vidange Samsung WW</span>
+</li>
+<li class="flex items-start gap-3 group">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary mt-1.5 flex-shrink-0"></span>
+<span class="text-sm font-medium text-on-surface group-hover:text-secondary transition-colors cursor-default">Carte électronique modèle E2x</span>
+</li>
+</ul>
+</section>
+</div>
+<!-- CTA Action -->
+<div class="mt-12 pb-12">
+<button class="w-full bg-on-background text-surface py-5 rounded-xl font-black uppercase italic tracking-widest text-lg shadow-xl active:scale-[0.98] transition-transform flex items-center justify-center gap-3">
+                Démarrer la mission
+                <span class="material-symbols-outlined">arrow_forward_ios</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center h-20 px-4 bg-[#f9f9f7] dark:bg-[#1a1c1b] border-t border-[#eeeeec]/10 shadow-[0_-4px_24px_0_rgba(26,28,27,0.04)] z-50">
+<div class="flex flex-col items-center justify-center text-[#003cdd] dark:text-[#0D46F2] relative after:content-[''] after:absolute after:-bottom-1 after:w-1 after:h-1 after:bg-[#003cdd] after:rounded-full cursor-pointer hover:opacity-80 transition-opacity active:scale-90 duration-150">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-widest mt-1">Accueil</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#464545] dark:text-[#747688] opacity-60 cursor-pointer hover:text-[#1a1c1b] dark:hover:text-[#ffffff] transition-colors active:scale-90 duration-150">
+<span class="material-symbols-outlined" data-icon="qr_code_scanner">qr_code_scanner</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-widest mt-1">Scan</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#464545] dark:text-[#747688] opacity-60 cursor-pointer hover:text-[#1a1c1b] dark:hover:text-[#ffffff] transition-colors active:scale-90 duration-150">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-widest mt-1">Messages</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#464545] dark:text-[#747688] opacity-60 cursor-pointer hover:text-[#1a1c1b] dark:hover:text-[#ffffff] transition-colors active:scale-90 duration-150">
+<span class="material-symbols-outlined" data-icon="construction">construction</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-widest mt-1">Diagnostic</span>
+</div>
+</nav>
+</body></html>
