@@ -30,7 +30,8 @@ import TechnicianDashboard from './pages/technician/Dashboard';
 import TechnicianMission from './pages/technician/Mission';
 import TechnicianScan from './pages/technician/Scan';
 import TechnicianDiagnostic from './pages/technician/Diagnostic';
-import TechnicianVerdict from './pages/technician/Verdict';
+import TechnicianVerification from './pages/technician/Verification';
+import TechnicianRecap from './pages/technician/Recap';
 import TechnicianMessages from './pages/technician/Messages';
 import ErrorBoundary from './components/shared/ErrorBoundary';
 
@@ -86,7 +87,8 @@ export default function App() {
                 <Route path="/technician/mission" element={<TechnicianMission />} />
                 <Route path="/technician/scan" element={<TechnicianScan />} />
                 <Route path="/technician/diagnostic" element={<TechnicianDiagnostic />} />
-                <Route path="/technician/verdict" element={<TechnicianVerdict />} />
+                <Route path="/technician/verification" element={<TechnicianVerification />} />
+                <Route path="/technician/recap" element={<TechnicianRecap />} />
                 <Route path="/technician/messages" element={<TechnicianMessages />} />
                 
                 {/* Fallback */}

@@ -10,8 +10,13 @@ const TechNavBar = () => {
     { id: 'home', label: 'Accueil', icon: 'home', path: '/technician/dashboard' },
     { id: 'scan', label: 'Scan', icon: 'qr_code_scanner', path: '/technician/scan' },
     { id: 'messages', label: 'Messages', icon: 'chat_bubble', path: '/technician/messages', badge: true },
-    { id: 'diagnostic', label: 'Diagnostic', icon: 'clipboard', path: '/technician/diagnostic' }
+    { id: 'diagnostic', label: 'Diagnostic', icon: 'stethoscope', path: '/technician/diagnostic' }
   ];
+
+  const missionPaths = ['/technician/scan', '/technician/diagnostic', '/technician/verification', '/technician/recap'];
+  const isMissionActive = missionPaths.includes(location.pathname);
+
+  if (isMissionActive) return null;
 
   const activeColor = '#0D46F2';
   const inactiveColor = '#8C8C8C';

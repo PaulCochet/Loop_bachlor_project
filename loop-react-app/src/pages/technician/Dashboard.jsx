@@ -25,9 +25,6 @@ const TechnicianDashboard = () => {
             </div>
             <div>
               <h1 className="font-bold italic uppercase tracking-tighter text-2xl leading-none">Bonjour Lucas</h1>
-              <span className="text-[10px] font-bold uppercase tracking-widest text-green-600 flex items-center gap-1 mt-1">
-                <span className="w-1 h-1 bg-green-600 rounded-full"></span> En service
-              </span>
             </div>
           </div>
           <div className="flex gap-4">
@@ -53,12 +50,12 @@ const TechnicianDashboard = () => {
             <motion.div 
               key={i} 
               whileTap={{ scale: 0.98 }}
-              className="bg-[#f9f9f7] p-5 rounded-[20px] border border-gray-100 flex flex-col justify-between aspect-square"
+              className="bg-[#f9f9f7] p-4 rounded-[20px] border border-gray-100 flex flex-col justify-between aspect-square"
             >
-              <span className="material-symbols-outlined text-[#0D46F2]">{item.icon}</span>
+              <span className="material-symbols-outlined text-[#0D46F2] !text-xl">{item.icon}</span>
               <div>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-[#8C8C8C]">{item.label}</p>
-                <p className="text-xl font-extrabold italic">{item.value}</p>
+                <p className="text-[9px] font-bold uppercase tracking-widest text-[#8C8C8C] truncate">{item.label}</p>
+                <p className="text-lg font-extrabold italic">{item.value}</p>
               </div>
             </motion.div>
           ))}
@@ -98,15 +95,6 @@ const TechnicianDashboard = () => {
                 Voir la fiche
                 <span className="material-symbols-outlined text-sm">arrow_forward</span>
               </Button>
-            </div>
-            
-            <div className="h-32 bg-[#f2f2f0] relative">
-              <img 
-                alt="Location Map" 
-                className="w-full h-full object-cover grayscale opacity-50" 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMB_Aar1tbylxuA12JqgTBhvQCiW2eL9DXbyjaWwrUTfP1EPVBif2qJ1VLlmPuVhUm03dACMLODM6aqAHf999TttWaDyHB6HnhUOZMONGThF_DkgFizoe_6qV9kVbtkWweKccrO2xGqEpeWIr-OMCrBqKVuZzzdbdAHniQCgr1xQE7Wc2uioGI6j7DlDI1z7RMqpWJr2JKvPcgTSpqRBmWvRpmB0DNuZtwA-0y7vNhm3PcNYb2K2K3IVHbyZCfW5USp0KJ1axduOE"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-white to-transparent"></div>
             </div>
           </motion.div>
         </section>

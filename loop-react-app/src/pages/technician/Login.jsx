@@ -48,8 +48,8 @@ const TechnicianLogin = () => {
       <div className="flex-grow flex flex-col gap-8">
         <div className="space-y-6">
           <IOSInput 
-            placeholder="Email professionnel" 
-            type="email"
+            placeholder="Identifiant" 
+            type="text"
           />
           <IOSInput 
             placeholder="Mot de passe" 

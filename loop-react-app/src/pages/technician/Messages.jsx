@@ -1,16 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import TechNavBar from '../../components/technician/TechNavBar';
 import Button from '../../components/shared/Button';
 
 const TechnicianMessages = () => {
   const navigate = useNavigate();
+  const [activeTab, setActiveTab] = useState('conversations');
+  const [requests, setRequests] = useState([
+    { id: 1, name: 'Lave-linge Samsung', address: '12 rue des Lilas, Nantes', slot: 'Demain 9h00 — 11h00', distance: '1,2 km', status: 'pending' }
+  ]);
+
+  const handleAccept = (id) => {
+    setRequests(requests.map(r => r.id === id ? { ...r, status: 'accepted' } : r));
+  };
+
+  const handleRefuse = (id) => {
+    setRequests(requests.filter(r => r.id !== id));
+  };
+
+  const tabs = [
+    { id: 'conversations', label: 'Conversations' },
+    { id: 'demandes', label: 'Demandes' },
+    { id: 'archives', label: 'Archives' }
+  ];
 
   return (
     <div className="bg-[#f9f9f7] min-h-screen pb-40">
-      {/* Top Navigation Bar */}
-      <header className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl flex justify-between items-center px-6 h-16 border-b border-gray-100">
+      {/* Top Header (Clean) */}
+      <header className="fixed top-0 w-full z-50 bg-white border-b border-gray-100 px-6 h-16 flex items-center justify-between">
         <div className="flex items-center gap-4">
           <motion.button 
             whileTap={{ scale: 0.9 }}
@@ -19,114 +37,164 @@ const TechnicianMessages = () => {
           >
             <span className="material-symbols-outlined text-[#0D46F2] font-black">chevron_left</span>
           </motion.button>
-          <img src="/logo.svg" alt="Loop" className="h-6 w-auto" />
-        </div>
-        <div className="w-9 h-9 rounded-full bg-white overflow-hidden border border-gray-100 shadow-sm">
-          <img 
-            className="w-full h-full object-cover" 
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAy8WCHJ6hx_dNYIfGoliCmdKi7fucEIoAm0R1ShodrNla_pvPG_iQIpJh3pPyVbKagMdYdBU_ZqcIYRslOESp3zKG4cIEYA2VgzLjZJ5FhOGIr8ThVCFmqQx0TTSuzcfd0TvJuPEt18_47eDy_ku-pLMsnxlVJfUVLPLppftbVhGjsW4u7yAyJFVsKnAwEK9UVnjBEZ_2g_h454YmewqZRBcZvxivPpq2TlO86w1SZNJe6Mmnq6kNTCGY0sFRefHDTVhfIOs5pbII"
-            alt="Technician"
-          />
+          <h1 className="text-lg font-black italic uppercase italic uppercase tracking-wider">Messages</h1>
         </div>
       </header>
 
-      <main className="pt-24 px-6 max-w-2xl mx-auto">
-        {/* Editorial Title */}
-        <div className="mb-12">
-          <h1 className="text-5xl font-black italic tracking-tighter uppercase leading-tight text-[#1a1c1b]">
-            Conversation
-          </h1>
-          <p className="text-[#8C8C8C] font-black text-[11px] uppercase tracking-[0.2em] mt-2">Dernières interactions</p>
+      {/* Tabs Navigation (Fixed below header) */}
+      <div className="fixed top-16 w-full z-40 bg-white border-b border-gray-100 px-6">
+        <div className="flex justify-between max-w-2xl mx-auto">
+          {tabs.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className="relative py-4 flex-1 text-center"
+            >
+              <span className={`text-[11px] font-black uppercase tracking-widest transition-all ${
+                activeTab === tab.id ? 'text-[#0D46F2]' : 'text-[#8C8C8C]'
+              }`}>
+                {tab.label}
+              </span>
+              {activeTab === tab.id && (
+                <motion.div 
+                  layoutId="activeTab"
+                  className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#0D46F2]"
+                />
+              )}
+            </button>
+          ))}
         </div>
-
-        {/* Active Conversations Section */}
-        <section className="mb-12">
-          <header className="flex items-baseline justify-between mb-8">
-            <h2 className="text-[10px] font-black tracking-[0.2em] uppercase text-[#8C8C8C]">Actives</h2>
-            <span className="text-[9px] font-black text-[#0D46F2] bg-[#0D46F2]/10 px-3 py-1 rounded-full uppercase italic tracking-tighter">2 Nouveaux</span>
-          </header>
-
-          <div className="space-y-4">
-            {/* Conversation 1: Active/Unread */}
-            <motion.div 
-              whileTap={{ scale: 0.98 }}
-              className="bg-white p-6 rounded-[24px] border border-gray-100 flex gap-4 shadow-xl shadow-black/5 relative overflow-hidden"
-            >
-              <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-[#0D46F2]"></div>
-              <div className="relative flex-shrink-0">
-                <div className="w-14 h-14 rounded-full overflow-hidden bg-gray-100 border-2 border-white shadow-sm font-bold">
-                  <img 
-                    className="w-full h-full object-cover" 
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3MXJkC7EsOmXB54F1IdC2Z1bHy0YBCcgeyIJ30rhbPMCytf9QP_ZISFFaMlN15nWSAjn5R8eTa1nITNCTZSQnmw-2BJ15oUn7nWNhqKb0AptGVvbzpyvR9dOuIOM6sZ10FKpN95_klgJCo1tEGp5BaBMLLZ8yLLdBjD0F-D-U6zbItBbwcVfpOX2VSsNZw9y0KQcuR0DBuYqkHKpYOBSFQ4i_51nOO4hCCZ9FPpooCN1MwAe8NpISLkezY7nqnFhQR9sNpZIiLZ0"
-                    alt="Sophie M."
-                  />
-                </div>
-                <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-[#0D46F2] border-4 border-white rounded-full"></div>
-              </div>
-              <div className="flex-grow min-w-0 py-1">
-                <div className="flex justify-between items-baseline mb-1">
-                  <h3 className="font-black italic uppercase text-[#1a1c1b] tracking-tight">Sophie M.</h3>
-                  <span className="text-[10px] font-bold text-[#0D46F2] uppercase italic">9h08</span>
-                </div>
-                <p className="text-sm text-[#464545] font-medium truncate">Bonjour, êtes-vous bien en route ?</p>
-              </div>
-            </motion.div>
-
-            {/* Conversation 2 */}
-            <motion.div 
-              whileTap={{ scale: 0.98 }}
-              className="bg-white p-6 rounded-[24px] border border-gray-100 flex gap-4 shadow-sm"
-            >
-              <div className="flex-shrink-0">
-                <div className="w-14 h-14 rounded-full overflow-hidden bg-gray-100 border border-gray-100">
-                  <img 
-                    className="w-full h-full object-cover" 
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKD6jN_3A2Nn75mLcu4Ip5Ovwizjraw0z1b_vDty4DNqr1WV920vxeSR1ELQhsGWtw9--EpsqLFmlXPwxCScBMF0dnW3aLoXY3MXXX3Hi2LkNxb6pzTQK6EcQNRynb8LGTWkSbEPAiVKlf2Bqr7MoQa5OpVqi25qAuQRqNjZP4ZgBEoGKJMj_uJGaLYUszdB7e1FBzkWosOOWJnVVy-NxijNEQbTGeLPQrTKXvZ77ggqESsQ8cddPpuY27mrsxiYUTfnqXHsDpV1E"
-                    alt="Marie L."
-                  />
-                </div>
-              </div>
-              <div className="flex-grow min-w-0 py-1">
-                <div className="flex justify-between items-baseline mb-1">
-                  <h3 className="font-bold text-[#1a1c1b] tracking-tight">Marie L.</h3>
-                  <span className="text-[10px] font-bold text-[#8C8C8C] uppercase">Hier</span>
-                </div>
-                <p className="text-sm text-[#8C8C8C] font-medium truncate">Merci beaucoup pour l'intervention !</p>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Archived Conversations Section */}
-        <section>
-          <header className="mb-6">
-            <h2 className="text-[10px] font-black tracking-[0.2em] uppercase text-[#8C8C8C]">Archives</h2>
-          </header>
-          <div className="space-y-4 opacity-40">
-            {/* Archive Row 1 */}
-            <div className="bg-white p-6 rounded-[24px] border border-gray-100 flex gap-4 grayscale">
-              <div className="w-14 h-14 rounded-full bg-gray-100 flex-shrink-0"></div>
-              <div className="flex-grow space-y-2 py-2">
-                <div className="flex justify-between">
-                  <div className="h-3 w-24 bg-gray-200 rounded-full"></div>
-                  <div className="h-2 w-8 bg-gray-200 rounded-full"></div>
-                </div>
-                <div className="h-2 w-40 bg-gray-200 rounded-full"></div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      {/* Floating Action Button */}
-      <div className="fixed bottom-28 right-6">
-        <motion.button 
-          whileTap={{ scale: 0.9 }}
-          className="w-16 h-16 bg-[#1a1c1b] text-white flex items-center justify-center rounded-[24px] shadow-2xl"
-        >
-          <span className="material-symbols-outlined !text-[28px]">edit_square</span>
-        </motion.button>
       </div>
+
+      <main className="pt-40 px-6 max-w-2xl mx-auto">
+        <AnimatePresence mode="wait">
+          {activeTab === 'conversations' && (
+            <motion.div 
+              key="conv"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              className="space-y-4"
+            >
+              {[
+                { name: 'Sophie M.', appliance: 'Lave-linge Samsung', msg: 'Merci beaucoup !', time: '9h08', unread: true },
+                { name: 'Marie L.', appliance: 'Machine à laver', msg: 'Intervention terminée', time: 'Hier', unread: false }
+              ].map((c, i) => (
+                <motion.div 
+                  key={i}
+                  whileTap={{ scale: 0.98 }}
+                  className="bg-white p-4 rounded-[20px] border border-gray-100 flex gap-4 items-center shadow-sm"
+                >
+                  <div className="w-11 h-11 bg-[#F2F2F7] rounded-[10px] flex-shrink-0 flex items-center justify-center">
+                    <span className="material-symbols-outlined text-[#8C8C8C]">local_laundry_service</span>
+                  </div>
+                  <div className="flex-grow min-w-0">
+                    <div className="flex justify-between items-baseline">
+                      <h3 className="font-bold text-sm tracking-tight text-[#1a1c1b]">{c.appliance}</h3>
+                      <span className="text-[9px] font-bold text-[#8C8C8C] uppercase">{c.time}</span>
+                    </div>
+                    <div className="flex justify-between items-center mt-0.5">
+                      <p className="text-xs text-[#8C8C8C] font-medium truncate italic">{c.name} — "{c.msg}"</p>
+                      {c.unread && <span className="w-2 h-2 bg-[#0D46F2] rounded-full"></span>}
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          )}
+
+          {activeTab === 'demandes' && (
+            <motion.div 
+              key="dem"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              className="space-y-4"
+            >
+              <AnimatePresence>
+                {requests.map((r) => (
+                  <motion.div 
+                    key={r.id}
+                    layout
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.95, x: 50 }}
+                    className="bg-white p-6 rounded-[24px] border border-gray-100 shadow-xl shadow-black/5"
+                  >
+                    <div className="flex gap-4">
+                      <div className="w-14 h-14 bg-[#F2F2F7] rounded-[12px] flex-shrink-0 flex items-center justify-center">
+                        <span className="material-symbols-outlined text-[#8C8C8C] !text-2xl">local_laundry_service</span>
+                      </div>
+                      <div className="flex-grow space-y-1">
+                        <h3 className="font-black italic uppercase text-sm tracking-tight">{r.name}</h3>
+                        <p className="text-xs font-bold text-[#8C8C8C] flex items-center gap-1">
+                          <span className="material-symbols-outlined !text-[14px]">location_on</span>
+                          {r.address}
+                        </p>
+                        <p className="text-[10px] font-black uppercase tracking-widest text-[#0D46F2] mt-2">
+                          {r.slot} • {r.distance}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="mt-6">
+                      {r.status === 'pending' ? (
+                        <div className="flex gap-3">
+                          <button 
+                            onClick={() => handleAccept(r.id)}
+                            className="flex-1 bg-[#0D46F2] text-white py-3 rounded-xl font-black uppercase text-[10px] tracking-widest shadow-lg shadow-[#0D46F2]/20 active:scale-95 transition-all"
+                          >
+                            Accepter
+                          </button>
+                          <button 
+                            onClick={() => handleRefuse(r.id)}
+                            className="flex-1 border border-[#E5E5E5] text-[#8C8C8C] py-3 rounded-xl font-black uppercase text-[10px] tracking-widest active:scale-95 transition-all"
+                          >
+                            Refuser
+                          </button>
+                        </div>
+                      ) : (
+                        <div className="bg-green-50 text-green-600 py-3 rounded-xl font-black uppercase text-[10px] tracking-widest text-center flex items-center justify-center gap-2">
+                          <span className="material-symbols-outlined !text-sm">check_circle</span>
+                          Acceptée
+                        </div>
+                      )}
+                    </div>
+                  </motion.div>
+                ))}
+              </AnimatePresence>
+            </motion.div>
+          )}
+
+          {activeTab === 'archives' && (
+            <motion.div 
+              key="arc"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              className="space-y-4"
+            >
+              {[
+                { name: 'Lave-linge Samsung', date: '12 Avr. 2026' },
+                { name: 'Machine à laver', date: '08 Avr. 2026' }
+              ].map((a, i) => (
+                <div key={i} className="bg-white p-4 rounded-[16px] border border-gray-50 flex items-center gap-4">
+                  <div className="w-10 h-10 bg-[#F2F2F7] rounded-[8px] flex items-center justify-center">
+                    <span className="material-symbols-outlined text-[#8C8C8C] !text-xl">local_laundry_service</span>
+                  </div>
+                  <div className="flex-grow">
+                    <h4 className="font-bold text-xs text-[#1a1c1b]">{a.name}</h4>
+                    <p className="text-[10px] text-[#8C8C8C]">{a.date}</p>
+                  </div>
+                  <div className="bg-[#F2F2F7] px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-tighter text-[#8C8C8C]">
+                    Terminée
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </main>
 
       <TechNavBar />
     </div>

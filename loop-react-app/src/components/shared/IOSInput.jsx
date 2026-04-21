@@ -42,7 +42,7 @@ const IOSInput = ({
         </label>
       )}
       <div 
-        className={`relative flex items-center bg-[#F2F2F7] rounded-[20px] transition-all duration-200 border-2 min-h-[52px] ${
+        className={`relative flex items-center bg-[#F2F2F7] rounded-[20px] transition-all duration-200 border-2 min-h-[52px] w-full ${
           isFocused ? 'border-[#0D46F2] bg-white ring-4 ring-[#0D46F2]/10' : 'border-transparent'
         }`}
       >
