@@ -20,8 +20,7 @@ const MobileFrame = ({ children }) => {
   if (isMobile) {
     return (
       <div className="relative w-full h-screen bg-white overflow-hidden flex flex-col">
-        <StatusBar />
-        <div className="flex-1 overflow-y-auto no-scrollbar pt-[44px] pb-[34px]">
+        <div className="flex-1 overflow-y-auto no-scrollbar pb-[34px]">
           {children}
         </div>
         <HomeIndicator />
@@ -49,10 +48,8 @@ const MobileFrame = ({ children }) => {
           position: 'relative' // Ensure relative scope for fixed children
         }}
       >
-        <StatusBar />
-        
         {/* Content area */}
-        <div className="flex-1 overflow-y-auto no-scrollbar pt-[44px] pb-[34px] relative">
+        <div className="flex-1 overflow-y-auto no-scrollbar pt-6 pb-[34px] relative">
           {children}
         </div>
 

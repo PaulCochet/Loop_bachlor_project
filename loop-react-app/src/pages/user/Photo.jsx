@@ -40,6 +40,7 @@ const Photo = () => {
           </button>
         </div>
       </div>
+    </div>
 
       {/* Fixed Actions */}
       <div className="absolute bottom-0 left-0 w-full p-8 pt-4 bg-gradient-to-t from-white via-white to-transparent overflow-hidden">
