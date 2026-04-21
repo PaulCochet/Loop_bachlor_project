@@ -9,27 +9,32 @@ const Dashboard = () => {
   return (
     <div className="flex flex-col h-full bg-white">
       {/* Header */}
-      <header className="px-6 py-4 flex justify-between items-center border-b border-[#E5E5E5]">
-        <div className="flex items-center gap-3">
-          <button 
-            onClick={() => navigate('/')} 
-            className="text-[#0A0A0A] active:opacity-50"
-          >
-            <span className="material-symbols-outlined">chevron_left</span>
-          </button>
-          <h1 className="text-xl font-black italic tracking-tighter uppercase">Mon compte</h1>
-        </div>
+      <header className="px-6 py-4 flex justify-between items-center border-b border-[#F2F2F7]">
+        <img src="/logo.svg" alt="Loop" className="h-6 w-auto" />
         <button className="text-[#0A0A0A]">
           <span className="material-symbols-outlined">notifications</span>
         </button>
       </header>
 
-      <main className="flex-1 px-6 pt-6 pb-24 overflow-y-auto space-y-8">
+      <main className="flex-1 px-6 pt-6 pb-24 overflow-y-auto space-y-8 no-scrollbar">
         {/* Hero Greeting */}
         <section>
-          <h2 className="text-3xl font-black italic tracking-tight leading-tight">
-            Que répare t-on aujourd'hui ?
+          <h2 className="text-3xl font-black italic tracking-tighter leading-none mb-1 uppercase">
+            Bonjour Sophie
           </h2>
+          <p className="text-sm font-medium text-[#8C8C8C]">Que répare-t-on aujourd'hui ?</p>
+        </section>
+
+        {/* Restore KPI Cards */}
+        <section className="grid grid-cols-2 gap-4">
+          <div className="bg-[#F2F2F7] p-5 rounded-[24px] space-y-1">
+            <p className="text-3xl font-black italic tracking-tighter text-[#0D46F2]">218 kg</p>
+            <p className="text-[10px] font-bold uppercase tracking-widest text-[#8C8C8C]">CO₂ évité</p>
+          </div>
+          <div className="bg-[#F2F2F7] p-5 rounded-[24px] space-y-1">
+            <p className="text-3xl font-black italic tracking-tighter text-[#0D46F2]">1</p>
+            <p className="text-[10px] font-bold uppercase tracking-widest text-[#8C8C8C]">appareil sauvé</p>
+          </div>
         </section>
 
         {/* Main Action */}

@@ -34,17 +34,16 @@ const Photo = () => {
             <span className="text-sm font-bold">Ouvrir l'appareil photo</span>
           </div>
           
-          <div className="mt-8 flex justify-center">
-            <button className="w-full py-4 rounded-[20px] border-2 border-[#F2F2F7] text-[#0A0A0A] font-bold text-sm hover:bg-[#F2F2F7] transition-all active:scale-[0.98]">
-              Choisir depuis ma galerie
-            </button>
-          </div>
+        <div className="mt-8 flex justify-center">
+          <button className="w-full py-4 rounded-[20px] border border-[#E5E5E5] text-[#8C8C8C] font-bold text-sm bg-transparent active:scale-[0.98] transition-all">
+            Choisir depuis ma galerie
+          </button>
         </div>
       </div>
 
       {/* Fixed Actions */}
-      <div className="absolute bottom-0 left-0 w-full p-8 pt-4 bg-gradient-to-t from-white via-white to-transparent">
-        <div className="space-y-3 mb-[32px]">
+      <div className="absolute bottom-0 left-0 w-full p-8 pt-4 bg-gradient-to-t from-white via-white to-transparent overflow-hidden">
+        <div className="space-y-3 mb-8">
           <Button onClick={() => navigate('/description')}>Continuer</Button>
           <Button variant="ghost" onClick={() => navigate('/dashboard')}>Retour</Button>
         </div>

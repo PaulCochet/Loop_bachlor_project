@@ -7,7 +7,7 @@ const Splash = () => {
   const navigate = useNavigate();
 
   return (
-    <main className="relative min-h-screen flex flex-col justify-between items-center px-8 py-20 bg-white overflow-hidden">
+    <main className="relative min-h-screen flex flex-col justify-between items-center px-8 py-12 bg-white overflow-hidden">
       {/* Background Subtle Texture */}
       <div 
         className="absolute inset-0 z-0 opacity-20 pointer-events-none" 
@@ -23,12 +23,12 @@ const Splash = () => {
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.8, type: 'spring' }}
-          className="mb-10"
+          className="mb-8"
         >
           <img 
             src="/logo.svg" 
             alt="Loop Logo" 
-            className="w-56 h-auto"
+            className="w-48 h-auto"
           />
         </motion.div>
 
@@ -59,7 +59,7 @@ const Splash = () => {
         </Button>
 
         {/* Tertiary Action */}
-        <div className="pt-6 flex justify-center">
+        <div className="pt-2 flex justify-center">
           <motion.button 
             whileTap={{ scale: 0.95 }}
             onClick={() => navigate('/technician/login')}
