@@ -17,6 +17,7 @@ import TimeSlot from './pages/user/TimeSlot';
 import Recap from './pages/user/Recap';
 import Notification from './pages/user/Notification';
 import Tracking from './pages/user/Tracking';
+import Intervention from './pages/user/Intervention';
 import InterventionSummary from './pages/user/InterventionSummary';
 import Payment from './pages/user/Payment';
 import Success from './pages/user/Success';
