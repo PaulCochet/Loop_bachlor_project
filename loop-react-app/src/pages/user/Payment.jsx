@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import Button from '../../components/shared/Button';
 import IOSBottomSheet from '../../components/shared/IOSBottomSheet';
 import { useGlobalState } from '../../context/GlobalStateContext';
-import { motion } from 'framer-motion';
+import ScreenLayout from '../../components/shared/ScreenLayout';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const Payment = () => {
   const navigate = useNavigate();
@@ -23,19 +24,32 @@ const Payment = () => {
   };
 
   const handleValidatePayment = () => {
+    console.log('[DEBUG] Validating payment...');
     setIsLoading(true);
     setTimeout(() => {
+      console.log('[DEBUG] Navigating to /success...');
       navigate('/success');
-    }, 1500);
+    }, 1600); // 1.6s ensures 1.5s animation completes
   };
 
   return (
-    <div className="flex flex-col h-full bg-white relative">
+    <ScreenLayout
+        actions={
+            <Button 
+              variant="primary" 
+              className="!bg-[#0A0A0A] !text-white"
+              onClick={handleValidatePayment}
+            >
+              Valider le paiement — 10€
+            </Button>
+        }
+    >
       <AnimatePresence>
         {isLoading && (
           <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             className="absolute inset-0 z-[100] bg-white flex flex-col items-center justify-center space-y-6"
           >
             <motion.img 
@@ -50,7 +64,7 @@ const Payment = () => {
         )}
       </AnimatePresence>
 
-      <div className="flex-1 px-8 pt-12 pb-8 overflow-y-auto no-scrollbar">
+      <div className="pt-4 pb-12">
         {/* Hero */}
         <div className="mb-10">
           <h1 className="text-4xl font-black italic tracking-tight leading-tight mb-2 uppercase">
@@ -88,7 +102,7 @@ const Payment = () => {
           </section>
 
           {/* Payment Method */}
-          <section className="space-y-4">
+          <section className="space-y-4 pb-4">
             <div className="flex justify-between items-end px-1">
               <h2 className="text-[10px] font-black uppercase tracking-widest text-[#8C8C8C]">Moyen de paiement</h2>
               <button 
@@ -116,17 +130,6 @@ const Payment = () => {
             </motion.div>
           </section>
         </div>
-      </div>
-
-      {/* Actions */}
-      <div className="p-8 pt-4">
-        <Button 
-          variant="primary" 
-          className="!bg-[#0A0A0A] !text-white"
-          onClick={handleValidatePayment}
-        >
-          Valider le paiement — 10€
-        </Button>
       </div>
 
       {/* Payment Selection Sheet */}
@@ -161,7 +164,7 @@ const Payment = () => {
           </motion.button>
         ))}
       </IOSBottomSheet>
-    </div>
+    </ScreenLayout>
   );
 };
 

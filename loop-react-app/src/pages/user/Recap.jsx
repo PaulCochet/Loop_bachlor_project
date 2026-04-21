@@ -12,12 +12,21 @@ const customIcon = new L.Icon({
   iconAnchor: [12, 41],
 });
 
+import ScreenLayout from '../../components/shared/ScreenLayout';
+
 const Recap = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col h-full bg-white relative">
-      <div className="flex-1 px-8 pt-12 pb-32 overflow-y-auto no-scrollbar">
+    <ScreenLayout
+        actions={
+            <div className="space-y-3 w-full">
+                <Button onClick={() => navigate('/notification')}>Valider</Button>
+                <Button variant="ghost" onClick={() => navigate('/slot')}>Modifier</Button>
+            </div>
+        }
+    >
+      <div className="pt-4 pb-8">
         {/* Hero */}
         <div className="mb-8">
           <h1 className="text-4xl font-black italic tracking-tight leading-tight mb-2">
@@ -77,15 +86,7 @@ const Recap = () => {
           </section>
         </div>
       </div>
-
-      {/* Fixed Actions */}
-      <div className="absolute bottom-0 left-0 w-full p-8 pt-4 bg-gradient-to-t from-white via-white to-transparent overflow-hidden">
-        <div className="space-y-3 mb-8">
-          <Button onClick={() => navigate('/notification')}>Valider</Button>
-          <Button variant="ghost" onClick={() => navigate('/slot')}>Modifier</Button>
-        </div>
-      </div>
-    </div>
+    </ScreenLayout>
   );
 };
 

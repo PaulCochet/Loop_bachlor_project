@@ -5,17 +5,24 @@ import IOSOuiNonToggle from '../../components/shared/IOSOuiNonToggle';
 import IOSInput from '../../components/shared/IOSInput';
 import ProgressBar from '../../components/shared/ProgressBar';
 import { useGlobalState } from '../../context/GlobalStateContext';
+import ScreenLayout from '../../components/shared/ScreenLayout';
 
 const Description = () => {
   const navigate = useNavigate();
   const { formData, updateFormData } = useGlobalState();
 
   return (
-    <div className="flex flex-col h-full bg-white relative">
-      {/* Progress Bar */}
+    <ScreenLayout
+        actions={
+            <div className="space-y-3 w-full">
+                <Button onClick={() => navigate('/slot')}>Continuer</Button>
+                <Button variant="ghost" onClick={() => navigate('/photo')}>Retour</Button>
+            </div>
+        }
+    >
       <ProgressBar step={2} />
       
-      <div className="flex-1 px-6 pt-4 pb-32 overflow-y-auto no-scrollbar">
+      <div className="pt-4 pb-8 text-scroll">
         {/* Step Info */}
         <div className="mb-2">
           <span className="text-[10px] font-bold tracking-widest uppercase text-[#8C8C8C]">Étape 2 sur 3</span>
@@ -63,15 +70,7 @@ const Description = () => {
           />
         </div>
       </div>
-
-      {/* Fixed Actions */}
-      <div className="absolute bottom-0 left-0 w-full p-8 pt-4 bg-gradient-to-t from-white via-white to-transparent">
-        <div className="space-y-3 mb-[32px]">
-          <Button onClick={() => navigate('/slot')}>Continuer</Button>
-          <Button variant="ghost" onClick={() => navigate('/photo')}>Retour</Button>
-        </div>
-      </div>
-    </div>
+    </ScreenLayout>
   );
 };
 

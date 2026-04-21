@@ -32,6 +32,7 @@ import TechnicianScan from './pages/technician/Scan';
 import TechnicianDiagnostic from './pages/technician/Diagnostic';
 import TechnicianVerdict from './pages/technician/Verdict';
 import TechnicianMessages from './pages/technician/Messages';
+import ErrorBoundary from './components/shared/ErrorBoundary';
 
 const PageWrapper = ({ children }) => {
   return (
@@ -61,7 +62,14 @@ export default function App() {
                 <Route path="/recap" element={<Recap />} />
                 <Route path="/notification" element={<Notification />} />
                 <Route path="/tracking" element={<Tracking />} />
-                <Route path="/intervention" element={<Intervention />} />
+                <Route 
+                  path="/intervention" 
+                  element={
+                    <ErrorBoundary fallback={<Navigate to="/dashboard" replace />}>
+                      <Intervention />
+                    </ErrorBoundary>
+                  } 
+                />
                 <Route path="/intervention-summary" element={<InterventionSummary />} />
                 <Route path="/payment" element={<Payment />} />
                 <Route path="/success" element={<Success />} />

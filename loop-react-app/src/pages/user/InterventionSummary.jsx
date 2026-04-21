@@ -1,17 +1,25 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../../components/shared/Button';
+import ScreenLayout from '../../components/shared/ScreenLayout';
 
 const InterventionSummary = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col h-full bg-white relative">
-      <div className="flex-1 px-8 pt-12 pb-32 overflow-y-auto no-scrollbar">
+    <ScreenLayout
+        actions={
+            <Button onClick={() => navigate('/payment')}>
+              Procéder au paiement
+              <span className="material-symbols-outlined ml-1">payments</span>
+            </Button>
+        }
+    >
+      <div className="pt-4 pb-12">
         {/* Success Header */}
         <div className="mb-10">
-          <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mb-6">
-            <span className="material-symbols-outlined text-green-600 !text-4xl" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
+          <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mb-6 text-green-600">
+            <span className="material-symbols-outlined !text-4xl" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
           </div>
           <h1 className="text-4xl font-black italic tracking-tight leading-tight mb-2 uppercase">
             Machine réparée
@@ -44,17 +52,7 @@ const InterventionSummary = () => {
           </div>
         </div>
       </div>
-
-      {/* Fixed Actions */}
-      <div className="absolute bottom-0 left-0 w-full p-8 pt-4 bg-gradient-to-t from-white via-white to-transparent overflow-hidden">
-        <div className="space-y-3 mb-8">
-          <Button onClick={() => navigate('/payment')}>
-            Procéder au paiement
-            <span className="material-symbols-outlined ml-1">payments</span>
-          </Button>
-        </div>
-      </div>
-    </div>
+    </ScreenLayout>
   );
 };
 

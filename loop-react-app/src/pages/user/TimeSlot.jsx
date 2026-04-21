@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Button from '../../components/shared/Button';
 import ProgressBar from '../../components/shared/ProgressBar';
 import { useGlobalState } from '../../context/GlobalStateContext';
+import ScreenLayout from '../../components/shared/ScreenLayout';
 
 const TimeSlot = () => {
   const navigate = useNavigate();
@@ -25,11 +26,17 @@ const TimeSlot = () => {
   ];
 
   return (
-    <div className="flex flex-col h-full bg-white relative">
-      {/* Progress Bar */}
+    <ScreenLayout
+        actions={
+            <div className="space-y-3 w-full">
+                <Button onClick={() => navigate('/recap')}>Continuer</Button>
+                <Button variant="ghost" onClick={() => navigate('/description')}>Retour</Button>
+            </div>
+        }
+    >
       <ProgressBar step={3} />
       
-      <div className="flex-1 px-8 pt-4 pb-32 overflow-y-auto no-scrollbar">
+      <div className="pt-4 pb-8">
         {/* Step Info */}
         <div className="mb-2">
           <span className="text-[10px] font-bold tracking-widest uppercase text-[#8C8C8C]">Étape 3 sur 3</span>
@@ -112,15 +119,7 @@ const TimeSlot = () => {
           })}
         </section>
       </div>
-
-      {/* Fixed Actions */}
-      <div className="absolute bottom-0 left-0 w-full p-8 pt-4 bg-gradient-to-t from-white via-white to-transparent">
-        <div className="space-y-3 mb-[32px]">
-          <Button onClick={() => navigate('/recap')}>Continuer</Button>
-          <Button variant="ghost" onClick={() => navigate('/description')}>Retour</Button>
-        </div>
-      </div>
-    </div>
+    </ScreenLayout>
   );
 };
 

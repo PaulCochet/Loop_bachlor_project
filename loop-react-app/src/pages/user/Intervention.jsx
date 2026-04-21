@@ -1,14 +1,18 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../../components/shared/Button';
-import NavBar from '../../components/user/UserNavBar';
+import ScreenLayout from '../../components/shared/ScreenLayout';
 
 const Intervention = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col h-full bg-white relative">
-      <main className="flex-1 px-8 pt-12 pb-24 overflow-y-auto space-y-10">
+    <ScreenLayout
+        actions={
+            <Button onClick={() => navigate('/intervention-summary')}>Voir le verdict</Button>
+        }
+    >
+      <div className="pt-4 pb-12 space-y-10">
         <header>
           <h1 className="text-4xl font-black italic tracking-tight leading-tight uppercase mb-2">Intervention</h1>
           <p className="text-sm font-medium text-[#8C8C8C]">En cours de réparation</p>
@@ -37,13 +41,8 @@ const Intervention = () => {
                 <span className="material-symbols-outlined text-4xl text-[#8C8C8C]">construction</span>
             </div>
         </div>
-
-        {/* Action to progress */}
-        <Button onClick={() => navigate('/verdict')}>Voir le verdict</Button>
-      </main>
-
-      <NavBar />
-    </div>
+      </div>
+    </ScreenLayout>
   );
 };
 

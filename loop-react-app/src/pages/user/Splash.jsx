@@ -7,18 +7,9 @@ const Splash = () => {
   const navigate = useNavigate();
 
   return (
-    <main className="relative min-h-screen flex flex-col justify-between items-center px-8 py-4 bg-white overflow-hidden">
-      {/* Background Subtle Texture */}
-      <div 
-        className="absolute inset-0 z-0 opacity-20 pointer-events-none" 
-        style={{ 
-          backgroundImage: 'radial-gradient(#F2F2F7 1px, transparent 1px)', 
-          backgroundSize: '40px 40px' 
-        }}
-      />
-
-      {/* Center Section: Brand Identity */}
-      <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center">
+    <main className="h-screen w-full flex flex-col bg-white overflow-hidden">
+      {/* TOP 50% */}
+      <section className="h-[50dvh] flex flex-col items-center justify-center text-center px-10">
         <motion.div 
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -28,11 +19,10 @@ const Splash = () => {
           <img 
             src="/logo.svg" 
             alt="Loop Logo" 
-            className="w-32 h-auto"
+            className="w-40 h-auto"
           />
         </motion.div>
 
-        {/* Tagline */}
         <motion.p 
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -41,44 +31,39 @@ const Splash = () => {
         >
           Donnez une seconde vie à vos appareils
         </motion.p>
-      </div>
+      </section>
 
-      {/* Bottom Section: Actions */}
-      <div className="relative z-10 w-full max-w-sm space-y-3 mb-1">
-        {/* Primary Action */}
-        <Button onClick={() => navigate('/signup')}>
-          Créer un compte
-        </Button>
+      {/* BOTTOM 50% */}
+      <section className="h-[50dvh] flex flex-col items-center justify-center px-8">
+        <div className="w-full max-w-sm space-y-4">
+          {/* Primary Action */}
+          <Button onClick={() => navigate('/signup')} className="!bg-[#0A0A0A] !text-white">
+            Créer un compte
+          </Button>
 
-        {/* Secondary Action */}
-        <Button 
-          variant="outline"
-          onClick={() => navigate('/login')}
-        >
-          Se connecter
-        </Button>
-
-        {/* Tertiary Action */}
-        <div className="pt-1 flex justify-center">
-          <motion.button 
-            whileTap={{ scale: 0.95 }}
-            onClick={() => navigate('/technician/login')}
-            className="inline-flex items-center gap-2 text-[#8C8C8C] text-[10px] font-black uppercase tracking-[0.15em] hover:text-[#1a1c1b] transition-colors group italic"
+          {/* Secondary Action */}
+          <Button 
+            variant="outline"
+            onClick={() => navigate('/login')}
           >
-            Accès technicien
-            <span className="material-symbols-outlined !text-xs group-hover:translate-x-1 transition-transform">
-              arrow_forward
-            </span>
-          </motion.button>
-        </div>
-      </div>
+            Se connecter
+          </Button>
 
-      {/* Background Decorative Gradient */}
-      <div className="fixed -bottom-[20%] -left-[10%] w-[60%] h-[60%] bg-[#0D46F2]/5 rounded-full blur-[120px] pointer-events-none" />
-      <div className="fixed -top-[10%] -right-[10%] w-[40%] h-[40%] bg-[#0D46F2]/5 rounded-full blur-[100px] pointer-events-none" />
-      
-      {/* Home Indicator Safe Area Bottom */}
-      <div className="h-[34px] w-full" />
+          {/* Tertiary Action */}
+          <div className="pt-2 flex justify-center">
+            <motion.button 
+              whileTap={{ scale: 0.95 }}
+              onClick={() => navigate('/technician/login')}
+              className="inline-flex items-center gap-2 text-[#8C8C8C] text-[10px] font-black uppercase tracking-[0.15em] hover:text-[#1a1c1b] transition-colors group italic"
+            >
+              Accès technicien
+              <span className="material-symbols-outlined !text-xs group-hover:translate-x-1 transition-transform">
+                arrow_forward
+              </span>
+            </motion.button>
+          </div>
+        </div>
+      </section>
     </main>
   );
 };
