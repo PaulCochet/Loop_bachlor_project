@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useIOSKeyboard } from './IOSKeyboardContext';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const IOSInput = ({ 
@@ -14,12 +13,10 @@ const IOSInput = ({
   rows = 4,
   ...props 
 }) => {
-  const { showKeyboard } = useIOSKeyboard();
   const [isFocused, setIsFocused] = useState(false);
 
   const handleFocus = (e) => {
     setIsFocused(true);
-    showKeyboard();
     if (onFocus) onFocus(e);
   };
 
@@ -35,7 +32,7 @@ const IOSInput = ({
     }
   };
 
-  const inputClasses = "flex-1 py-4 bg-transparent text-[17px] font-medium outline-none placeholder:text-[#C7C7CC] text-[#1a1c1b]";
+  const inputClasses = "flex-1 py-[14px] bg-transparent text-[17px] font-medium outline-none placeholder:text-[#C7C7CC] text-[#1a1c1b]";
 
   return (
     <div className={`flex flex-col w-full px-6 mb-4 ${props.className || ''}`}>
@@ -45,7 +42,7 @@ const IOSInput = ({
         </label>
       )}
       <div 
-        className={`relative flex items-center bg-[#F2F2F7] rounded-[24px] px-5 transition-all duration-200 border-2 ${
+        className={`relative flex items-center bg-[#F2F2F7] rounded-[20px] px-5 transition-all duration-200 border-2 min-h-[52px] ${
           isFocused ? 'border-[#0D46F2] bg-white ring-4 ring-[#0D46F2]/10' : 'border-transparent'
         }`}
       >

@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import HomeIndicator from './HomeIndicator';
-import IOSKeyboard from './IOSKeyboard';
-import { useIOSKeyboard } from './IOSKeyboardContext';
 
 const MobileFrame = ({ children }) => {
-  const { isKeyboardVisible, hideKeyboard } = useIOSKeyboard();
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -23,7 +20,6 @@ const MobileFrame = ({ children }) => {
           {children}
         </div>
         <HomeIndicator />
-        <IOSKeyboard isVisible={isKeyboardVisible} onDismiss={hideKeyboard} />
       </div>
     );
   }
@@ -53,7 +49,6 @@ const MobileFrame = ({ children }) => {
         </div>
 
         <HomeIndicator />
-        <IOSKeyboard isVisible={isKeyboardVisible} onDismiss={hideKeyboard} />
       </div>
     </div>
   );

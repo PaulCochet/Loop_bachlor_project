@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import MobileFrame from './components/shared/MobileFrame';
-import { IOSKeyboardProvider } from './components/shared/IOSKeyboardContext';
 import { GlobalStateProvider, useGlobalState } from './context/GlobalStateContext';
 
 // Pages
@@ -18,11 +17,10 @@ import TimeSlot from './pages/user/TimeSlot';
 import Recap from './pages/user/Recap';
 import Notification from './pages/user/Notification';
 import Tracking from './pages/user/Tracking';
-import Intervention from './pages/user/Intervention';
-import Verdict from './pages/user/Verdict';
+import InterventionSummary from './pages/user/InterventionSummary';
 import Payment from './pages/user/Payment';
+import Success from './pages/user/Success';
 import Login from './pages/user/Login';
-import UpdatedDashboard from './pages/user/UpdatedDashboard';
 import QRPage from './pages/user/QRPage';
 
 // Technician Pages
@@ -44,8 +42,7 @@ const PageWrapper = ({ children }) => {
 
 export default function App() {
   return (
-    <IOSKeyboardProvider>
-      <BrowserRouter>
+    <BrowserRouter>
         <GlobalStateProvider>
           <MobileFrame>
             <PageWrapper>
@@ -64,9 +61,14 @@ export default function App() {
                 <Route path="/notification" element={<Notification />} />
                 <Route path="/tracking" element={<Tracking />} />
                 <Route path="/intervention" element={<Intervention />} />
-                <Route path="/verdict" element={<Verdict />} />
+                <Route path="/intervention-summary" element={<InterventionSummary />} />
                 <Route path="/payment" element={<Payment />} />
-                <Route path="/dashboard-updated" element={<UpdatedDashboard />} />
+                <Route path="/success" element={<Success />} />
+                
+                {/* Legacy Redirects */}
+                <Route path="/verdict" element={<Navigate to="/intervention-summary" replace />} />
+                <Route path="/dashboard-updated" element={<Navigate to="/dashboard" replace />} />
+                
                 <Route path="/qr" element={<QRPage />} />
 
                 {/* Technician Flow */}
@@ -85,6 +87,5 @@ export default function App() {
           </MobileFrame>
         </GlobalStateProvider>
       </BrowserRouter>
-    </IOSKeyboardProvider>
   );
 }
