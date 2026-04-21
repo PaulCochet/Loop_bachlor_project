@@ -20,7 +20,6 @@ const homeIcon = new L.Icon({
 
 const Notification = () => {
   const navigate = useNavigate();
-  const [showPopup, setShowPopup] = useState(false);
 
   return (
     <div className="relative h-full w-full bg-black overflow-hidden select-none">
@@ -43,7 +42,7 @@ const Notification = () => {
           initial={{ y: 200, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ type: 'spring', damping: 20, stiffness: 100 }}
-          onClick={() => setShowPopup(true)}
+          onClick={() => navigate('/intervention')}
           className="mt-12 w-full max-w-sm bg-white/80 backdrop-blur-2xl rounded-[32px] p-5 flex gap-4 cursor-pointer active:scale-[0.98] transition-all shadow-2xl"
         >
           <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-[#0D46F2] shadow-sm">
@@ -73,80 +72,6 @@ const Notification = () => {
       </div>
 
       <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-32 h-1.5 bg-white/40 rounded-full z-10"></div>
-
-      {/* Interactive Popup Overlay */}
-      <AnimatePresence>
-        {showPopup && (
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="absolute inset-0 z-50 bg-black/60 backdrop-blur-md flex items-center justify-center p-6"
-          >
-            <motion.div 
-              initial={{ scale: 0.9, y: 30 }}
-              animate={{ scale: 1, y: 0 }}
-              exit={{ scale: 0.9, y: 30 }}
-              className="w-full bg-white rounded-[40px] overflow-hidden shadow-2xl"
-            >
-              {/* Map Preview */}
-              <div className="h-64 w-full bg-[#F2F2F7] relative">
-                <MapContainer 
-                  center={[47.2181, -1.5528]} 
-                  zoom={14} 
-                  zoomControl={false}
-                  attributionControl={false}
-                  className="h-full w-full"
-                >
-                  <TileLayer url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png" />
-                  <Marker position={[47.2181, -1.5528]} icon={homeIcon} />
-                  <Marker position={[47.2250, -1.5600]} icon={techIcon} />
-                </MapContainer>
-                
-                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider text-[#0D46F2] shadow-sm z-[1000]">
-                  À 0.8 km de vous
-                </div>
-              </div>
-
-              {/* Popup Content */}
-              <div className="p-8">
-                <div className="flex gap-5 items-center mb-8">
-                  <div className="w-16 h-16 bg-[#F2F2F7] rounded-3xl overflow-hidden shadow-sm">
-                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAy8WCHJ6hx_dNYIfGoliCmdKi7fucEIoAm0R1ShodrNla_pvPG_iQIpJh3pPyVbKagMdYdBU_ZqcIYRslOESp3zKG4cIEYA2VgzLjZJ5FhOGIr8ThVCFmqQx0TTSuzcfd0TvJuPEt18_47eDy_ku-pLMsnxlVJfUVLPLppftbVhGjsW4u7yAyJFVsKnAwEK9UVnjBEZ_2g_h454YmewqZRBcZvxivPpq2TlO86w1SZNJe6Mmnq6kNTCGY0sFRefHDTVhfIOs5pbII" alt="Lucas" className="w-full h-full object-cover" />
-                  </div>
-                  <div>
-                    <h2 className="text-2xl font-black italic tracking-tighter uppercase leading-none mb-1">LUCAS M.</h2>
-                    <p className="text-[10px] font-bold text-[#8C8C8C] uppercase tracking-[0.15em]">Expert agréé Loop</p>
-                  </div>
-                </div>
-
-                <div className="space-y-3">
-                  <button 
-                    onClick={() => navigate('/tracking')}
-                    className="w-full py-5 bg-[#0D46F2] text-white rounded-[24px] font-black italic uppercase tracking-widest flex items-center justify-center gap-3 active:scale-[0.98] transition-all"
-                  >
-                    <span className="material-symbols-outlined !text-xl">call</span>
-                    Appeler Lucas
-                  </button>
-                  <button 
-                    onClick={() => navigate('/technician/messages')}
-                    className="w-full py-5 bg-[#F2F2F7] text-[#0A0A0A] rounded-[24px] font-black italic uppercase tracking-widest flex items-center justify-center gap-3 active:scale-[0.98] transition-all"
-                  >
-                    <span className="material-symbols-outlined !text-xl">chat_bubble</span>
-                    Envoyer un message
-                  </button>
-                  <button 
-                    onClick={() => setShowPopup(false)}
-                    className="w-full py-2 text-[#8C8C8C] text-[10px] font-black uppercase tracking-[0.2em] mt-2 active:opacity-50"
-                  >
-                    Ignorer
-                  </button>
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </div>
   );
 };

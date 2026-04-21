@@ -59,10 +59,13 @@ const Verdict = () => {
         </div>
       </div>
 
-      {/* Fixed Actions */}
-      <div className="absolute bottom-0 left-0 w-full p-8 pt-4 bg-gradient-to-t from-white via-white to-transparent">
-        <div className="space-y-3 mb-[32px]">
-          <Button onClick={() => navigate('/dashboard')}>Retour à l'accueil</Button>
+      {/* Action Footer */}
+      <div className="absolute bottom-0 left-0 w-full p-8 pt-4 bg-gradient-to-t from-white via-white to-transparent overflow-hidden">
+        <div className="mb-4">
+          <Button onClick={() => navigate('/payment')} className="bg-[#0D46F2]">
+            Procéder au paiement
+            <span className="material-symbols-outlined ml-1">arrow_forward</span>
+          </Button>
         </div>
       </div>
     </div>

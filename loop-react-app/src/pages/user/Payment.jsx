@@ -28,27 +28,27 @@ const Payment = () => {
         <h1 className="text-4xl font-black italic tracking-tight leading-tight mb-2 uppercase">
           Paiement final
         </h1>
-        <p className="text-[#0D46F2] font-medium uppercase text-[10px] tracking-widest font-black">Intervention terminée</p>
+        <p className="text-[#0D46F2] font-black uppercase text-[10px] tracking-[0.2em]">Intervention terminée • Lucas M.</p>
       </div>
 
       {/* Invoice */}
-      <div className="flex-1 space-y-8 overflow-y-auto pr-2">
-        <section className="bg-[#F2F2F7] p-8 rounded-[24px] space-y-6">
+      <div className="flex-1 space-y-8 overflow-y-auto no-scrollbar pr-1">
+        <section className="bg-[#F2F2F7] p-8 rounded-[32px] space-y-6">
           <div className="flex justify-between items-center text-sm">
-            <span className="text-[#8C8C8C] font-bold uppercase tracking-tight">Déplacement</span>
-            <span className="font-bold text-[#1a1c1b]">49€</span>
+            <span className="text-[#8C8C8C] font-black uppercase tracking-widest text-[10px]">Intervention</span>
+            <span className="font-bold text-[#1a1c1b]">Lave-linge Samsung</span>
           </div>
           <div className="flex justify-between items-center text-sm">
-            <span className="text-[#8C8C8C] font-bold uppercase tracking-tight">Main d'oeuvre</span>
+            <span className="text-[#8C8C8C] font-black uppercase tracking-widest text-[10px]">Déplacement & MO</span>
             <span className="font-bold text-[#0D46F2]">Inclus</span>
           </div>
           <div className="flex justify-between items-center text-sm">
-            <span className="text-[#8C8C8C] font-bold uppercase tracking-tight">Pièces (remboursables)</span>
-            <span className="font-bold text-[#1a1c1b]">20€</span>
+            <span className="text-[#8C8C8C] font-black uppercase tracking-widest text-[10px]">Supplément pièces</span>
+            <span className="font-bold text-[#1a1c1b]">10€</span>
           </div>
           <div className="pt-6 border-t border-[#E5E5E5] flex justify-between items-center">
             <span className="font-black italic uppercase text-xl">Total</span>
-            <span className="font-black italic tracking-tighter text-3xl">69€</span>
+            <span className="font-black italic tracking-tighter text-3xl">10€</span>
           </div>
         </section>
 
@@ -84,7 +84,7 @@ const Payment = () => {
 
       {/* Actions */}
       <div className="mt-8 space-y-3">
-        <Button onClick={() => navigate('/verdict')}>Valider le paiement — 69€</Button>
+        <Button onClick={() => navigate('/dashboard-updated')}>Valider le paiement — 10€</Button>
       </div>
 
       {/* Payment Selection Sheet */}

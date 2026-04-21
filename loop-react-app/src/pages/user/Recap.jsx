@@ -79,9 +79,9 @@ const Recap = () => {
       </div>
 
       {/* Fixed Actions */}
-      <div className="absolute bottom-0 left-0 w-full p-8 pt-4 bg-gradient-to-t from-white via-white to-transparent">
-        <div className="space-y-3 mb-[32px]">
-          <Button onClick={() => navigate('/confirmation')}>Valider</Button>
+      <div className="absolute bottom-0 left-0 w-full p-8 pt-4 bg-gradient-to-t from-white via-white to-transparent overflow-hidden">
+        <div className="space-y-3 mb-8">
+          <Button onClick={() => navigate('/notification')}>Valider</Button>
           <Button variant="ghost" onClick={() => navigate('/slot')}>Modifier</Button>
         </div>
       </div>

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import StatusBar from './StatusBar';
 import HomeIndicator from './HomeIndicator';
 import IOSKeyboard from './IOSKeyboard';
 import { useIOSKeyboard } from './IOSKeyboardContext';

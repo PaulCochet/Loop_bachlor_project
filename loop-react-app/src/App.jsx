@@ -16,7 +16,6 @@ import Photo from './pages/user/Photo';
 import Description from './pages/user/Description';
 import TimeSlot from './pages/user/TimeSlot';
 import Recap from './pages/user/Recap';
-import Confirmation from './pages/user/Confirmation';
 import Notification from './pages/user/Notification';
 import Tracking from './pages/user/Tracking';
 import Intervention from './pages/user/Intervention';
@@ -62,7 +61,6 @@ export default function App() {
                 <Route path="/description" element={<Description />} />
                 <Route path="/slot" element={<TimeSlot />} />
                 <Route path="/recap" element={<Recap />} />
-                <Route path="/confirmation" element={<Confirmation />} />
                 <Route path="/notification" element={<Notification />} />
                 <Route path="/tracking" element={<Tracking />} />
                 <Route path="/intervention" element={<Intervention />} />

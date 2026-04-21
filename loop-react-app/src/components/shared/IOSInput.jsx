@@ -10,6 +10,8 @@ const IOSInput = ({
   onChange, 
   onFocus,
   onBlur,
+  multiline = false,
+  rows = 4,
   ...props 
 }) => {
   const { showKeyboard } = useIOSKeyboard();
@@ -33,28 +35,43 @@ const IOSInput = ({
     }
   };
 
+  const inputClasses = "flex-1 py-4 bg-transparent text-[17px] font-medium outline-none placeholder:text-[#C7C7CC] text-[#1a1c1b]";
+
   return (
-    <div className="flex flex-col w-full px-6 mb-4">
+    <div className={`flex flex-col w-full px-6 mb-4 ${props.className || ''}`}>
       {label && (
         <label className="text-[11px] font-bold text-[#8E8E93] uppercase tracking-wider mb-2 ml-1">
           {label}
         </label>
       )}
       <div 
-        className={`relative flex items-center bg-[#F2F2F7] rounded-[16px] px-4 transition-all duration-200 border-2 ${
+        className={`relative flex items-center bg-[#F2F2F7] rounded-[24px] px-5 transition-all duration-200 border-2 ${
           isFocused ? 'border-[#0D46F2] bg-white ring-4 ring-[#0D46F2]/10' : 'border-transparent'
         }`}
       >
-        <input
-          type={type}
-          value={value}
-          onChange={onChange}
-          onFocus={handleFocus}
-          onBlur={handleBlur}
-          placeholder={placeholder}
-          className="flex-1 py-4 bg-transparent text-[17px] font-medium outline-none placeholder:text-[#C7C7CC] text-[#1a1c1b]"
-          {...props}
-        />
+        {multiline ? (
+          <textarea
+            value={value}
+            onChange={onChange}
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+            placeholder={placeholder}
+            rows={rows}
+            className={`${inputClasses} resize-none min-h-[100px]`}
+            {...props}
+          />
+        ) : (
+          <input
+            type={type}
+            value={value}
+            onChange={onChange}
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+            placeholder={placeholder}
+            className={inputClasses}
+            {...props}
+          />
+        )}
         <AnimatePresence>
           {value && value.length > 0 && (
             <motion.button 
