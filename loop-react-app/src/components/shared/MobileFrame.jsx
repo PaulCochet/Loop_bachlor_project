@@ -45,13 +45,14 @@ const MobileFrame = ({ children }) => {
           display: 'flex',
           flexDirection: 'column',
           borderRadius: '50px', 
-          border: '12px solid #333', 
+          border: '12px solid #333',
+          position: 'relative' // Ensure relative scope for fixed children
         }}
       >
         <StatusBar />
         
         {/* Content area */}
-        <div className="flex-1 overflow-y-auto no-scrollbar pt-[44px] pb-[34px]">
+        <div className="flex-1 overflow-y-auto no-scrollbar pt-[44px] pb-[34px] relative">
           {children}
         </div>
 

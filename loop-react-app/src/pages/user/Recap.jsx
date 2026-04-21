@@ -1,63 +1,89 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../../components/shared/Button';
+import { MapContainer, TileLayer, Marker } from 'react-leaflet';
+import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
+
+// Fix for default marker icons in Leaflet with React
+const customIcon = new L.Icon({
+  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+});
 
 const Recap = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col h-full bg-white px-8 pt-12 pb-8">
-      {/* Hero */}
-      <div className="mb-10">
-        <h1 className="text-4xl font-black italic tracking-tight leading-tight mb-2">
-          Récapitulatif
-        </h1>
-        <p className="text-sm font-medium">Vérifiez avant de confirmer</p>
-      </div>
-
-      {/* Recap Card */}
-      <div className="flex-1 space-y-8 overflow-y-auto">
-        <div className="card space-y-8">
-          <div className="grid grid-cols-2 gap-y-6">
-            <div className="flex flex-col gap-1">
-              <span className="text-[10px] font-bold uppercase tracking-widest text-[#8C8C8C]">Appareil</span>
-              <span className="text-sm font-bold">Lave-linge</span>
-            </div>
-            <div className="flex flex-col gap-1 text-right">
-              <span className="text-[10px] font-bold uppercase tracking-widest text-[#8C8C8C]">Problème</span>
-              <span className="text-sm font-bold">S'arrête en cours</span>
-            </div>
-            <div className="flex flex-col gap-1">
-              <span className="text-[10px] font-bold uppercase tracking-widest text-[#8C8C8C]">Créneau</span>
-              <span className="text-sm font-bold">Demain 9h–11h</span>
-            </div>
-            <div className="flex flex-col gap-1 text-right">
-              <span className="text-[10px] font-bold uppercase tracking-widest text-[#8C8C8C]">Technicien</span>
-              <span className="text-sm font-bold text-[#0D46F2]">Lucas M.</span>
-            </div>
-          </div>
-
-          <div className="pt-6 border-t border-[#E5E5E5]">
-            <span className="text-[10px] font-bold uppercase tracking-widest text-[#8C8C8C]">Adresse</span>
-            <p className="text-sm font-bold mt-1">4 rue Loop, Nantes</p>
-          </div>
-
-          {/* Map Mock */}
-          <div className="h-24 bg-[#F2F2F0] rounded-[12px] flex items-center justify-center border border-[#E5E5E5] overflow-hidden">
-            <div className="w-6 h-6 bg-[#0D46F2] rounded-full shadow-lg"></div>
-          </div>
+    <div className="flex flex-col h-full bg-white relative">
+      <div className="flex-1 px-8 pt-12 pb-32 overflow-y-auto no-scrollbar">
+        {/* Hero */}
+        <div className="mb-8">
+          <h1 className="text-4xl font-black italic tracking-tight leading-tight mb-2">
+            Récapitulatif
+          </h1>
+          <p className="text-lg font-medium text-[#8C8C8C]">Vérifiez vos informations</p>
         </div>
 
-        <div className="flex justify-center">
-            <Button variant="outline" fullWidth={false} onClick={() => navigate('/slot')}>
-                Modifier
-            </Button>
+        {/* Content Recap */}
+        <div className="space-y-6">
+          {/* Photo Preview Card */}
+          <section className="bg-[#F2F2F7] p-5 rounded-[24px]">
+            <p className="text-[10px] font-bold uppercase tracking-widest text-[#8C8C8C] mb-4">Votre appareil</p>
+            <div className="flex gap-4 items-center">
+              <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center overflow-hidden border border-[#E5E5E5] group active:scale-95 transition-transform cursor-pointer">
+                <span className="material-symbols-outlined text-[#8C8C8C] text-3xl">image</span>
+              </div>
+              <div>
+                <p className="font-bold text-[17px]">Lave-linge Samsung</p>
+                <p className="text-xs text-[#8C8C8C]">Problème : S'arrête en cours</p>
+              </div>
+            </div>
+          </section>
+
+          {/* Address & Map Card */}
+          <section className="bg-[#F2F2F7] p-5 rounded-[24px] overflow-hidden">
+            <p className="text-[10px] font-bold uppercase tracking-widest text-[#8C8C8C] mb-4">Lieu d'intervention</p>
+            <p className="font-bold text-[17px] mb-4 tracking-tight">4 rue Loop, Nantes</p>
+            <div className="h-32 w-full rounded-[16px] overflow-hidden bg-white shadow-inner">
+              <MapContainer 
+                center={[47.2181, -1.5528]} 
+                zoom={14} 
+                zoomControl={false}
+                attributionControl={false}
+                dragging={false}
+                scrollWheelZoom={false}
+                className="h-full w-full"
+              >
+                <TileLayer url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png" />
+                <Marker position={[47.2181, -1.5528]} icon={customIcon} />
+              </MapContainer>
+            </div>
+          </section>
+
+          {/* Appointment Card */}
+          <section className="bg-[#F2F2F7] p-5 rounded-[24px]">
+            <p className="text-[10px] font-bold uppercase tracking-widest text-[#8C8C8C] mb-4">Rendez-vous</p>
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-[#0D46F2] shadow-sm">
+                <span className="material-symbols-outlined">event</span>
+              </div>
+              <div>
+                <p className="font-bold text-[17px]">Demain 22 Avril</p>
+                <p className="text-xs text-[#8C8C8C]">9:00 - 11:00 • Lucas M.</p>
+              </div>
+            </div>
+          </section>
         </div>
       </div>
 
-      {/* Actions */}
-      <div className="mt-8 space-y-3">
-        <Button onClick={() => navigate('/confirmation')}>Valider & payer</Button>
+      {/* Fixed Actions */}
+      <div className="absolute bottom-0 left-0 w-full p-8 pt-4 bg-gradient-to-t from-white via-white to-transparent">
+        <div className="space-y-3 mb-[32px]">
+          <Button onClick={() => navigate('/confirmation')}>Valider</Button>
+          <Button variant="ghost" onClick={() => navigate('/slot')}>Modifier</Button>
+        </div>
       </div>
     </div>
   );

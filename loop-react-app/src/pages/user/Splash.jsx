@@ -44,9 +44,9 @@ const Splash = () => {
       </div>
 
       {/* Bottom Section: Actions */}
-      <div className="relative z-10 w-full max-w-sm space-y-4 mb-4">
+      <div className="relative z-10 w-full max-w-sm space-y-4 mb-2">
         {/* Primary Action */}
-        <Button onClick={() => navigate('/onboarding')}>
+        <Button onClick={() => navigate('/signup')}>
           Créer un compte
         </Button>
 

@@ -35,20 +35,20 @@ const Payment = () => {
       <div className="flex-1 space-y-8 overflow-y-auto pr-2">
         <section className="bg-[#F2F2F7] p-8 rounded-[24px] space-y-6">
           <div className="flex justify-between items-center text-sm">
-            <span className="text-[#8C8C8C] font-bold uppercase tracking-tight">Diagnostic</span>
-            <span className="font-bold text-[#1a1c1b]">Inclus</span>
+            <span className="text-[#8C8C8C] font-bold uppercase tracking-tight">Déplacement</span>
+            <span className="font-bold text-[#1a1c1b]">49€</span>
           </div>
           <div className="flex justify-between items-center text-sm">
             <span className="text-[#8C8C8C] font-bold uppercase tracking-tight">Main d'oeuvre</span>
-            <span className="font-bold text-[#1a1c1b]">45€</span>
+            <span className="font-bold text-[#0D46F2]">Inclus</span>
           </div>
           <div className="flex justify-between items-center text-sm">
-            <span className="text-[#8C8C8C] font-bold uppercase tracking-tight">Pièce pompe</span>
-            <span className="font-bold text-[#1a1c1b]">38€</span>
+            <span className="text-[#8C8C8C] font-bold uppercase tracking-tight">Pièces (remboursables)</span>
+            <span className="font-bold text-[#1a1c1b]">20€</span>
           </div>
           <div className="pt-6 border-t border-[#E5E5E5] flex justify-between items-center">
             <span className="font-black italic uppercase text-xl">Total</span>
-            <span className="font-black italic tracking-tighter text-3xl">83€</span>
+            <span className="font-black italic tracking-tighter text-3xl">69€</span>
           </div>
         </section>
 
@@ -84,7 +84,7 @@ const Payment = () => {
 
       {/* Actions */}
       <div className="mt-8 space-y-3">
-        <Button onClick={() => navigate('/certificate')}>Valider le paiement — 83€</Button>
+        <Button onClick={() => navigate('/verdict')}>Valider le paiement — 69€</Button>
       </div>
 
       {/* Payment Selection Sheet */}

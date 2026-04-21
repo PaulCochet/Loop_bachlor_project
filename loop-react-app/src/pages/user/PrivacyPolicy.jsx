@@ -4,6 +4,8 @@ import Button from '../../components/shared/Button';
 
 const PrivacyPolicy = () => {
   const navigate = useNavigate();
+  const [agreedCGU, setAgreedCGU] = React.useState(true);
+  const [agreedPrivacy, setAgreedPrivacy] = React.useState(true);
 
   return (
     <div className="flex flex-col h-full bg-white px-8 pt-12 pb-8">
@@ -22,9 +24,12 @@ const PrivacyPolicy = () => {
             <h3 className="text-xl font-bold tracking-tight text-[#0A0A0A]">
               Conditions Générales d'Utilisation (CGU)*
             </h3>
-            <div className="relative inline-flex items-center cursor-pointer mt-1">
-              <div className="w-11 h-6 bg-[#0D46F2] rounded-full flex items-center px-[2px] justify-end">
-                <div className="bg-white rounded-full h-5 w-5"></div>
+            <div 
+              onClick={() => setAgreedCGU(!agreedCGU)}
+              className="relative inline-flex items-center cursor-pointer mt-1"
+            >
+              <div className={`w-11 h-6 rounded-full flex items-center px-[2px] transition-colors duration-200 ${agreedCGU ? 'bg-[#0D46F2] justify-end' : 'bg-[#E5E5E5] justify-start'}`}>
+                <div className="bg-white rounded-full h-5 w-5 shadow-sm"></div>
               </div>
             </div>
           </div>
@@ -40,9 +45,12 @@ const PrivacyPolicy = () => {
             <h3 className="text-xl font-bold tracking-tight text-[#0A0A0A]">
               Politique de confidentialité*
             </h3>
-            <div className="relative inline-flex items-center cursor-pointer mt-1">
-              <div className="w-11 h-6 bg-[#0D46F2] rounded-full flex items-center px-[2px] justify-end">
-                <div className="bg-white rounded-full h-5 w-5"></div>
+            <div 
+              onClick={() => setAgreedPrivacy(!agreedPrivacy)}
+              className="relative inline-flex items-center cursor-pointer mt-1"
+            >
+              <div className={`w-11 h-6 rounded-full flex items-center px-[2px] transition-colors duration-200 ${agreedPrivacy ? 'bg-[#0D46F2] justify-end' : 'bg-[#E5E5E5] justify-start'}`}>
+                <div className="bg-white rounded-full h-5 w-5 shadow-sm"></div>
               </div>
             </div>
           </div>

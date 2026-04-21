@@ -10,7 +10,15 @@ const Dashboard = () => {
     <div className="flex flex-col h-full bg-white">
       {/* Header */}
       <header className="px-6 py-4 flex justify-between items-center border-b border-[#E5E5E5]">
-        <h1 className="text-xl font-black italic tracking-tighter uppercase">Bonjour Sophie</h1>
+        <div className="flex items-center gap-3">
+          <button 
+            onClick={() => navigate('/')} 
+            className="text-[#0A0A0A] active:opacity-50"
+          >
+            <span className="material-symbols-outlined">chevron_left</span>
+          </button>
+          <h1 className="text-xl font-black italic tracking-tighter uppercase">Mon compte</h1>
+        </div>
         <button className="text-[#0A0A0A]">
           <span className="material-symbols-outlined">notifications</span>
         </button>
@@ -26,8 +34,8 @@ const Dashboard = () => {
 
         {/* Main Action */}
         <Button onClick={() => navigate('/photo')}>
-          Nouvelle demande
-          <span className="material-symbols-outlined">add_circle</span>
+          Diagnostic
+          <span className="material-symbols-outlined">qr_code_scanner</span>
         </Button>
 
         {/* Active Requests */}

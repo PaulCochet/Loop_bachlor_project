@@ -22,7 +22,7 @@ import Tracking from './pages/user/Tracking';
 import Intervention from './pages/user/Intervention';
 import Verdict from './pages/user/Verdict';
 import Payment from './pages/user/Payment';
-import Certificate from './pages/user/Certificate';
+import Login from './pages/user/Login';
 import UpdatedDashboard from './pages/user/UpdatedDashboard';
 import QRPage from './pages/user/QRPage';
 
@@ -55,9 +55,9 @@ export default function App() {
                 <Route path="/" element={<Splash />} />
                 <Route path="/onboarding" element={<Onboarding />} />
                 <Route path="/signup" element={<Signup />} />
-                <Route path="/login" element={<Signup />} />
+                <Route path="/login" element={<Login />} />
                 <Route path="/privacy" element={<PrivacyPolicy />} />
-                <Route path="/dashboard" element={<UpdatedDashboard />} />
+                <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/photo" element={<Photo />} />
                 <Route path="/description" element={<Description />} />
                 <Route path="/slot" element={<TimeSlot />} />
@@ -68,7 +68,6 @@ export default function App() {
                 <Route path="/intervention" element={<Intervention />} />
                 <Route path="/verdict" element={<Verdict />} />
                 <Route path="/payment" element={<Payment />} />
-                <Route path="/certificate" element={<Certificate />} />
                 <Route path="/dashboard-updated" element={<UpdatedDashboard />} />
                 <Route path="/qr" element={<QRPage />} />
 
