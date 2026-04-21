@@ -38,7 +38,7 @@ const TechnicianScan = () => {
         </div>
 
         <div className="mb-10 w-full text-left">
-          <h1 className="text-4xl font-black italic tracking-tight leading-tight uppercase mb-2">
+          <h1 className="text-4xl display-text tracking-tight leading-tight uppercase mb-2">
             Scanner l'appareil
           </h1>
           <p className="text-sm font-medium text-[#8C8C8C]">Scannez le QR code ou approchez le NFC</p>
@@ -77,11 +77,11 @@ const TechnicianScan = () => {
         <section className="w-full bg-[#f9f9f7] rounded-[24px] p-6 border border-gray-100">
           <div className="flex items-start justify-between mb-4">
             <div>
-              <h2 className="text-xl font-black italic tracking-tight mb-1 text-[#1a1c1b] uppercase">Samsung WW90</h2>
-              <p className="text-[#8C8C8C] font-black text-[10px] uppercase tracking-widest">WW90CGC04DAE — 2022</p>
+              <h2 className="text-xl display-text tracking-tight mb-1 text-[#1a1c1b] uppercase">Samsung WW90</h2>
+              <p className="text-[#8C8C8C] display-text text-[10px] uppercase tracking-widest">WW90CGC04DAE — 2022</p>
             </div>
             <div className="bg-red-50 px-3 py-1 rounded-full border border-red-100">
-              <span className="text-red-600 text-[10px] font-black italic uppercase tracking-tighter">Code: E21</span>
+              <span className="text-red-600 text-[10px] display-text uppercase tracking-tighter">Code: E21</span>
             </div>
           </div>
           

@@ -27,7 +27,7 @@ const Splash = () => {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.6 }}
-          className="text-[#8C8C8C] text-base max-w-[240px] leading-tight font-black italic uppercase tracking-tighter"
+          className="text-[#8C8C8C] text-base max-w-[240px] leading-tight display-text uppercase tracking-tighter"
         >
           Donnez une seconde vie à vos appareils
         </motion.p>
@@ -54,7 +54,7 @@ const Splash = () => {
             <motion.button 
               whileTap={{ scale: 0.95 }}
               onClick={() => navigate('/technician/login')}
-              className="inline-flex items-center gap-2 text-[#8C8C8C] text-[10px] font-black uppercase tracking-[0.15em] hover:text-[#1a1c1b] transition-colors group italic"
+              className="inline-flex items-center gap-2 text-[#8C8C8C] text-[10px] display-text uppercase tracking-[0.15em] hover:text-[#1a1c1b] transition-colors group"
             >
               Accès technicien
               <span className="material-symbols-outlined !text-xs group-hover:translate-x-1 transition-transform">

@@ -28,7 +28,7 @@ const TechnicianLogin = () => {
       <header className="flex items-center gap-3 mb-16 mt-16 ml-1">
         <img src="/logo.svg" alt="Loop" className="h-7 w-auto" />
         <div className="h-5 w-[1px] bg-[#F2F2F7] mx-1" />
-        <div className="flex items-center gap-1.5 text-[#0D46F2] font-black uppercase text-[10px] tracking-widest italic pt-1">
+        <div className="flex items-center gap-1.5 text-[#0D46F2] display-text uppercase tracking-widest  pt-1">
           <span className="material-symbols-outlined !text-[16px]" style={{ fontVariationSettings: "'FILL' 1" }}>build</span>
           <span>Espace technicien</span>
         </div>
@@ -36,7 +36,7 @@ const TechnicianLogin = () => {
 
       {/* Title Section */}
       <section className="mb-12">
-        <h1 className="text-4xl font-black italic tracking-tighter text-[#1a1c1b] mb-4 leading-none uppercase">
+        <h1 className="text-4xl display-text tracking-tighter text-[#1a1c1b] mb-4 leading-none uppercase">
           Connexion
         </h1>
         <p className="text-[#8C8C8C] text-sm leading-relaxed max-w-[240px] font-medium">
@@ -86,7 +86,7 @@ const TechnicianLogin = () => {
 
       {/* Footer */}
       <footer className="mt-auto pt-8 flex flex-col items-start gap-1">
-        <p className="text-[11px] text-[#8C8C8C] font-black uppercase tracking-widest">
+        <p className="text-[11px] text-[#8C8C8C] display-text uppercase tracking-widest">
           Problème ? <span className="text-[#0D46F2] cursor-pointer hover:underline italic">Contactez Loop</span>
         </p>
       </footer>

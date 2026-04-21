@@ -14,7 +14,7 @@ const Intervention = () => {
     >
       <div className="pt-4 pb-12 space-y-10">
         <header>
-          <h1 className="text-4xl font-black italic tracking-tight leading-tight uppercase mb-2">Intervention</h1>
+          <h1 className="text-4xl display-text tracking-tight leading-tight uppercase mb-2">Intervention</h1>
           <p className="text-sm font-medium text-[#8C8C8C]">En cours de réparation</p>
         </header>
 

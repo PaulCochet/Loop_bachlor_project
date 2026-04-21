@@ -50,7 +50,7 @@ const TechnicianRecap = () => {
             >
                 <span className="material-symbols-outlined text-green-600 !text-4xl">check_circle</span>
             </motion.div>
-            <h1 className="text-4xl font-black italic tracking-tight leading-tight uppercase mb-2">
+            <h1 className="text-4xl display-text tracking-tight leading-tight uppercase mb-2">
                 Intervention terminée
             </h1>
             <p className="text-sm font-medium text-[#8C8C8C]">La mission a été clôturée avec succès</p>
@@ -60,24 +60,24 @@ const TechnicianRecap = () => {
             {/* Mission Summary Card */}
             <section className="bg-[#F2F2F7] rounded-[32px] p-8 space-y-6">
                 <div className="flex justify-between items-center text-sm">
-                    <span className="text-[#8C8C8C] font-black uppercase tracking-widest text-[9px]">Appareil</span>
+                    <span className="text-[#8C8C8C] display-text uppercase tracking-widest text-[9px]">Appareil</span>
                     <span className="font-bold">Lave-linge Samsung</span>
                 </div>
                 <div className="flex justify-between items-center text-sm">
-                    <span className="text-[#8C8C8C] font-black uppercase tracking-widest text-[9px]">Usager</span>
+                    <span className="text-[#8C8C8C] display-text uppercase tracking-widest text-[9px]">Usager</span>
                     <span className="font-bold">Sophie M.</span>
                 </div>
                 <div className="flex justify-between items-center text-sm">
-                    <span className="text-[#8C8C8C] font-black uppercase tracking-widest text-[9px]">Calcul durée</span>
+                    <span className="text-[#8C8C8C] display-text uppercase tracking-widest text-[9px]">Calcul durée</span>
                     <span className="font-bold italic text-[#0D46F2]">38 min</span>
                 </div>
                 <div className="flex justify-between items-center text-sm">
-                    <span className="text-[#8C8C8C] font-black uppercase tracking-widest text-[9px]">Pièce remplacée</span>
+                    <span className="text-[#8C8C8C] display-text uppercase tracking-widest text-[9px]">Pièce remplacée</span>
                     <span className="font-bold">{formData.identifiedPart || 'Pompe de vidange'}</span>
                 </div>
                 <div className="flex justify-between items-center text-sm">
-                    <span className="text-[#8C8C8C] font-black uppercase tracking-widest text-[9px]">Verdict</span>
-                    <span className="px-3 py-1 bg-white rounded-full font-black italic uppercase text-[10px] text-[#0D46F2]">
+                    <span className="text-[#8C8C8C] display-text uppercase tracking-widest text-[9px]">Verdict</span>
+                    <span className="px-3 py-1 bg-white rounded-full display-text uppercase text-[10px] text-[#0D46F2]">
                         {formData.verdict || 'Réparable'}
                     </span>
                 </div>
@@ -85,7 +85,7 @@ const TechnicianRecap = () => {
 
             {/* Quick Details List */}
             <section className="space-y-4 px-2">
-                <h3 className="text-[10px] font-black uppercase tracking-widest text-[#8C8C8C]">Détails techniques</h3>
+                <h3 className="text-[10px] display-text uppercase tracking-widest text-[#8C8C8C]">Détails techniques</h3>
                 <div className="space-y-3">
                     {Object.entries(formData.diagnosticResults || {}).map(([key, value]) => (
                         <div key={key} className="flex items-center gap-3">

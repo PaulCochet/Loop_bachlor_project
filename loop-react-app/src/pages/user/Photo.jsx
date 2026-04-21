@@ -26,7 +26,7 @@ const Photo = () => {
 
         {/* Hero */}
         <div className="mb-8">
-          <h1 className="text-4xl font-black italic tracking-tight leading-tight mb-2">
+          <h1 className="text-4xl display-text tracking-tight leading-tight mb-2">
             Prenez une photo
           </h1>
           <p className="text-lg font-medium text-[#8C8C8C]">Capturez le problème de votre appareil</p>
@@ -42,7 +42,7 @@ const Photo = () => {
           </div>
           
           <div className="mt-6 flex justify-center pb-8">
-            <button className="w-full py-5 rounded-[24px] border-2 border-[#F2F2F7] text-[#0A0A0A] font-black italic uppercase tracking-widest text-[13px] bg-transparent active:scale-[0.98] transition-all flex items-center justify-center gap-3">
+            <button className="w-full py-5 rounded-[24px] border-2 border-[#F2F2F7] text-[#0A0A0A] display-text uppercase tracking-widest text-[13px] bg-transparent active:scale-[0.98] transition-all flex items-center justify-center gap-3">
               <span className="material-symbols-outlined !text-xl">image</span>
               Choisir depuis ma galerie
             </button>

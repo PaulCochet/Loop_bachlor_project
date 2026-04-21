@@ -29,7 +29,7 @@ const Recap = () => {
       <div className="pt-4 pb-8">
         {/* Hero */}
         <div className="mb-8">
-          <h1 className="text-4xl font-black italic tracking-tight leading-tight mb-2">
+          <h1 className="text-4xl display-text tracking-tight leading-tight mb-2">
             Récapitulatif
           </h1>
           <p className="text-lg font-medium text-[#8C8C8C]">Vérifiez vos informations</p>

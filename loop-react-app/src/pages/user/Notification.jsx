@@ -102,24 +102,24 @@ const Notification = () => {
                       <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=1974&auto=format&fit=crop" alt="Lucas" className="w-full h-full object-cover" />
                     </div>
                     <div>
-                      <h4 className="font-black italic tracking-tighter uppercase text-lg leading-none mb-1">Lucas M.</h4>
-                      <p className="text-[10px] font-black uppercase tracking-widest text-[#8C8C8C]">Expert Loop</p>
+                      <h4 className="display-text tracking-tighter uppercase text-lg leading-none mb-1">Lucas M.</h4>
+                      <p className="text-[10px] display-text uppercase tracking-widest text-[#8C8C8C]">Expert Loop</p>
                     </div>
                   </div>
                   <div className="text-right">
-                    <p className="text-[10px] font-black uppercase text-[#0D46F2] tracking-widest">Temps estimé</p>
-                    <p className="text-xl font-black italic tracking-tighter uppercase leading-none">12 MIN</p>
+                    <p className="text-[10px] display-text uppercase text-[#0D46F2] tracking-widest">Temps estimé</p>
+                    <p className="text-xl display-text tracking-tighter uppercase leading-none">12 MIN</p>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-2 gap-3">
                   <button className="flex flex-col items-center justify-center gap-2 bg-[#F2F2F7] p-5 rounded-[24px] active:scale-[0.98] transition-all">
                     <span className="material-symbols-outlined !text-3xl text-[#0D46F2]">call</span>
-                    <span className="text-[9px] font-black uppercase tracking-widest">Appeler</span>
+                    <span className="text-[9px] display-text uppercase tracking-widest">Appeler</span>
                   </button>
                   <button className="flex flex-col items-center justify-center gap-2 bg-[#F2F2F7] p-5 rounded-[24px] active:scale-[0.98] transition-all">
                     <span className="material-symbols-outlined !text-3xl text-[#0D46F2]">chat_bubble</span>
-                    <span className="text-[9px] font-black uppercase tracking-widest">Message</span>
+                    <span className="text-[9px] display-text uppercase tracking-widest">Message</span>
                   </button>
                 </div>
 

@@ -19,7 +19,7 @@ const Login = () => {
     <div className="flex flex-col h-full bg-white px-8 pt-12 pb-8">
       {/* Header */}
       <div className="mb-10">
-        <h1 className="text-4xl font-black italic tracking-tight leading-tight mb-2">
+        <h1 className="text-4xl display-text tracking-tight leading-tight mb-2">
           Bon retour
         </h1>
         <p className="text-lg font-medium text-[#8C8C8C]">Connectez-vous à votre compte</p>

@@ -30,7 +30,7 @@ const Description = () => {
 
         {/* Hero */}
         <div className="mb-6">
-          <h1 className="text-4xl font-black italic tracking-tight leading-tight mb-2">
+          <h1 className="text-4xl display-text tracking-tight leading-tight mb-2">
             Décrivez le problème
           </h1>
           <p className="text-lg font-medium text-[#8C8C8C]">Répondez en quelques secondes</p>

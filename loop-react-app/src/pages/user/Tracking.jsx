@@ -67,7 +67,7 @@ const Tracking = () => {
         <div className="w-10 h-1 bg-[#F2F2F7] rounded-full mx-auto mb-6"></div>
         
         <header className="mb-6">
-            <h2 className="text-3xl font-black italic tracking-tighter leading-tight uppercase">Lucas arrive</h2>
+            <h2 className="text-3xl display-text tracking-tighter leading-tight uppercase">Lucas arrive</h2>
             <p className="text-sm font-medium text-[#8C8C8C]">Arrivée estimée : 17:47</p>
         </header>
 

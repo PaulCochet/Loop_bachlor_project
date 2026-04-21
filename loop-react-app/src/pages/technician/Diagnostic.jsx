@@ -37,7 +37,7 @@ const TechnicianDiagnostic = () => {
         </div>
 
         <div className="mb-8 w-full text-left">
-          <h1 className="text-4xl font-black italic tracking-tight leading-tight uppercase mb-2">
+          <h1 className="text-4xl display-text tracking-tight leading-tight uppercase mb-2">
             Diagnostic
           </h1>
           <p className="text-sm font-medium text-[#8C8C8C]">Questionnaire technique approfondi</p>

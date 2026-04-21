@@ -20,7 +20,7 @@ const Dashboard = () => {
         {/* Impact Section */}
         <section className="space-y-6">
           <header>
-            <h2 className="text-3xl font-black italic tracking-tighter leading-none mb-1 uppercase">
+            <h2 className="text-3xl display-text tracking-tighter leading-none mb-1 uppercase">
               Bonjour Sophie
             </h2>
             <p className="text-xs font-bold text-[#8C8C8C] uppercase tracking-widest">Votre impact est réel</p>
@@ -28,12 +28,12 @@ const Dashboard = () => {
           
           <div className="flex gap-4">
             <div className="flex-1 bg-[#0D46F2] p-6 rounded-[24px] text-white shadow-xl shadow-[#0D46F2]/20">
-              <p className="text-3xl font-black italic mb-0.5">218 kg</p>
-              <p className="text-[10px] font-black uppercase tracking-widest opacity-80">CO₂ évité</p>
+              <p className="text-3xl display-text mb-0.5">218 kg</p>
+              <p className="text-[10px] display-text uppercase tracking-widest opacity-80">CO₂ évité</p>
             </div>
             <div className="flex-1 bg-[#F2F2F7] p-6 rounded-[24px]">
-              <p className="text-3xl font-black italic mb-0.5 text-[#0A0A0A]">1</p>
-              <p className="text-[10px] font-black uppercase tracking-widest text-[#8C8C8C]">appareil sauvé</p>
+              <p className="text-3xl display-text mb-0.5 text-[#0A0A0A]">1</p>
+              <p className="text-[10px] display-text uppercase tracking-widest text-[#8C8C8C]">appareil sauvé</p>
             </div>
           </div>
         </section>
@@ -50,14 +50,14 @@ const Dashboard = () => {
         {/* Active Requests */}
         <section className="space-y-6">
           <header className="flex items-center gap-4">
-            <h3 className="text-[10px] font-black tracking-[0.2em] uppercase text-[#8C8C8C]">En cours</h3>
+            <h3 className="text-[10px] display-text tracking-[0.2em] uppercase text-[#8C8C8C]">En cours</h3>
             <div className="flex-1 h-[1px] bg-[#F2F2F7]"></div>
           </header>
 
           <div className="bg-white rounded-[24px] p-6 border border-[#F2F2F7] shadow-xl shadow-black/5 space-y-6">
             <div className="flex justify-between items-start">
               <div className="space-y-1">
-                <h4 className="text-xl font-black uppercase italic tracking-tight leading-none">Lave-linge Samsung</h4>
+                <h4 className="text-xl display-text uppercase tracking-tight leading-none">Lave-linge Samsung</h4>
                 <p className="text-[10px] font-bold text-[#0D46F2] uppercase tracking-widest">Intervention terminée</p>
               </div>
               <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center">
@@ -77,13 +77,13 @@ const Dashboard = () => {
         {/* History */}
         <section className="space-y-6">
           <header className="flex items-center gap-4">
-            <h3 className="text-[10px] font-black tracking-[0.2em] uppercase text-[#8C8C8C]">Historique</h3>
+            <h3 className="text-[10px] display-text tracking-[0.2em] uppercase text-[#8C8C8C]">Historique</h3>
             <div className="flex-1 h-[1px] bg-[#F2F2F7]"></div>
           </header>
 
           <div className="bg-white rounded-[24px] p-6 border border-[#F2F2F7] shadow-xl shadow-black/5 flex items-center justify-between">
             <div>
-              <h4 className="text-lg font-black uppercase italic tracking-tight">Frigo Smeg</h4>
+              <h4 className="text-lg display-text uppercase tracking-tight">Frigo Smeg</h4>
               <p className="text-[9px] font-bold text-[#8C8C8C] uppercase tracking-widest">Réparé le 12/04/2026</p>
             </div>
             <span className="material-symbols-outlined text-[#8C8C8C]" style={{ fontVariationSettings: "'FILL' 1" }}>verified_user</span>

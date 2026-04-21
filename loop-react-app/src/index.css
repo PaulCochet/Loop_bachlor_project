@@ -73,7 +73,15 @@ body {
 /* Typography */
 h1, h2, h3 {
   font-weight: 800;
+  font-style: italic;
   letter-spacing: -0.02em;
+}
+
+/* Utility Class for Native Display Font */
+.display-text {
+  font-family: var(--font-family);
+  font-weight: 800;
+  font-style: italic;
 }
 
 /* Global Micro-Interactions */

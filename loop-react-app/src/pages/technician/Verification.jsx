@@ -49,7 +49,7 @@ const TechnicianVerification = () => {
         </div>
 
         <div className="mb-8 w-full text-left">
-          <h1 className="text-4xl font-black italic tracking-tight leading-tight uppercase mb-2">
+          <h1 className="text-4xl display-text tracking-tight leading-tight uppercase mb-2">
             Vérification
           </h1>
           <p className="text-sm font-medium text-[#8C8C8C]">Confirmez le diagnostic final</p>
@@ -58,7 +58,7 @@ const TechnicianVerification = () => {
         <div className="space-y-10">
         {/* Summary of Questionnaire */}
         <section>
-          <h3 className="text-[10px] font-black uppercase tracking-widest text-[#8C8C8C] mb-6 ml-1">Confirmation diagnostic</h3>
+          <h3 className="text-[10px] display-text uppercase tracking-widest text-[#8C8C8C] mb-6 ml-1">Confirmation diagnostic</h3>
           <div className="space-y-6">
             {[
                 { key: 'abnormalNoise', label: 'La pompe de vidange émet-elle un bruit anormal ?' },
@@ -80,7 +80,7 @@ const TechnicianVerification = () => {
           {/* Part Identification */}
           <section className="space-y-6">
             <div className="w-full">
-              <label className="block text-[10px] font-black uppercase tracking-widest text-[#8C8C8C] mb-3 ml-1">Pièce(s) identifiée(s)</label>
+              <label className="block text-[10px] display-text uppercase tracking-widest text-[#8C8C8C] mb-3 ml-1">Pièce(s) identifiée(s)</label>
               <IOSInput 
                 placeholder="Ex: Pompe de vidange" 
                 value={formData.identifiedPart || ''}
@@ -90,7 +90,7 @@ const TechnicianVerification = () => {
             </div>
 
             <div className="w-full">
-              <label className="block text-[10px] font-black uppercase tracking-widest text-[#8C8C8C] mb-3 ml-1">Observations</label>
+              <label className="block text-[10px] display-text uppercase tracking-widest text-[#8C8C8C] mb-3 ml-1">Observations</label>
               <textarea 
                 className="w-full bg-[#f2f2f7] border-2 border-transparent rounded-[20px] p-[14px_16px] min-h-[120px] focus:border-[#0D46F2] outline-none text-[#1a1c1b] placeholder:text-gray-400 transition-all font-medium text-sm"
                 placeholder="Précisez les détails de l'intervention..."
@@ -102,7 +102,7 @@ const TechnicianVerification = () => {
 
           {/* Verdict Selection */}
           <section className="space-y-4">
-            <h3 className="text-[10px] font-black uppercase tracking-widest text-[#8C8C8C] mb-4 ml-1">Verdict final</h3>
+            <h3 className="text-[10px] display-text uppercase tracking-widest text-[#8C8C8C] mb-4 ml-1">Verdict final</h3>
             <div className="grid grid-cols-1 gap-3">
               {[
                 { id: 'réparable', label: 'Réparable', icon: 'check_circle' },
@@ -125,7 +125,7 @@ const TechnicianVerification = () => {
                       <span className={`material-symbols-outlined ${isSelected ? 'text-[#0D46F2]' : 'text-[#8C8C8C]'}`}>
                         {v.icon}
                       </span>
-                      <span className={`font-black italic uppercase text-sm ${isSelected ? 'text-[#0D46F2]' : 'text-[#1a1c1b]'}`}>
+                      <span className={`display-text uppercase text-sm ${isSelected ? 'text-[#0D46F2]' : 'text-[#1a1c1b]'}`}>
                         {v.label}
                       </span>
                     </div>

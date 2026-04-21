@@ -35,9 +35,9 @@ const TechnicianMessages = () => {
             onClick={() => navigate('/technician/dashboard')}
             className="p-1 rounded-full active:bg-gray-100 transition-colors"
           >
-            <span className="material-symbols-outlined text-[#0D46F2] font-black">chevron_left</span>
+            <span className="material-symbols-outlined text-[#0D46F2] display-text">chevron_left</span>
           </motion.button>
-          <h1 className="text-lg font-black italic uppercase italic uppercase tracking-wider">Messages</h1>
+          <h1 className="text-lg display-text uppercase tracking-wider">Messages</h1>
         </div>
       </header>
 
@@ -50,7 +50,7 @@ const TechnicianMessages = () => {
               onClick={() => setActiveTab(tab.id)}
               className="relative py-4 flex-1 text-center"
             >
-              <span className={`text-[11px] font-black uppercase tracking-widest transition-all ${
+              <span className={`text-[11px] display-text uppercase tracking-widest transition-all ${
                 activeTab === tab.id ? 'text-[#0D46F2]' : 'text-[#8C8C8C]'
               }`}>
                 {tab.label}
@@ -126,12 +126,12 @@ const TechnicianMessages = () => {
                         <span className="material-symbols-outlined text-[#8C8C8C] !text-2xl">local_laundry_service</span>
                       </div>
                       <div className="flex-grow space-y-1">
-                        <h3 className="font-black italic uppercase text-sm tracking-tight">{r.name}</h3>
+                        <h3 className="display-text uppercase text-sm tracking-tight">{r.name}</h3>
                         <p className="text-xs font-bold text-[#8C8C8C] flex items-center gap-1">
                           <span className="material-symbols-outlined !text-[14px]">location_on</span>
                           {r.address}
                         </p>
-                        <p className="text-[10px] font-black uppercase tracking-widest text-[#0D46F2] mt-2">
+                        <p className="text-[10px] display-text uppercase tracking-widest text-[#0D46F2] mt-2">
                           {r.slot} • {r.distance}
                         </p>
                       </div>
@@ -142,19 +142,19 @@ const TechnicianMessages = () => {
                         <div className="flex gap-3">
                           <button 
                             onClick={() => handleAccept(r.id)}
-                            className="flex-1 bg-[#0D46F2] text-white py-3 rounded-xl font-black uppercase text-[10px] tracking-widest shadow-lg shadow-[#0D46F2]/20 active:scale-95 transition-all"
+                            className="flex-1 bg-[#0D46F2] text-white py-3 rounded-xl display-text uppercase text-[10px] tracking-widest shadow-lg shadow-[#0D46F2]/20 active:scale-95 transition-all"
                           >
                             Accepter
                           </button>
                           <button 
                             onClick={() => handleRefuse(r.id)}
-                            className="flex-1 border border-[#E5E5E5] text-[#8C8C8C] py-3 rounded-xl font-black uppercase text-[10px] tracking-widest active:scale-95 transition-all"
+                            className="flex-1 border border-[#E5E5E5] text-[#8C8C8C] py-3 rounded-xl display-text uppercase text-[10px] tracking-widest active:scale-95 transition-all"
                           >
                             Refuser
                           </button>
                         </div>
                       ) : (
-                        <div className="bg-green-50 text-green-600 py-3 rounded-xl font-black uppercase text-[10px] tracking-widest text-center flex items-center justify-center gap-2">
+                        <div className="bg-green-50 text-green-600 py-3 rounded-xl display-text uppercase text-[10px] tracking-widest text-center flex items-center justify-center gap-2">
                           <span className="material-symbols-outlined !text-sm">check_circle</span>
                           Acceptée
                         </div>
@@ -186,7 +186,7 @@ const TechnicianMessages = () => {
                     <h4 className="font-bold text-xs text-[#1a1c1b]">{a.name}</h4>
                     <p className="text-[10px] text-[#8C8C8C]">{a.date}</p>
                   </div>
-                  <div className="bg-[#F2F2F7] px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-tighter text-[#8C8C8C]">
+                  <div className="bg-[#F2F2F7] px-3 py-1 rounded-full text-[9px] display-text uppercase tracking-tighter text-[#8C8C8C]">
                     Terminée
                   </div>
                 </div>

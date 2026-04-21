@@ -22,7 +22,7 @@ const Onboarding = () => {
             />
           </svg>
         </div>
-        <h1 className="text-4xl font-black italic tracking-tighter text-center leading-[0.9] uppercase max-w-[280px]">
+        <h1 className="text-4xl display-text tracking-tighter text-center leading-[0.9] uppercase max-w-[280px]">
           Donnez une seconde vie à vos appareils
         </h1>
       </div>

@@ -59,7 +59,7 @@ const Payment = () => {
               animate={{ rotate: 360 }}
               transition={{ repeat: Infinity, duration: 1.5, ease: "linear" }}
             />
-            <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#0D46F2] animate-pulse">Paiement en cours</p>
+            <p className="text-[10px] display-text uppercase tracking-[0.3em] text-[#0D46F2] animate-pulse">Paiement en cours</p>
           </motion.div>
         )}
       </AnimatePresence>
@@ -67,47 +67,47 @@ const Payment = () => {
       <div className="pt-4 pb-12">
         {/* Hero */}
         <div className="mb-10">
-          <h1 className="text-4xl font-black italic tracking-tight leading-tight mb-2 uppercase">
+          <h1 className="text-4xl display-text tracking-tight leading-tight mb-2 uppercase">
             Paiement final
           </h1>
-          <p className="text-[#0D46F2] font-black uppercase text-[10px] tracking-[0.2em]">Intervention terminée • Lucas M.</p>
+          <p className="text-[#0D46F2] display-text uppercase text-[10px] tracking-[0.2em]">Intervention terminée • Lucas M.</p>
         </div>
 
         {/* Invoice */}
         <div className="space-y-8 pr-1">
           <section className="bg-[#F2F2F7] p-8 rounded-[32px] space-y-6">
             <div className="flex justify-between items-center text-sm">
-              <span className="text-[#8C8C8C] font-black uppercase tracking-widest text-[10px]">Intervention</span>
+              <span className="text-[#8C8C8C] display-text uppercase tracking-widest text-[10px]">Intervention</span>
               <span className="font-bold text-[#1a1c1b]">Lave-linge Samsung</span>
             </div>
             <div className="flex justify-between items-center text-sm">
-              <span className="text-[#8C8C8C] font-black uppercase tracking-widest text-[10px]">Déplacement & MO</span>
+              <span className="text-[#8C8C8C] display-text uppercase tracking-widest text-[10px]">Déplacement & MO</span>
               <span className="font-bold text-[#0D46F2]">Inclus</span>
             </div>
             <div className="flex flex-col gap-1">
               <div className="flex justify-between items-center text-sm">
-                <span className="text-[#8C8C8C] font-black uppercase tracking-widest text-[10px]">Consigne pièces</span>
+                <span className="text-[#8C8C8C] display-text uppercase tracking-widest text-[10px]">Consigne pièces</span>
                 <span className="font-bold text-[#1a1c1b]">20€</span>
               </div>
               <p className="text-[9px] text-[#8C8C8C] italic">Remboursable si pièces non utilisées</p>
             </div>
             <div className="flex justify-between items-center text-sm">
-              <span className="text-[#8C8C8C] font-black uppercase tracking-widest text-[10px]">Supplément final</span>
+              <span className="text-[#8C8C8C] display-text uppercase tracking-widest text-[10px]">Supplément final</span>
               <span className="font-bold text-[#1a1c1b]">10€</span>
             </div>
             <div className="pt-6 border-t border-[#E5E5E5] flex justify-between items-center">
-              <span className="font-black italic uppercase text-xl">Total</span>
-              <span className="font-black italic tracking-tighter text-3xl">10€</span>
+              <span className="display-text uppercase text-xl">Total</span>
+              <span className="display-text tracking-tighter text-3xl">10€</span>
             </div>
           </section>
 
           {/* Payment Method */}
           <section className="space-y-4 pb-4">
             <div className="flex justify-between items-end px-1">
-              <h2 className="text-[10px] font-black uppercase tracking-widest text-[#8C8C8C]">Moyen de paiement</h2>
+              <h2 className="text-[10px] display-text uppercase tracking-widest text-[#8C8C8C]">Moyen de paiement</h2>
               <button 
                 onClick={() => setIsSheetOpen(true)}
-                className="text-[10px] font-black uppercase tracking-widest text-[#0D46F2] hover:opacity-70"
+                className="text-[10px] display-text uppercase tracking-widest text-[#0D46F2] hover:opacity-70"
               >
                 Modifier
               </button>
@@ -124,8 +124,8 @@ const Payment = () => {
                 </span>
               </div>
               <div className="flex-grow">
-                <p className="font-black italic text-base">{formData.paymentMethod.label}</p>
-                <p className="text-[9px] text-[#8C8C8C] uppercase font-black tracking-widest">{formData.paymentMethod.type}</p>
+                <p className="display-text text-base">{formData.paymentMethod.label}</p>
+                <p className="text-[9px] text-[#8C8C8C] uppercase display-text tracking-widest">{formData.paymentMethod.type}</p>
               </div>
             </motion.div>
           </section>
@@ -152,7 +152,7 @@ const Payment = () => {
             <span className="material-symbols-outlined">{option.icon}</span>
             <div className="text-left">
               <p className="font-bold text-sm">{option.label}</p>
-              <p className={`text-[9px] uppercase font-black tracking-widest ${
+              <p className={`text-[9px] uppercase display-text tracking-widest ${
                 formData.paymentMethod.id === option.id ? 'text-gray-400' : 'text-[#8C8C8C]'
               }`}>
                 {option.type}

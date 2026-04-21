@@ -43,7 +43,7 @@ const TimeSlot = () => {
         </div>
 
         <div className="mb-8">
-          <h1 className="text-4xl font-black italic tracking-tight leading-tight mb-2">
+          <h1 className="text-4xl display-text tracking-tight leading-tight mb-2">
             Prenez rendez-vous
           </h1>
           <p className="text-sm font-medium text-[#8C8C8C]">Techniciens disponibles près de chez vous</p>
@@ -71,11 +71,11 @@ const TimeSlot = () => {
                   }`}
                 >
                   <span className={`text-[10px] uppercase mb-1 ${
-                    isToday ? 'text-[#0D46F2] font-black' : 'text-[#8C8C8C] font-bold'
+                    isToday ? 'text-[#0D46F2] display-text' : 'text-[#8C8C8C] font-bold'
                   }`}>
                     {day.label}
                   </span>
-                  <span className={`text-sm font-black ${
+                  <span className={`text-sm display-text ${
                     isSelected ? 'text-[#0D46F2]' : 'text-[#0A0A0A]'
                   }`}>
                     {day.num}
@@ -104,7 +104,7 @@ const TimeSlot = () => {
               >
                 <div className="flex justify-between items-center">
                   <div>
-                    <p className={`text-lg font-black italic ${isSelected ? 'text-[#0D46F2]' : 'text-[#0A0A0A]'}`}>{slot.time}</p>
+                    <p className={`text-lg display-text ${isSelected ? 'text-[#0D46F2]' : 'text-[#0A0A0A]'}`}>{slot.time}</p>
                     <p className="text-xs text-[#8C8C8C] font-medium">{slot.tech}</p>
                   </div>
                   <span 

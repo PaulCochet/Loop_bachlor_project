@@ -23,7 +23,7 @@ const TechnicianMission = () => {
           </motion.button>
         </div>
 
-        <h1 className="italic font-black uppercase tracking-tighter text-4xl">
+        <h1 className="display-text uppercase tracking-tighter text-4xl">
           Mission Brief
         </h1>
         <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-white shadow-sm">
@@ -37,7 +37,7 @@ const TechnicianMission = () => {
 
       <main className="px-6 pt-8">
         <div className="flex items-center gap-4 mb-10">
-          <h2 className="text-3xl font-black italic uppercase tracking-tighter text-[#1a1c1b]">Fiche mission</h2>
+          <h2 className="text-3xl display-text uppercase tracking-tighter text-[#1a1c1b]">Fiche mission</h2>
           <span className="px-3 py-1 bg-[#f2f2f7] text-[#8C8C8C] text-[10px] font-bold uppercase tracking-widest rounded-full">À venir</span>
         </div>
 
@@ -54,7 +54,7 @@ const TechnicianMission = () => {
                 />
               </div>
               <div>
-                <p className="text-lg font-extrabold text-[#1a1c1b]">Sophie M.</p>
+                <p className="text-lg display-text text-[#1a1c1b]">Sophie M.</p>
                 <p className="text-sm text-[#8C8C8C] font-medium">12 rue des Lilas Nantes</p>
               </div>
             </div>
@@ -76,12 +76,12 @@ const TechnicianMission = () => {
                 />
               </div>
               <div className="space-y-2">
-                <p className="text-lg font-extrabold text-[#1a1c1b]">Lave-linge Samsung WW90</p>
+                <p className="text-lg display-text text-[#1a1c1b]">Lave-linge Samsung WW90</p>
                 <div className="space-y-1">
-                  <p className="text-xs text-[#8C8C8C] font-black uppercase tracking-widest">Problème</p>
+                  <p className="text-xs text-[#8C8C8C] display-text uppercase tracking-widest">Problème</p>
                   <p className="text-sm font-medium text-[#464545]">S'arrête en cours de cycle</p>
                 </div>
-                <div className="inline-flex items-center gap-2 px-2 py-1 bg-red-50 text-red-600 rounded text-[9px] font-black uppercase tracking-tighter italic">
+                <div className="inline-flex items-center gap-2 px-2 py-1 bg-red-50 text-red-600 rounded text-[9px] display-text tracking-tighter ">
                   Error Code: E21
                 </div>
               </div>

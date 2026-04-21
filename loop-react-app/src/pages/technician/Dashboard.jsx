@@ -55,7 +55,7 @@ const TechnicianDashboard = () => {
               <span className="material-symbols-outlined text-[#0D46F2] !text-xl">{item.icon}</span>
               <div>
                 <p className="text-[9px] font-bold uppercase tracking-widest text-[#8C8C8C] truncate">{item.label}</p>
-                <p className="text-lg font-extrabold italic">{item.value}</p>
+                <p className="text-lg display-text">{item.value}</p>
               </div>
             </motion.div>
           ))}
@@ -64,7 +64,7 @@ const TechnicianDashboard = () => {
         {/* Current Mission Section */}
         <section className="space-y-6">
           <div className="flex justify-between items-end">
-            <h2 className="text-3xl font-extrabold italic uppercase tracking-tighter">Mission en cours</h2>
+            <h2 className="text-3xl display-text uppercase tracking-tighter">Mission en cours</h2>
             <span className="text-[10px] font-bold text-[#0D46F2] uppercase tracking-widest pb-1">Priorité Haute</span>
           </div>
           
@@ -75,7 +75,7 @@ const TechnicianDashboard = () => {
             <div className="p-8 space-y-6">
               <div className="flex justify-between items-start">
                 <div className="space-y-1">
-                  <h3 className="text-2xl font-black italic">Sophie M.</h3>
+                  <h3 className="text-2xl display-text">Sophie M.</h3>
                   <p className="text-[#8C8C8C] font-medium">Lave-linge Samsung EcoBubble</p>
                 </div>
                 <div className="bg-[#f2f2f0] px-3 py-1 rounded-full">
@@ -101,7 +101,7 @@ const TechnicianDashboard = () => {
 
         {/* Next Missions Section */}
         <section className="space-y-6">
-          <h2 className="text-2xl font-extrabold italic uppercase tracking-tighter">Missions suivantes</h2>
+          <h2 className="text-2xl display-text uppercase tracking-tighter">Missions suivantes</h2>
           <div className="space-y-4">
             {[
               { time: '13:30', name: 'MARC D.', device: 'Lave-vaisselle Bosch', address: '24 Bd des Belges' },
@@ -115,7 +115,7 @@ const TechnicianDashboard = () => {
               >
                 <div className="text-center min-w-[60px]">
                   <p className="text-[10px] font-bold text-[#8C8C8C] uppercase tracking-widest">{mission.time}</p>
-                  <p className="text-lg font-black italic">{mission.name}</p>
+                  <p className="text-lg display-text">{mission.name}</p>
                 </div>
                 <div className="h-8 w-[1px] bg-gray-200"></div>
                 <div className="flex-1">

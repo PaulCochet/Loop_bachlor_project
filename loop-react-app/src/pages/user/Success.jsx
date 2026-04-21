@@ -27,30 +27,30 @@ const Success = () => {
           </motion.span>
         </motion.div>
 
-        <h1 className="text-4xl font-black italic tracking-tight uppercase mb-2">
+        <h1 className="text-4xl display-text tracking-tight uppercase mb-2">
           Félicitations !
         </h1>
-        <p className="text-[#0D46F2] font-black uppercase tracking-[0.2em] text-xs mb-12">
+        <p className="text-[#0D46F2] display-text uppercase tracking-[0.2em] text-xs mb-12">
           Appareil reconditionné
         </p>
 
         {/* Download Section */}
         <div className="w-full space-y-4">
-          <p className="text-[10px] font-black uppercase tracking-widest text-[#8C8C8C] mb-4">Vos documents</p>
+          <p className="text-[10px] display-text uppercase tracking-widest text-[#8C8C8C] mb-4">Vos documents</p>
           <div className="grid grid-cols-2 gap-3">
             <motion.button 
               whileTap={{ scale: 0.95 }}
               className="flex flex-col items-center gap-3 bg-[#F2F2F7] p-6 rounded-[28px] border border-transparent active:border-[#0D46F2] transition-all"
             >
               <span className="material-symbols-outlined text-[#0D46F2] !text-3xl">download</span>
-              <span className="text-[9px] font-black uppercase tracking-widest leading-tight">Télécharger la facture</span>
+              <span className="text-[9px] display-text uppercase tracking-widest leading-tight">Télécharger la facture</span>
             </motion.button>
             <motion.button 
               whileTap={{ scale: 0.95 }}
               className="flex flex-col items-center gap-3 bg-[#F2F2F7] p-6 rounded-[28px] border border-transparent active:border-[#0D46F2] transition-all"
             >
               <span className="material-symbols-outlined text-[#0D46F2] !text-3xl">description</span>
-              <span className="text-[9px] font-black uppercase tracking-widest leading-tight">Télécharger certificat</span>
+              <span className="text-[9px] display-text uppercase tracking-widest leading-tight">Télécharger certificat</span>
             </motion.button>
           </div>
         </div>

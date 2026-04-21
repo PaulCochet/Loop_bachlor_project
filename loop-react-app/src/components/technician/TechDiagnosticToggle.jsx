@@ -17,7 +17,7 @@ const TechDiagnosticToggle = ({ value, onChange }) => {
             key={option.value}
             whileTap={{ scale: 0.96 }}
             onClick={() => onChange(option.value)}
-            className={`flex-1 h-[44px] rounded-full text-[11px] font-black uppercase tracking-widest transition-all border ${
+            className={`flex-1 h-[44px] rounded-full text-[11px] display-text uppercase tracking-widest transition-all border ${
               isSelected 
                 ? 'bg-[#0A0A0A] border-[#0A0A0A] text-white' 
                 : 'bg-white border-[#E5E5E5] text-[#0A0A0A]'

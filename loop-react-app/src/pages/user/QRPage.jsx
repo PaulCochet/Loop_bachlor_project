@@ -11,7 +11,7 @@ const QRPage = () => {
 
   return (
     <div className="flex flex-col items-center justify-center h-full p-8 bg-white text-center">
-      <h1 className="text-2xl font-black uppercase mb-4 italic tracking-tighter">Connect to iPhone</h1>
+      <h1 className="text-2xl display-text uppercase mb-4 tracking-tighter">Connect to iPhone</h1>
       <p className="text-sm text-[#8C8C8C] mb-8">Scan this code with your iPhone camera to open the app on your local network.</p>
       
       <div className="p-6 bg-white shadow-2xl rounded-3xl border border-[#F2F2F0] mb-8">
