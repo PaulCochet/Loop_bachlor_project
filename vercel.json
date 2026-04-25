@@ -1,0 +1,6 @@
+{
+  "buildCommand": "npm run build --prefix loop-react-app",
+  "outputDirectory": "loop-react-app/dist",
+  "installCommand": "npm install --prefix loop-react-app",
+  "framework": "vite"
+}
