@@ -4,7 +4,10 @@ const ScreenLayout = ({ children, actions, className = "" }) => {
   return (
     <div className={`h-full w-full flex flex-col bg-white overflow-hidden ${className}`}>
       {/* Scrollable Content Zone */}
-      <div className="flex-1 overflow-y-auto no-scrollbar p-6 pb-0">
+      <div 
+        className="flex-1 overflow-y-auto no-scrollbar p-6 pb-0"
+        style={{ paddingTop: 'env(safe-area-inset-top, 0px)' }}
+      >
         {children}
       </div>
       
