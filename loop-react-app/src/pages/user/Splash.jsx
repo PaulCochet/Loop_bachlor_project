@@ -9,10 +9,7 @@ const Splash = () => {
   return (
     <main className="h-screen w-full flex flex-col bg-white overflow-hidden">
       {/* TOP 50% */}
-      <section 
-        className="h-[50dvh] flex flex-col items-center justify-center text-center px-6"
-        style={{ paddingTop: 'env(safe-area-inset-top)' }}
-      >
+      <section className="h-[50dvh] flex flex-col items-center justify-center text-center px-6">
         <motion.div 
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -37,10 +34,7 @@ const Splash = () => {
       </section>
 
       {/* BOTTOM 50% */}
-      <section 
-        className="h-[50dvh] flex flex-col items-center justify-center px-6"
-        style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
-      >
+      <section className="h-[50dvh] flex flex-col items-center justify-center px-6">
         <div className="w-full max-w-sm space-y-4">
           {/* Primary Action */}
           <Button onClick={() => navigate('/signup')} className="!bg-[#0A0A0A] !text-white">

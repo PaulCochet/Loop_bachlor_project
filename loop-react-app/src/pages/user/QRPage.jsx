@@ -10,10 +10,7 @@ const QRPage = () => {
   const url = `http://${localIP}:${port}`;
 
   return (
-    <div 
-      className="flex flex-col items-center justify-center h-full p-6 bg-white text-center"
-      style={{ paddingTop: 'env(safe-area-inset-top)', paddingBottom: 'env(safe-area-inset-bottom)' }}
-    >
+    <div className="flex flex-col items-center justify-center h-full p-8 bg-white text-center">
       <h1 className="text-2xl display-text uppercase mb-4 tracking-tighter">Connect to iPhone</h1>
       <p className="text-sm text-[#8C8C8C] mb-8">Scan this code with your iPhone camera to open the app on your local network.</p>
       

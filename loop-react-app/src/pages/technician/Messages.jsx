@@ -28,10 +28,7 @@ const TechnicianMessages = () => {
   return (
     <div className="bg-[#f9f9f7] min-h-screen pb-40">
       {/* Top Header (Clean) */}
-      <header 
-        className="fixed top-0 w-full z-50 bg-white border-b border-gray-100 px-6 flex items-center justify-between"
-        style={{ height: 'calc(env(safe-area-inset-top) + 64px)', paddingTop: 'env(safe-area-inset-top)' }}
-      >
+      <header className="fixed top-0 w-full z-50 bg-white border-b border-gray-100 px-6 h-16 flex items-center justify-between">
         <div className="flex items-center gap-4">
           <motion.button 
             whileTap={{ scale: 0.9 }}
@@ -45,10 +42,7 @@ const TechnicianMessages = () => {
       </header>
 
       {/* Tabs Navigation (Fixed below header) */}
-      <div 
-        className="fixed w-full z-40 bg-white border-b border-gray-100 px-6"
-        style={{ top: 'calc(env(safe-area-inset-top) + 64px)' }}
-      >
+      <div className="fixed top-16 w-full z-40 bg-white border-b border-gray-100 px-6">
         <div className="flex justify-between max-w-2xl mx-auto">
           {tabs.map((tab) => (
             <button
@@ -72,10 +66,7 @@ const TechnicianMessages = () => {
         </div>
       </div>
 
-      <main 
-        className="px-6 max-w-2xl mx-auto"
-        style={{ paddingTop: 'calc(env(safe-area-inset-top) + 160px)' }}
-      >
+      <main className="pt-40 px-6 max-w-2xl mx-auto">
         <AnimatePresence mode="wait">
           {activeTab === 'conversations' && (
             <motion.div 

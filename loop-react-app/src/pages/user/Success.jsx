@@ -7,10 +7,7 @@ const Success = () => {
   const navigate = useNavigate();
 
   return (
-    <div 
-      className="flex flex-col h-full bg-[#0D46F2] relative overflow-hidden"
-      style={{ paddingTop: 'env(safe-area-inset-top)', paddingBottom: 'env(safe-area-inset-bottom)' }}
-    >
+    <div className="flex flex-col h-full bg-[#0D46F2] relative overflow-hidden">
       <div className="flex-1 px-6 pt-24 pb-32 flex flex-col items-center text-center text-white">
         {/* Animated Checkmark */}
         <motion.div 

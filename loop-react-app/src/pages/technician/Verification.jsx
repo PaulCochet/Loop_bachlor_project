@@ -85,17 +85,17 @@ const TechnicianVerification = () => {
                 placeholder="Ex: Pompe de vidange" 
                 value={formData.identifiedPart || ''}
                 onChange={(e) => updateFormData('identifiedPart', e.target.value)}
-                className="!px-0 !mb-0 w-full"
               />
             </div>
 
             <div className="w-full">
               <label className="block text-[10px] display-text uppercase tracking-widest text-[#8C8C8C] mb-3 ml-1">Observations</label>
-              <textarea 
-                className="w-full bg-[#f2f2f7] border-2 border-transparent rounded-[20px] p-[14px_16px] min-h-[120px] focus:border-[#0D46F2] outline-none text-[#1a1c1b] placeholder:text-gray-400 transition-all font-medium text-sm"
+              <IOSInput 
                 placeholder="Précisez les détails de l'intervention..."
                 value={formData.techObservations || ''}
                 onChange={(e) => updateFormData('techObservations', e.target.value)}
+                multiline={true}
+                rows={4}
               />
             </div>
           </section>

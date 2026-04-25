@@ -43,7 +43,6 @@ const Description = () => {
             placeholder="Samsung, Smeg..."
             value={formData.brand}
             onChange={(e) => updateFormData('brand', e.target.value)}
-            className="!px-0"
           />
 
           <div className="space-y-6">
@@ -66,7 +65,6 @@ const Description = () => {
             value={formData.problem}
             onChange={(e) => updateFormData('problem', e.target.value)}
             multiline={true}
-            className="!px-0"
           />
         </div>
       </div>

@@ -55,8 +55,7 @@ const Tracking = () => {
         <motion.div 
           initial={{ y: -20, opacity: 0, x: '-50%' }}
           animate={{ y: 0, opacity: 1, x: '-50%' }}
-          className="absolute left-1/2 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full shadow-lg border border-[rgba(0,0,0,0.1)] flex items-center gap-2 z-[1000]"
-          style={{ top: 'calc(env(safe-area-inset-top) + 12px)' }}
+          className="absolute top-12 left-1/2 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full shadow-lg border border-[rgba(0,0,0,0.1)] flex items-center gap-2 z-[1000]"
         >
             <div className="w-2 h-2 bg-[#0D46F2] rounded-full animate-pulse"></div>
             <span className="text-[10px] font-bold uppercase tracking-tight">Lucas arrive dans 12 min</span>

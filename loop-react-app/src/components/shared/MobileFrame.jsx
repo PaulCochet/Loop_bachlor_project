@@ -18,7 +18,6 @@ const MobileFrame = ({ children }) => {
       <div className="relative w-full h-screen bg-white overflow-hidden flex flex-col">
         <div 
           className="flex-1 overflow-y-auto no-scrollbar pb-[34px]"
-          style={{ paddingTop: 'env(safe-area-inset-top)' }}
         >
           {children}
         </div>
@@ -43,12 +42,11 @@ const MobileFrame = ({ children }) => {
           flexDirection: 'column',
           borderRadius: '50px', 
           border: '12px solid #333',
-          position: 'relative', // Ensure relative scope for fixed children
-          paddingTop: 'env(safe-area-inset-top)'
+          position: 'relative'
         }}
       >
         {/* Content area */}
-        <div className="flex-1 overflow-y-auto no-scrollbar pt-6 pb-[34px] relative">
+        <div className="flex-1 overflow-y-auto no-scrollbar pb-[34px] relative">
           {children}
         </div>
 

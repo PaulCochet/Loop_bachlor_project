@@ -8,10 +8,7 @@ const Onboarding = () => {
   return (
     <div className="flex flex-col h-full bg-white">
       {/* Header Visual */}
-      <div 
-        className="flex flex-col items-center pt-24 pb-8 px-6"
-        style={{ paddingTop: 'calc(env(safe-area-inset-top) + 64px)' }}
-      >
+      <div className="flex flex-col items-center pt-24 pb-8 px-6">
         <div className="mb-8 p-6 bg-[#0D46F2]/5 rounded-[32px]">
           <svg width="60" height="60" viewBox="0 0 100 100" fill="none" className="text-[#0D46F2]">
             <path 
@@ -53,10 +50,7 @@ const Onboarding = () => {
       </div>
 
       {/* Footer Actions */}
-      <div 
-        className="p-6 space-y-3"
-        style={{ paddingBottom: 'calc(env(safe-area-inset-bottom) + 24px)' }}
-      >
+      <div className="p-6 space-y-3">
         <Button onClick={() => navigate('/signup')}>
           Suivant
           <span className="material-symbols-outlined">chevron_right</span>

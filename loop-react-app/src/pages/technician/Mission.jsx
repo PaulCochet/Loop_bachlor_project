@@ -10,15 +10,9 @@ const TechnicianMission = () => {
   return (
     <div className="bg-white min-h-screen pb-32">
       {/* TopAppBar */}
-      <header 
-        className="bg-white/80 backdrop-blur-xl text-[#1a1c1b] sticky top-0 z-50 px-6 pb-4 flex justify-between items-end border-b border-gray-100"
-        style={{ paddingTop: 'calc(env(safe-area-inset-top) + 64px)' }}
-      >
+      <header className="bg-white/80 backdrop-blur-xl text-[#1a1c1b] sticky top-0 z-50 px-6 pt-16 pb-4 flex justify-between items-end border-b border-gray-100">
         {/* Back Button */}
-        <div 
-          className="absolute left-6 z-50"
-          style={{ top: 'calc(env(safe-area-inset-top) + 12px)' }}
-        >
+        <div className="absolute top-[44px] left-6 z-50">
           <motion.button 
             whileTap={{ scale: 0.9 }}
             onClick={() => navigate('/technician/dashboard')}

@@ -39,10 +39,7 @@ const Notification = () => {
       <div className="absolute inset-0 z-0 bg-black/40"></div>
 
       {/* Lock Screen UI */}
-      <div 
-        className="relative z-10 h-full flex flex-col items-center justify-between pb-12 pt-20 px-6"
-        style={{ paddingTop: 'calc(env(safe-area-inset-top) + 20px)' }}
-      >
+      <div className="relative z-10 h-full flex flex-col items-center justify-between pb-12 pt-20 px-6">
         {/* Date & Time */}
         <div className="text-center">
           <p className="text-white/90 text-sm font-semibold uppercase tracking-[0.2em] mb-1">Mardi 21 Avril</p>

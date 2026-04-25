@@ -35,7 +35,7 @@ const IOSInput = ({
   const inputClasses = "flex-1 py-[14px] bg-transparent text-[17px] font-medium outline-none placeholder:text-[#C7C7CC] text-[#1a1c1b]";
 
   return (
-    <div className={`flex flex-col w-full px-6 mb-4 ${props.className || ''}`}>
+    <div className={`flex flex-col w-full mb-4 ${props.className || ''}`}>
       {label && (
         <label className="text-[11px] font-bold text-[#8E8E93] uppercase tracking-wider mb-2">
           {label}
@@ -43,7 +43,7 @@ const IOSInput = ({
       )}
       <div 
         className={`relative flex items-center bg-[#F2F2F7] rounded-[20px] transition-all duration-200 border-2 min-h-[52px] w-full ${
-          isFocused ? 'border-[#0D46F2] bg-white ring-4 ring-[#0D46F2]/10' : 'border-transparent'
+          isFocused ? 'border-[#0D46F2] bg-white' : 'border-transparent'
         }`}
       >
         <div className="relative flex-1 flex items-center h-full">
