@@ -78,7 +78,8 @@ const IOSInput = ({
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0, opacity: 0 }}
                 onClick={clearInput}
-                className="absolute right-3 top-1/2 -translate-y-1/2 w-6 h-6 bg-[#8E8E93]/20 rounded-full flex items-center justify-center text-[#8E8E93] hover:bg-[#8E8E93]/30 transition-colors z-10"
+                className="absolute right-[12px] top-1/2 -translate-y-1/2 w-6 h-6 bg-[#8E8E93]/20 rounded-full flex items-center justify-center text-[#8E8E93] hover:bg-[#8E8E93]/30 transition-colors z-10"
+                style={{ right: '12px', top: '50%', transform: 'translateY(-50%)' }}
               >
                 <span className="material-symbols-outlined !text-[16px] font-bold">close</span>
               </motion.button>
