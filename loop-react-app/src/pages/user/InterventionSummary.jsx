@@ -9,7 +9,10 @@ const InterventionSummary = () => {
   return (
     <div className="h-full w-full flex flex-col bg-white overflow-hidden">
       {/* STATUS HERO - Full bleed colored background */}
-      <div className="bg-[#0D46F2] pt-16 pb-12 px-6 flex flex-col items-center text-center text-white relative">
+      <div 
+        className="bg-[#0D46F2] pt-16 pb-12 px-6 flex flex-col items-center text-center text-white relative"
+        style={{ paddingTop: 'calc(env(safe-area-inset-top) + 64px)' }}
+      >
         <div className="w-20 h-20 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center mb-8">
           <span className="material-symbols-outlined !text-5xl text-white" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
         </div>
@@ -64,7 +67,10 @@ const InterventionSummary = () => {
       </div>
 
       {/* Actions */}
-      <div className="flex-shrink-0 p-6 pt-4 pb-[34px] bg-white border-t border-[#E5E5E5]">
+      <div 
+        className="flex-shrink-0 p-6 pt-4 pb-[34px] bg-white border-t border-[#E5E5E5]"
+        style={{ paddingBottom: 'calc(env(safe-area-inset-bottom) + 34px)' }}
+      >
         <Button onClick={() => navigate('/payment')}>
           Procéder au paiement
           <span className="material-symbols-outlined ml-1">payments</span>

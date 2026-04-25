@@ -36,7 +36,10 @@ const Dashboard = () => {
   return (
     <div className="flex flex-col h-full bg-white">
       {/* Header */}
-      <header className="px-6 py-4 flex justify-between items-center border-b border-[#F2F2F7] sticky top-0 bg-white/90 backdrop-blur-md z-10">
+      <header 
+        className="px-6 py-4 flex justify-between items-center border-b border-[#F2F2F7] sticky top-0 bg-white/90 backdrop-blur-md z-10"
+        style={{ paddingTop: 'env(safe-area-inset-top)' }}
+      >
         <img src="/logo.svg" alt="Loop" className="h-6 w-auto" />
         <button 
           onClick={() => setIsNotifOpen(true)}

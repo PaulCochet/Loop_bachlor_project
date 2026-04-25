@@ -39,6 +39,9 @@ html, body, #root {
   position: fixed;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE and Edge */
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  box-sizing: border-box;
 }
 
 /* Hide Scrollbar for Chrome, Safari and Opera */

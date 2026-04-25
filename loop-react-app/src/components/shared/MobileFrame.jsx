@@ -16,7 +16,10 @@ const MobileFrame = ({ children }) => {
   if (isMobile) {
     return (
       <div className="relative w-full h-screen bg-white overflow-hidden flex flex-col">
-        <div className="flex-1 overflow-y-auto no-scrollbar pb-[34px]">
+        <div 
+          className="flex-1 overflow-y-auto no-scrollbar pb-[34px]"
+          style={{ paddingTop: 'env(safe-area-inset-top)' }}
+        >
           {children}
         </div>
         <HomeIndicator />
@@ -40,7 +43,8 @@ const MobileFrame = ({ children }) => {
           flexDirection: 'column',
           borderRadius: '50px', 
           border: '12px solid #333',
-          position: 'relative' // Ensure relative scope for fixed children
+          position: 'relative', // Ensure relative scope for fixed children
+          paddingTop: 'env(safe-area-inset-top)'
         }}
       >
         {/* Content area */}

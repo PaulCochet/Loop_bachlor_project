@@ -39,6 +39,7 @@ const NotificationModal = ({ isOpen, onClose }) => {
             exit={{ y: "100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
             className="fixed bottom-0 left-0 right-0 bg-white rounded-t-[32px] z-[101] max-h-[80%] overflow-hidden flex flex-col"
+            style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
           >
             {/* Handle */}
             <div className="w-full flex justify-center pt-3 pb-2">

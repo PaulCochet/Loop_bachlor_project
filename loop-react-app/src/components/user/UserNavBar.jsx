@@ -16,7 +16,10 @@ const UserNavBar = () => {
   const inactiveColor = '#8C8C8C';
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-white border-t-[0.5px] border-[#E5E5E5] flex justify-around items-start pt-3 px-6 z-[100] h-[80px]">
+    <nav 
+      className="fixed bottom-0 left-0 right-0 bg-white border-t-[0.5px] border-[#E5E5E5] flex justify-around items-start pt-3 px-6 z-[100]"
+      style={{ height: 'calc(env(safe-area-inset-bottom) + 64px)', paddingBottom: 'env(safe-area-inset-bottom)' }}
+    >
       {tabs.map((tab) => {
         const isActive = location.pathname === tab.path || 
                         (tab.id === 'home' && location.pathname === '/dashboard-updated') ||

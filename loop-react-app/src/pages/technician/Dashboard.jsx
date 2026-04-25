@@ -12,7 +12,10 @@ const TechnicianDashboard = () => {
   return (
     <div className="bg-white min-h-screen pb-32">
       {/* TopAppBar */}
-      <header className="bg-white/80 backdrop-blur-xl text-[#1a1c1b] sticky top-0 z-50 border-b border-gray-100">
+      <header 
+        className="bg-white/80 backdrop-blur-xl text-[#1a1c1b] sticky top-0 z-50 border-b border-gray-100"
+        style={{ paddingTop: 'env(safe-area-inset-top)' }}
+      >
         <div className="flex justify-between items-center px-6 py-4 max-w-full">
           <div className="flex items-center gap-3">
             <div className="relative">

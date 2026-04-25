@@ -10,7 +10,10 @@ const TechnicianLogin = () => {
   return (
     <main className="w-full min-h-screen bg-white flex flex-col px-8 py-12 relative overflow-hidden">
       {/* Back Button */}
-      <div className="absolute top-[44px] left-6 z-50">
+      <div 
+        className="absolute left-6 z-50"
+        style={{ top: 'calc(env(safe-area-inset-top) + 12px)' }}
+      >
         <motion.button 
           whileTap={{ scale: 0.9 }}
           onClick={() => navigate('/')}

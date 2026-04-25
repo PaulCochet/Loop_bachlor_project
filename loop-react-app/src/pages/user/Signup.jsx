@@ -14,7 +14,10 @@ const Signup = () => {
   return (
     <div className="flex flex-col h-full bg-white pt-12">
       {/* iOS Navigation Header */}
-      <div className="px-6 py-2 flex items-center">
+      <div 
+        className="px-6 py-2 flex items-center"
+        style={{ paddingTop: 'env(safe-area-inset-top)' }}
+      >
         <button 
           onClick={() => navigate(-1)}
           className="flex items-center text-[#0D46F2] font-semibold text-[17px] active:opacity-50"
