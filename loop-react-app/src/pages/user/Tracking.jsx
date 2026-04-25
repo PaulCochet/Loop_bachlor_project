@@ -63,7 +63,7 @@ const Tracking = () => {
       </div>
 
       {/* Bottom Panel */}
-      <div className="bg-white rounded-t-[32px] shadow-[0_-10px_40px_rgba(0,0,0,0.05)] px-8 pt-4 pb-24 z-10 border-t border-[rgba(0,0,0,0.05)]">
+      <div className="bg-white rounded-t-[32px] shadow-[0_-10px_40px_rgba(0,0,0,0.05)] px-6 pt-4 pb-24 z-10 border-t border-[rgba(0,0,0,0.05)]">
         <div className="w-10 h-1 bg-[#F2F2F7] rounded-full mx-auto mb-6"></div>
         
         <header className="mb-6">

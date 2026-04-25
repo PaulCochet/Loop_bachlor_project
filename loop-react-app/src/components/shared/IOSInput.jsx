@@ -37,7 +37,7 @@ const IOSInput = ({
   return (
     <div className={`flex flex-col w-full px-6 mb-4 ${props.className || ''}`}>
       {label && (
-        <label className="text-[11px] font-bold text-[#8E8E93] uppercase tracking-wider mb-2 ml-1">
+        <label className="text-[11px] font-bold text-[#8E8E93] uppercase tracking-wider mb-2">
           {label}
         </label>
       )}

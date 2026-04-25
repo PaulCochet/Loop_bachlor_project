@@ -8,7 +8,7 @@ const Onboarding = () => {
   return (
     <div className="flex flex-col h-full bg-white">
       {/* Header Visual */}
-      <div className="flex flex-col items-center pt-24 pb-8 px-8">
+      <div className="flex flex-col items-center pt-24 pb-8 px-6">
         <div className="mb-8 p-6 bg-[#0D46F2]/5 rounded-[32px]">
           <svg width="60" height="60" viewBox="0 0 100 100" fill="none" className="text-[#0D46F2]">
             <path 
@@ -28,7 +28,7 @@ const Onboarding = () => {
       </div>
 
       {/* Steps Mini */}
-      <div className="flex-1 px-8 pt-6 space-y-8">
+      <div className="flex-1 px-6 pt-6 space-y-8">
         <div className="flex items-center gap-5">
           <div className="w-12 h-12 rounded-2xl bg-[#0D46F2]/5 flex items-center justify-center text-[#0D46F2]">
             <span className="material-symbols-outlined !text-2xl">document_scanner</span>

@@ -119,3 +119,20 @@ input:focus, textarea:focus {
 .ios-shadow {
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
 }
+
+/* Standard Padding Utility (24px alignment) */
+.px-ios {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.mx-ios {
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+/* Ensure inputs take 100% width minus padding */
+.input-full-width {
+  width: calc(100% - 48px);
+  margin-left: 24px;
+}

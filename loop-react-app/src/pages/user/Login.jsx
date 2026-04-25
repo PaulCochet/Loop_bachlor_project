@@ -16,7 +16,7 @@ const Login = () => {
   };
 
   return (
-    <div className="flex flex-col h-full bg-white px-8 pt-12 pb-8">
+    <div className="flex flex-col h-full bg-white px-6 pt-12 pb-8">
       {/* Header */}
       <div className="mb-10">
         <h1 className="text-4xl display-text tracking-tight leading-tight mb-2">

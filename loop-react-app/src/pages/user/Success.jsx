@@ -7,60 +7,59 @@ const Success = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col h-full bg-white relative">
-      <div className="flex-1 px-8 pt-20 pb-32 flex flex-col items-center text-center">
+    <div className="flex flex-col h-full bg-[#0D46F2] relative overflow-hidden">
+      <div className="flex-1 px-6 pt-24 pb-32 flex flex-col items-center text-center text-white">
         {/* Animated Checkmark */}
         <motion.div 
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ type: 'spring', damping: 12, stiffness: 200, delay: 0.2 }}
-          className="w-24 h-24 bg-green-500 rounded-full flex items-center justify-center mb-8 shadow-xl shadow-green-500/20"
+          className="w-24 h-24 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center mb-10 shadow-2xl"
         >
           <motion.span 
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="material-symbols-outlined text-white !text-5xl"
+            className="material-symbols-outlined text-white !text-6xl"
             style={{ fontVariationSettings: "'FILL' 1" }}
           >
             check_circle
           </motion.span>
         </motion.div>
 
-        <h1 className="text-4xl display-text tracking-tight uppercase mb-2">
+        <h1 className="text-5xl display-text tracking-tighter uppercase italic mb-4 leading-none">
           Félicitations !
         </h1>
-        <p className="text-[#0D46F2] display-text uppercase tracking-[0.2em] text-xs mb-12">
-          Appareil reconditionné
+        <p className="text-white/80 display-text uppercase tracking-[0.2em] text-xs mb-16">
+          Appareil sauvé
         </p>
 
-        {/* Download Section */}
+        {/* Download Section (Glassmorphism cards) */}
         <div className="w-full space-y-4">
-          <p className="text-[10px] display-text uppercase tracking-widest text-[#8C8C8C] mb-4">Vos documents</p>
-          <div className="grid grid-cols-2 gap-3">
+          <p className="text-[10px] display-text uppercase tracking-widest text-white/60 mb-6">Vos documents</p>
+          <div className="grid grid-cols-2 gap-4">
             <motion.button 
               whileTap={{ scale: 0.95 }}
-              className="flex flex-col items-center gap-3 bg-[#F2F2F7] p-6 rounded-[28px] border border-transparent active:border-[#0D46F2] transition-all"
+              className="flex flex-col items-center gap-4 bg-white/10 backdrop-blur-md p-6 rounded-[32px] border border-white/10 active:bg-white/20 transition-all"
             >
-              <span className="material-symbols-outlined text-[#0D46F2] !text-3xl">download</span>
-              <span className="text-[9px] display-text uppercase tracking-widest leading-tight">Télécharger la facture</span>
+              <span className="material-symbols-outlined text-white !text-3xl">download</span>
+              <span className="text-[9px] display-text uppercase tracking-widest leading-tight text-white/80">Facture</span>
             </motion.button>
             <motion.button 
               whileTap={{ scale: 0.95 }}
-              className="flex flex-col items-center gap-3 bg-[#F2F2F7] p-6 rounded-[28px] border border-transparent active:border-[#0D46F2] transition-all"
+              className="flex flex-col items-center gap-4 bg-white/10 backdrop-blur-md p-6 rounded-[32px] border border-white/10 active:bg-white/20 transition-all"
             >
-              <span className="material-symbols-outlined text-[#0D46F2] !text-3xl">description</span>
-              <span className="text-[9px] display-text uppercase tracking-widest leading-tight">Télécharger certificat</span>
+              <span className="material-symbols-outlined text-white !text-3xl">description</span>
+              <span className="text-[9px] display-text uppercase tracking-widest leading-tight text-white/80">Certificat</span>
             </motion.button>
           </div>
         </div>
       </div>
 
       {/* Footer CTA */}
-      <div className="absolute bottom-0 left-0 w-full p-8 pt-4">
+      <div className="p-6 pb-[34px] bg-white/5 backdrop-blur-sm border-t border-white/10">
         <Button 
-          variant="primary" 
-          className="!bg-[#0A0A0A]"
+          variant="black" 
           onClick={() => navigate('/dashboard')}
         >
           Retour à l'accueil

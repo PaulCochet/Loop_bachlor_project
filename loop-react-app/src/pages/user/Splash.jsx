@@ -34,7 +34,7 @@ const Splash = () => {
       </section>
 
       {/* BOTTOM 50% */}
-      <section className="h-[50dvh] flex flex-col items-center justify-center px-8">
+      <section className="h-[50dvh] flex flex-col items-center justify-center px-6">
         <div className="w-full max-w-sm space-y-4">
           {/* Primary Action */}
           <Button onClick={() => navigate('/signup')} className="!bg-[#0A0A0A] !text-white">

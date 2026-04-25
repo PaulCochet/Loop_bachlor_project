@@ -1,17 +1,47 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../../components/shared/Button';
 import NavBar from '../../components/user/UserNavBar';
+import NotificationModal from '../../components/user/NotificationModal';
 
 const Dashboard = () => {
   const navigate = useNavigate();
+  const [isNotifOpen, setIsNotifOpen] = useState(false);
+
+  const historyItems = [
+    {
+      id: 'samsung-lave-linge',
+      appliance: 'Lave-linge Samsung',
+      status: 'Réparé',
+      date: 'il y a 1 semaine',
+      technician: 'Lucas M.',
+      parts: 'Pompe de vidange',
+      duration: '38 min',
+      co2: '218 kg',
+      verdict: 'Réparable'
+    },
+    {
+      id: 'smeg-frigo',
+      appliance: 'Frigo SMEG',
+      status: 'Réparé',
+      date: 'il y a 3 semaines',
+      technician: 'Lucas M.',
+      parts: 'Compresseur',
+      duration: '52 min',
+      co2: '187 kg',
+      verdict: 'Réparable'
+    }
+  ];
 
   return (
     <div className="flex flex-col h-full bg-white">
       {/* Header */}
       <header className="px-6 py-4 flex justify-between items-center border-b border-[#F2F2F7] sticky top-0 bg-white/90 backdrop-blur-md z-10">
         <img src="/logo.svg" alt="Loop" className="h-6 w-auto" />
-        <button className="text-[#0A0A0A]">
+        <button 
+          onClick={() => setIsNotifOpen(true)}
+          className="text-[#0A0A0A] active:scale-90 transition-transform"
+        >
           <span className="material-symbols-outlined">notifications</span>
         </button>
       </header>
@@ -66,7 +96,7 @@ const Dashboard = () => {
             </div>
             
             <div className="flex gap-3">
-              <Button variant="outline" className="flex-1 !py-3 !text-[11px]" onClick={() => navigate('/verdict')}>
+              <Button variant="outline" className="flex-1 !py-3 !text-[11px]" onClick={() => navigate('/intervention-summary')}>
                 <span className="material-symbols-outlined !text-lg">description</span>
                 DÉTAILS
               </Button>
@@ -81,16 +111,28 @@ const Dashboard = () => {
             <div className="flex-1 h-[1px] bg-[#F2F2F7]"></div>
           </header>
 
-          <div className="bg-white rounded-[24px] p-6 border border-[#F2F2F7] shadow-xl shadow-black/5 flex items-center justify-between">
-            <div>
-              <h4 className="text-lg display-text uppercase tracking-tight">Frigo Smeg</h4>
-              <p className="text-[9px] font-bold text-[#8C8C8C] uppercase tracking-widest">Réparé le 12/04/2026</p>
-            </div>
-            <span className="material-symbols-outlined text-[#8C8C8C]" style={{ fontVariationSettings: "'FILL' 1" }}>verified_user</span>
+          <div className="space-y-4">
+            {historyItems.map((item) => (
+              <div 
+                key={item.id}
+                onClick={() => navigate('/intervention-detail', { state: { intervention: item } })}
+                className="bg-white rounded-[24px] p-6 border border-[#F2F2F7] shadow-xl shadow-black/5 flex items-center justify-between active:scale-95 transition-transform cursor-pointer"
+              >
+                <div>
+                  <h4 className="text-lg display-text uppercase tracking-tight">{item.appliance}</h4>
+                  <p className="text-[9px] font-bold text-[#8C8C8C] uppercase tracking-widest">{item.status} {item.date}</p>
+                </div>
+                <span className="material-symbols-outlined text-[#8C8C8C]" style={{ fontVariationSettings: "'FILL' 1" }}>verified_user</span>
+              </div>
+            ))}
           </div>
         </section>
       </main>
 
+      <NotificationModal 
+        isOpen={isNotifOpen} 
+        onClose={() => setIsNotifOpen(false)} 
+      />
       <NavBar />
     </div>
   );

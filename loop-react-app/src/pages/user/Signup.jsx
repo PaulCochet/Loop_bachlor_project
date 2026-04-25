@@ -24,7 +24,7 @@ const Signup = () => {
         </button>
       </div>
 
-      <div className="px-8 pt-6 pb-8 flex-1 overflow-y-auto no-scrollbar">
+      <div className="px-6 pt-6 pb-8 flex-1 overflow-y-auto no-scrollbar">
         {/* Hero */}
         <div className="mb-10">
           <h1 className="text-4xl display-text tracking-tighter leading-tight mb-2 uppercase">
