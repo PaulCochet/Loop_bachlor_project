@@ -1,8 +1,16 @@
 import React from 'react';
 
-const ProgressBar = ({ step = 1, totalSteps = 3 }) => {
+const ProgressBar = ({ step = 1, totalSteps = 3, label }) => {
   return (
-    <div className="w-full px-8 pt-2 pb-6">
+    <div 
+      className="sticky top-0 z-[50] bg-white border-b border-[#E5E5E5] w-full"
+      style={{ padding: '12px 24px' }}
+    >
+      {label && (
+        <div className="mb-3">
+          <span className="text-[10px] font-bold tracking-widest uppercase text-[#8C8C8C]">{label}</span>
+        </div>
+      )}
       <div className="flex gap-2">
         {[...Array(totalSteps)].map((_, i) => (
           <div 

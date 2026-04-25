@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import TechNavBar from '../../components/technician/TechNavBar';
 import Button from '../../components/shared/Button';
+import ProgressBar from '../../components/shared/ProgressBar';
 
 const TechnicianMission = () => {
   const navigate = useNavigate();
@@ -34,6 +35,8 @@ const TechnicianMission = () => {
           />
         </div>
       </header>
+
+      <ProgressBar step={1} totalSteps={4} label="Étape 1 sur 4" />
 
       <main className="px-6 pt-8">
         <div className="flex items-center gap-4 mb-10">

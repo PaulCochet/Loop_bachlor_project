@@ -35,12 +35,9 @@ const TechnicianRecap = () => {
             </div>
         }
     >
-      <ProgressBar step={4} totalSteps={4} />
-
-      <div className="pt-4 pb-12">
-        <div className="mb-2 w-full">
-          <span className="text-[10px] font-bold tracking-widest uppercase text-[#8C8C8C]">Étape 4 sur 4</span>
-        </div>
+      <ProgressBar step={4} totalSteps={4} label="Étape 4 sur 4" />
+      
+      <div className="pt-8 pb-12">
 
         <div className="mb-10 w-full text-center">
             <motion.div 

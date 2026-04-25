@@ -34,13 +34,9 @@ const TimeSlot = () => {
             </div>
         }
     >
-      <ProgressBar step={3} />
+      <ProgressBar step={3} totalSteps={3} label="Étape 3 sur 3" />
       
-      <div className="pt-4 pb-8">
-        {/* Step Info */}
-        <div className="mb-2">
-          <span className="text-[10px] font-bold tracking-widest uppercase text-[#8C8C8C]">Étape 3 sur 3</span>
-        </div>
+      <div className="pt-8 pb-8">
 
         <div className="mb-8">
           <h1 className="text-4xl display-text tracking-tight leading-tight mb-2">

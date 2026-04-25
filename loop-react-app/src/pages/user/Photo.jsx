@@ -16,13 +16,9 @@ const Photo = () => {
             </div>
         }
     >
-      <ProgressBar step={1} />
+      <ProgressBar step={1} totalSteps={3} label="Étape 1 sur 3" />
       
-      <div className="pt-4">
-        {/* Step Info */}
-        <div className="mb-2">
-          <span className="text-[10px] font-bold tracking-widest uppercase text-[#8C8C8C]">Étape 1 sur 3</span>
-        </div>
+      <div className="pt-8">
 
         {/* Hero */}
         <div className="mb-8">

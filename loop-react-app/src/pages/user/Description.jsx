@@ -20,13 +20,9 @@ const Description = () => {
             </div>
         }
     >
-      <ProgressBar step={2} />
+      <ProgressBar step={2} totalSteps={3} label="Étape 2 sur 3" />
       
-      <div className="pt-4 pb-8 text-scroll">
-        {/* Step Info */}
-        <div className="mb-2">
-          <span className="text-[10px] font-bold tracking-widest uppercase text-[#8C8C8C]">Étape 2 sur 3</span>
-        </div>
+      <div className="pt-8 pb-8 text-scroll">
 
         {/* Hero */}
         <div className="mb-6">

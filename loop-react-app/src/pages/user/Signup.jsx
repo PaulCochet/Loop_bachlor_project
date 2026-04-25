@@ -12,7 +12,10 @@ const Signup = () => {
   };
 
   return (
-    <div className="flex flex-col h-full bg-white pt-12">
+    <div 
+      className="flex flex-col h-full bg-white pt-12"
+      style={{ paddingTop: 'env(safe-area-inset-top, 16px)' }}
+    >
       {/* iOS Navigation Header */}
       <div className="px-6 py-2 flex items-center">
         <button 

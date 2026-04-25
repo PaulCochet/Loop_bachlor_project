@@ -36,7 +36,13 @@ const Dashboard = () => {
   return (
     <div className="flex flex-col h-full bg-white">
       {/* Header */}
-      <header className="px-6 py-4 flex justify-between items-center border-b border-[#F2F2F7] sticky top-0 bg-white/90 backdrop-blur-md z-10">
+      <header 
+        className="px-6 flex justify-between items-center border-b border-[#F2F2F7] fixed top-0 left-0 w-full bg-white/90 backdrop-blur-md z-[100]"
+        style={{ 
+          paddingTop: 'env(safe-area-inset-top, 0px)',
+          height: 'calc(64px + env(safe-area-inset-top, 0px))'
+        }}
+      >
         <img src="/logo.svg" alt="Loop" className="h-6 w-auto" />
         <button 
           onClick={() => setIsNotifOpen(true)}
@@ -46,7 +52,10 @@ const Dashboard = () => {
         </button>
       </header>
 
-      <main className="flex-1 px-6 pt-8 pb-32 overflow-y-auto space-y-10 no-scrollbar">
+      <main 
+        className="flex-1 px-6 pt-8 pb-32 overflow-y-auto space-y-10 no-scrollbar"
+        style={{ marginTop: 'calc(64px + env(safe-area-inset-top, 0px))' }}
+      >
         {/* Impact Section */}
         <section className="space-y-6">
           <header>

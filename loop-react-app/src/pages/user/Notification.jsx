@@ -30,7 +30,7 @@ const Notification = () => {
   };
 
   return (
-    <div className="relative h-full w-full bg-black overflow-hidden select-none">
+    <div className="relative h-[100dvh] w-full bg-black overflow-hidden select-none">
       {/* Background Image (Lock Screen Wallpaper Style) */}
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center brightness-75 blur-[20px] scale-110"

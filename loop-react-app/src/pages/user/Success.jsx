@@ -7,7 +7,7 @@ const Success = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col h-full bg-[#0D46F2] relative overflow-hidden">
+    <div className="flex flex-col min-h-[100dvh] bg-[#0D46F2] relative overflow-hidden">
       <div className="flex-1 px-6 pt-24 pb-32 flex flex-col items-center text-center text-white">
         {/* Animated Checkmark */}
         <motion.div 
@@ -57,7 +57,10 @@ const Success = () => {
       </div>
 
       {/* Footer CTA */}
-      <div className="p-6 pb-[34px] bg-white/5 backdrop-blur-sm border-t border-white/10">
+      <div 
+        className="p-6 bg-white/5 backdrop-blur-sm border-t border-white/10"
+        style={{ paddingBottom: 'env(safe-area-inset-bottom, 24px)' }}
+      >
         <Button 
           variant="black" 
           onClick={() => navigate('/dashboard')}

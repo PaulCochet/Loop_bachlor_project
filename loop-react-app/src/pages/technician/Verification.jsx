@@ -41,12 +41,9 @@ const TechnicianVerification = () => {
             </div>
         }
     >
-      <ProgressBar step={3} totalSteps={4} />
+      <ProgressBar step={3} totalSteps={4} label="Étape 3 sur 4" />
 
-      <div className="pt-4 pb-12">
-        <div className="mb-2 w-full">
-          <span className="text-[10px] font-bold tracking-widest uppercase text-[#8C8C8C]">Étape 3 sur 4</span>
-        </div>
+      <div className="pt-8 pb-12">
 
         <div className="mb-8 w-full text-left">
           <h1 className="text-4xl display-text tracking-tight leading-tight uppercase mb-2">
