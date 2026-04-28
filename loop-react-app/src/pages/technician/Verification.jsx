@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { ArrowRight, ChevronLeft, Wrench, RefreshCw, Trash2 } from 'lucide-react';
 import Button from '../../components/shared/Button';
 import ProgressBar from '../../components/shared/ProgressBar';
 import ScreenLayout from '../../components/shared/ScreenLayout';
@@ -33,15 +34,15 @@ const TechnicianVerification = () => {
         actions={
             <div className="space-y-3 w-full">
                 <Button onClick={() => navigate('/technician/recap')}>
-                    Valider →
+                    Valider <ArrowRight size={20} className="ml-2 inline-block" />
                 </Button>
                 <Button variant="ghost" onClick={() => navigate('/technician/diagnostic')}>
-                    ‹ Retour
+                    <ChevronLeft size={20} className="mr-1 inline-block" /> Retour
                 </Button>
             </div>
         }
     >
-      <ProgressBar step={3} totalSteps={4} label="Étape 3 sur 4" />
+      <ProgressBar step={3} totalSteps={3} label="Étape 3 sur 3" />
 
       <div className="pt-8 pb-12">
 
@@ -97,14 +98,13 @@ const TechnicianVerification = () => {
             </div>
           </section>
 
-          {/* Verdict Selection */}
           <section className="space-y-4">
             <h3 className="text-[10px] display-text uppercase tracking-widest text-[#8C8C8C] mb-4 ml-1">Verdict final</h3>
             <div className="grid grid-cols-1 gap-3">
               {[
-                { id: 'réparable', label: 'Réparable', icon: 'check_circle' },
-                { id: 'à reprendre', label: 'À reprendre', icon: 'history' },
-                { id: 'à recycler', label: 'À recycler', icon: 'recycling' }
+                { id: 'réparable', label: 'Réparable', description: "L'appareil peut être remis en état sur place", Icon: Wrench },
+                { id: 'à reprendre', label: 'À reprendre', description: "Valeur de revente ou reconditionnement possible", Icon: RefreshCw },
+                { id: 'à recycler', label: 'À recycler', description: "Non réparable, orienter vers filière DEEE", Icon: Trash2 }
               ].map((v) => {
                 const isSelected = formData.verdict === v.id;
                 return (
@@ -112,23 +112,30 @@ const TechnicianVerification = () => {
                     key={v.id}
                     whileTap={{ scale: 0.98 }}
                     onClick={() => updateFormData('verdict', v.id)}
-                    className={`flex items-center justify-between p-5 rounded-[20px] border-2 transition-all ${
+                    className={`relative flex items-start gap-4 p-5 rounded-[20px] border-2 transition-all w-full text-left ${
                       isSelected 
-                        ? 'border-[#0D46F2] bg-[#f0f4ff]' 
-                        : 'border-transparent bg-[#F2F2F7]'
+                        ? 'border-[#0D46F2] bg-[#E8EEFF]' 
+                        : 'border-[#E5E5E5] bg-white'
                     }`}
                   >
-                    <div className="flex items-center gap-4">
-                      <span className={`material-symbols-outlined ${isSelected ? 'text-[#0D46F2]' : 'text-[#8C8C8C]'}`}>
-                        {v.icon}
-                      </span>
-                      <span className={`display-text uppercase text-sm ${isSelected ? 'text-[#0D46F2]' : 'text-[#1a1c1b]'}`}>
-                        {v.label}
-                      </span>
+                    <div className={`p-3 rounded-full ${isSelected ? 'bg-[#0D46F2] text-white' : 'bg-[#F2F2F7] text-[#8C8C8C]'}`}>
+                      <v.Icon size={24} />
                     </div>
-                    {isSelected && (
-                      <span className="material-symbols-outlined text-[#0D46F2]">check_circle</span>
-                    )}
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between mb-1">
+                        <span className={`display-text uppercase font-bold text-lg ${isSelected ? 'text-[#0D46F2]' : 'text-[#1a1c1b]'}`}>
+                          {v.label}
+                        </span>
+                        {v.id === 'réparable' && (
+                          <span className="px-2 py-0.5 bg-[#0D46F2] text-white text-[9px] font-bold uppercase tracking-widest rounded-full">
+                            Recommandé
+                          </span>
+                        )}
+                      </div>
+                      <p className={`text-sm font-medium ${isSelected ? 'text-[#0D46F2]' : 'text-[#8C8C8C]'}`}>
+                        {v.description}
+                      </p>
+                    </div>
                   </motion.button>
                 );
               })}

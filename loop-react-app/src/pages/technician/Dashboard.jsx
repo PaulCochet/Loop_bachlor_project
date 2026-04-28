@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { Settings, ClipboardList, Clock, Route, MapPin, ArrowRight, ChevronRight } from 'lucide-react';
 import TechNavBar from '../../components/technician/TechNavBar';
 import IOSBottomSheet from '../../components/shared/IOSBottomSheet';
 import Button from '../../components/shared/Button';
@@ -15,14 +16,6 @@ const TechnicianDashboard = () => {
       <header className="bg-white/80 backdrop-blur-xl text-[#1a1c1b] sticky top-0 z-50 border-b border-gray-100">
         <div className="flex justify-between items-center px-6 py-4 max-w-full">
           <div className="flex items-center gap-3">
-            <div className="relative">
-              <img 
-                alt="Technician Portrait" 
-                className="w-10 h-10 rounded-full object-cover border-2 border-white shadow-sm" 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDZ4bHsoIeK_eob6Z0IiDUktN5Tj5Hdj-z_OJxeeNrO2YQ7WepYEZQJOg3Ljw05ukUFJQjf5H696i_ijMJQz6jqU_k7hEGNjFP7Ywy9uiTMPFrgO9hCeHjQ1QamEGtpojbTeHwznA6A2YtyiwNiK8uAcGmJhs6qSIubZO3KvpRstAScEgTbT9bDzDN6312n1cWMtjBtqCgOBuRTbCmWmrcF_A6dooBpwns8VVQxM3rPEVrm9ezJUZHjsvyBqWaHirbUr3yV3g4zMc"
-              />
-              <span className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white rounded-full"></span>
-            </div>
             <div>
               <h1 className="font-bold italic uppercase tracking-tighter text-2xl leading-none">Bonjour Lucas</h1>
             </div>
@@ -31,9 +24,9 @@ const TechnicianDashboard = () => {
             <motion.button 
               whileTap={{ scale: 0.9 }}
               onClick={() => setIsSettingsOpen(true)}
-              className="material-symbols-outlined p-2 rounded-full active:bg-gray-100 transition-colors"
+              className="p-2 rounded-full active:bg-gray-100 transition-colors"
             >
-              settings
+              <Settings size={24} />
             </motion.button>
           </div>
         </div>
@@ -43,16 +36,16 @@ const TechnicianDashboard = () => {
         {/* Metrics Section */}
         <section className="grid grid-cols-3 gap-4">
           {[
-            { icon: 'task', label: 'Missions', value: '3' },
-            { icon: 'schedule', label: 'Temps', value: '2h30' },
-            { icon: 'distance', label: 'Route', value: '1,2 km' }
+            { icon: ClipboardList, label: 'Missions', value: '3' },
+            { icon: Clock, label: 'Temps', value: '2h30' },
+            { icon: Route, label: 'Route', value: '1,2 km' }
           ].map((item, i) => (
             <motion.div 
               key={i} 
               whileTap={{ scale: 0.98 }}
               className="bg-[#f9f9f7] p-4 rounded-[20px] border border-gray-100 flex flex-col justify-between aspect-square"
             >
-              <span className="material-symbols-outlined text-[#0D46F2] !text-xl">{item.icon}</span>
+              <item.icon className="text-[#0D46F2]" size={20} />
               <div>
                 <p className="text-[9px] font-bold uppercase tracking-widest text-[#8C8C8C] truncate">{item.label}</p>
                 <p className="text-lg display-text">{item.value}</p>
@@ -84,7 +77,7 @@ const TechnicianDashboard = () => {
               </div>
               
               <div className="flex items-start gap-3 py-4 border-y border-[#eeeeec]">
-                <span className="material-symbols-outlined text-[#8C8C8C] mt-0.5">location_on</span>
+                <MapPin className="text-[#8C8C8C] mt-0.5" size={20} />
                 <div className="space-y-0.5">
                   <p className="text-sm font-bold">12 rue des Lilas</p>
                   <p className="text-xs text-[#8C8C8C] font-medium uppercase tracking-wider">44000 Nantes</p>
@@ -93,7 +86,7 @@ const TechnicianDashboard = () => {
 
               <Button onClick={() => navigate('/technician/mission')}>
                 Voir la fiche
-                <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                <ArrowRight size={20} />
               </Button>
             </div>
           </motion.div>
@@ -122,7 +115,7 @@ const TechnicianDashboard = () => {
                   <p className="text-sm font-bold">{mission.device}</p>
                   <p className="text-[10px] text-[#8C8C8C] font-medium uppercase tracking-widest">{mission.address}</p>
                 </div>
-                <span className="material-symbols-outlined text-gray-300">chevron_right</span>
+                <ChevronRight className="text-gray-300" size={24} />
               </motion.div>
             ))}
           </div>

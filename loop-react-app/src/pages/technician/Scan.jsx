@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { ArrowRight, ChevronLeft, AlertTriangle } from 'lucide-react';
 import Button from '../../components/shared/Button';
 import ProgressBar from '../../components/shared/ProgressBar';
 import ScreenLayout from '../../components/shared/ScreenLayout';
@@ -22,19 +23,19 @@ const TechnicianScan = () => {
             <div className="space-y-3 w-full">
                 <Button onClick={() => navigate('/technician/diagnostic')}>
                     Continuer
-                    <span className="material-symbols-outlined">arrow_forward</span>
+                    <ArrowRight size={20} />
                 </Button>
                 <Button variant="ghost" onClick={() => navigate('/technician/mission')}>
-                    ‹ Retour
+                    <ChevronLeft size={20} className="mr-1 inline-block" /> Retour
                 </Button>
             </div>
         }
     >
-      <ProgressBar step={1} totalSteps={4} />
+      <ProgressBar step={1} totalSteps={3} />
       
       <div className="pt-4 pb-12 flex flex-col items-center">
         <div className="mb-2 w-full">
-          <span className="text-[10px] font-bold tracking-widest uppercase text-[#8C8C8C]">Étape 1 sur 4</span>
+          <span className="text-[10px] font-bold tracking-widest uppercase text-[#8C8C8C]">Étape 1 sur 3</span>
         </div>
 
         <div className="mb-10 w-full text-left">
@@ -87,7 +88,7 @@ const TechnicianScan = () => {
           
           <div className="space-y-4 pt-4 border-t border-gray-200">
             <div className="flex items-start gap-3">
-              <span className="material-symbols-outlined text-[#0D46F2] text-lg mt-0.5" style={{ fontVariationSettings: "'FILL' 1" }}>warning</span>
+              <AlertTriangle className="text-[#0D46F2] mt-0.5" size={18} />
               <p className="text-sm font-bold leading-tight">Panne connue: pompe de vidange défaillante</p>
             </div>
           </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { ArrowRight, ChevronLeft } from 'lucide-react';
 import Button from '../../components/shared/Button';
 import ProgressBar from '../../components/shared/ProgressBar';
 import ScreenLayout from '../../components/shared/ScreenLayout';
@@ -21,15 +22,15 @@ const TechnicianDiagnostic = () => {
             <div className="space-y-3 w-full">
                 <Button onClick={() => navigate('/technician/verification')}>
                     Continuer
-                    <span className="material-symbols-outlined">arrow_forward</span>
+                    <ArrowRight size={20} />
                 </Button>
                 <Button variant="ghost" onClick={() => navigate('/technician/scan')}>
-                    ‹ Retour
+                    <ChevronLeft size={20} className="mr-1 inline-block" /> Retour
                 </Button>
             </div>
         }
     >
-      <ProgressBar step={2} totalSteps={4} label="Étape 2 sur 4" />
+      <ProgressBar step={2} totalSteps={3} label="Étape 2 sur 3" />
 
       <div className="pt-8 pb-12">
 
@@ -61,6 +62,7 @@ const TechnicianDiagnostic = () => {
             <TechDiagnosticToggle 
               value={formData.diagnosticResults?.powerStatus}
               onChange={(val) => handleUpdateDiagnostic('powerStatus', val)}
+              options={[{ label: 'OK', value: 'OK' }, { label: 'Non', value: 'Non' }, { label: 'Non accessible', value: 'Non accessible' }]}
             />
           </section>
 

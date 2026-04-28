@@ -1,12 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const TechDiagnosticToggle = ({ value, onChange }) => {
-  const options = [
+const TechDiagnosticToggle = ({ value, onChange, options = [
     { label: 'Oui', value: 'Oui' },
     { label: 'Non', value: 'Non' },
     { label: 'Non accessible', value: 'Non accessible' }
-  ];
+  ] }) => {
 
   return (
     <div className="flex gap-2 w-full">

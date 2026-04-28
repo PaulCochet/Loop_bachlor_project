@@ -1,16 +1,17 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { Home, QrCode, MessageCircle, Unplug } from 'lucide-react';
 
 const TechNavBar = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
   const tabs = [
-    { id: 'home', label: 'Accueil', icon: 'home', path: '/technician/dashboard' },
-    { id: 'scan', label: 'Scan', icon: 'qr_code_scanner', path: '/technician/scan' },
-    { id: 'messages', label: 'Messages', icon: 'chat_bubble', path: '/technician/messages', badge: true },
-    { id: 'diagnostic', label: 'Diagnostic', icon: 'stethoscope', path: '/technician/diagnostic' }
+    { id: 'home', label: 'Accueil', Icon: Home, path: '/technician/dashboard' },
+    { id: 'scan', label: 'Scan', Icon: QrCode, path: '/technician/scan' },
+    { id: 'messages', label: 'Messages', Icon: MessageCircle, path: '/technician/messages', badge: true },
+    { id: 'diagnostic', label: 'Diagnostic', Icon: Unplug, path: '/technician/diagnostic' }
   ];
 
   const missionPaths = ['/technician/scan', '/technician/diagnostic', '/technician/verification', '/technician/recap'];
@@ -53,12 +54,11 @@ const TechNavBar = () => {
             className="flex flex-col items-center gap-1 relative min-w-[64px] mt-3"
             style={{ color: isActive ? activeColor : inactiveColor }}
           >
-            <span 
-              className="material-symbols-outlined text-[26px] transition-all duration-200" 
-              style={{ fontVariationSettings: isActive ? "'FILL' 1" : "'FILL' 0" }}
-            >
-              {tab.icon}
-            </span>
+            <tab.Icon 
+              size={26} 
+              strokeWidth={isActive ? 2.5 : 1.5}
+              className="transition-all duration-200" 
+            />
             <span className="text-[10px] font-bold uppercase tracking-tight">{tab.label}</span>
             
             {tab.badge && (

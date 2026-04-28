@@ -1,9 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { ChevronLeft, Clock, ArrowRight } from 'lucide-react';
 import TechNavBar from '../../components/technician/TechNavBar';
 import Button from '../../components/shared/Button';
-import ProgressBar from '../../components/shared/ProgressBar';
 
 const TechnicianMission = () => {
   const navigate = useNavigate();
@@ -19,7 +19,7 @@ const TechnicianMission = () => {
             onClick={() => navigate('/technician/dashboard')}
             className="flex items-center gap-1 text-[#0D46F2] font-semibold text-[17px]"
           >
-            <span className="material-symbols-outlined !text-[24px]">chevron_left</span>
+            <ChevronLeft size={24} />
             <span>Retour</span>
           </motion.button>
         </div>
@@ -35,8 +35,6 @@ const TechnicianMission = () => {
           />
         </div>
       </header>
-
-      <ProgressBar step={1} totalSteps={4} label="Étape 1 sur 4" />
 
       <main className="px-6 pt-8">
         <div className="flex items-center gap-4 mb-10">
@@ -62,7 +60,7 @@ const TechnicianMission = () => {
               </div>
             </div>
             <div className="pt-4 border-t border-gray-100 flex items-center gap-2">
-              <span className="material-symbols-outlined text-[#0D46F2] text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>schedule</span>
+              <Clock className="text-[#0D46F2]" size={14} />
               <p className="text-sm font-bold text-[#1a1c1b]">Demain 9h00 à 11h00</p>
             </div>
           </section>
@@ -112,7 +110,7 @@ const TechnicianMission = () => {
         <div className="mt-12 pb-12">
           <Button onClick={() => navigate('/technician/scan')}>
             Démarrer la mission
-            <span className="material-symbols-outlined">arrow_forward_ios</span>
+            <ArrowRight size={20} />
           </Button>
         </div>
       </main>

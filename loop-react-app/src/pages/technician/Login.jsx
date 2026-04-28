@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { ChevronLeft, Wrench, Check, ArrowRight } from 'lucide-react';
 import IOSInput from '../../components/shared/IOSInput';
 import Button from '../../components/shared/Button';
 
 const TechnicianLogin = () => {
   const navigate = useNavigate();
+  const [identifiant, setIdentifiant] = useState('');
+  const [password, setPassword] = useState('');
 
   return (
     <main className="w-full min-h-screen bg-white flex flex-col px-8 py-12 relative overflow-hidden">
@@ -16,7 +19,7 @@ const TechnicianLogin = () => {
           onClick={() => navigate('/')}
           className="flex items-center gap-1 text-[#0D46F2] font-semibold text-[17px]"
         >
-          <span className="material-symbols-outlined !text-[24px]">chevron_left</span>
+          <ChevronLeft size={24} />
           <span>Retour</span>
         </motion.button>
       </div>
@@ -29,7 +32,7 @@ const TechnicianLogin = () => {
         <img src="/logo.svg" alt="Loop" className="h-7 w-auto" />
         <div className="h-5 w-[1px] bg-[#F2F2F7] mx-1" />
         <div className="flex items-center gap-1.5 text-[#0D46F2] display-text uppercase tracking-widest  pt-1">
-          <span className="material-symbols-outlined !text-[16px]" style={{ fontVariationSettings: "'FILL' 1" }}>build</span>
+          <Wrench size={16} />
           <span>Espace technicien</span>
         </div>
       </header>
@@ -50,10 +53,14 @@ const TechnicianLogin = () => {
           <IOSInput 
             placeholder="Identifiant" 
             type="text"
+            value={identifiant}
+            onChange={(e) => setIdentifiant(e.target.value)}
           />
           <IOSInput 
             placeholder="Mot de passe" 
             type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
         </div>
 
@@ -64,7 +71,7 @@ const TechnicianLogin = () => {
               id="remember" 
               type="checkbox"
             />
-            <span className="material-symbols-outlined absolute text-white text-[16px] left-1 pointer-events-none opacity-0 peer-checked:opacity-100 font-bold">check</span>
+            <Check size={16} strokeWidth={4} className="absolute text-white pointer-events-none opacity-0 peer-checked:opacity-100 left-1" />
           </div>
           <label className="text-[13px] font-bold text-[#8C8C8C] cursor-pointer" htmlFor="remember">Rester connecté</label>
         </div>
@@ -72,16 +79,9 @@ const TechnicianLogin = () => {
         <div className="mt-4">
           <Button onClick={() => navigate('/technician/dashboard')}>
             Se connecter
-            <span className="material-symbols-outlined text-[20px]">arrow_forward</span>
+            <ArrowRight size={20} />
           </Button>
         </div>
-      </div>
-
-      {/* Decorative Element */}
-      <div className="mt-12 opacity-[0.03] pointer-events-none">
-        <span className="material-symbols-outlined text-[200px] absolute -bottom-20 -right-20 rotate-12" style={{ fontVariationSettings: "'FILL' 1" }}>
-          precision_manufacturing
-        </span>
       </div>
 
       {/* Footer */}
