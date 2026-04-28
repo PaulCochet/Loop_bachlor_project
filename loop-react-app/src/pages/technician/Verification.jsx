@@ -34,7 +34,7 @@ const TechnicianVerification = () => {
         actions={
             <div className="space-y-3 w-full">
                 <Button onClick={() => navigate('/technician/recap')}>
-                    Valider <ArrowRight size={20} className="ml-2 inline-block" />
+                    Valider le verdict <ArrowRight size={20} className="ml-2 inline-block" />
                 </Button>
                 <Button variant="ghost" onClick={() => navigate('/technician/diagnostic')}>
                     <ChevronLeft size={20} className="mr-1 inline-block" /> Retour
@@ -54,49 +54,6 @@ const TechnicianVerification = () => {
         </div>
 
         <div className="space-y-10">
-        {/* Summary of Questionnaire */}
-        <section>
-          <h3 className="text-[10px] display-text uppercase tracking-widest text-[#8C8C8C] mb-6 ml-1">Confirmation diagnostic</h3>
-          <div className="space-y-6">
-            {[
-                { key: 'abnormalNoise', label: 'La pompe de vidange émet-elle un bruit anormal ?' },
-                { key: 'powerStatus', label: 'L\'alimentation électrique est-elle correcte ?' },
-                { key: 'visibleLeak', label: 'Y a-t-il des signes visibles de fuite ?' },
-                { key: 'drumRotation', label: 'Le tambour tourne-t-il correctement ?' }
-            ].map((q) => (
-                <div key={q.key} className="bg-white p-6 rounded-[24px] border border-gray-100 shadow-sm">
-                    <h3 className="text-sm font-bold leading-snug text-[#1a1c1b] mb-4">{q.label}</h3>
-                    <TechDiagnosticToggle 
-                        value={formData.diagnosticResults?.[q.key]}
-                        onChange={(val) => updateDiagnostic(q.key, val)}
-                    />
-                </div>
-            ))}
-          </div>
-        </section>
-
-          {/* Part Identification */}
-          <section className="space-y-6">
-            <div className="w-full">
-              <label className="block text-[10px] display-text uppercase tracking-widest text-[#8C8C8C] mb-3 ml-1">Pièce(s) identifiée(s)</label>
-              <IOSInput 
-                placeholder="Ex: Pompe de vidange" 
-                value={formData.identifiedPart || ''}
-                onChange={(e) => updateFormData('identifiedPart', e.target.value)}
-              />
-            </div>
-
-            <div className="w-full">
-              <label className="block text-[10px] display-text uppercase tracking-widest text-[#8C8C8C] mb-3 ml-1">Observations</label>
-              <IOSInput 
-                placeholder="Précisez les détails de l'intervention..."
-                value={formData.techObservations || ''}
-                onChange={(e) => updateFormData('techObservations', e.target.value)}
-                multiline={true}
-                rows={4}
-              />
-            </div>
-          </section>
 
           <section className="space-y-4">
             <h3 className="text-[10px] display-text uppercase tracking-widest text-[#8C8C8C] mb-4 ml-1">Verdict final</h3>
