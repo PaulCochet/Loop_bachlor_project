@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import HomeIndicator from './HomeIndicator';
+
 
 const MobileFrame = ({ children }) => {
   const [isMobile, setIsMobile] = useState(false);
@@ -25,11 +25,10 @@ const MobileFrame = ({ children }) => {
         }}
       >
         <div 
-          className="flex-1 overflow-y-auto no-scrollbar pb-[34px]"
+          className="flex-1 overflow-y-auto no-scrollbar pb-[80px]"
         >
           {children}
         </div>
-        <HomeIndicator />
       </div>
     );
   }
@@ -54,11 +53,9 @@ const MobileFrame = ({ children }) => {
         }}
       >
         {/* Content area */}
-        <div className="flex-1 overflow-y-auto no-scrollbar pb-[34px] relative">
+        <div className="flex-1 overflow-y-auto no-scrollbar pb-[80px] relative">
           {children}
         </div>
-
-        <HomeIndicator />
       </div>
     </div>
   );

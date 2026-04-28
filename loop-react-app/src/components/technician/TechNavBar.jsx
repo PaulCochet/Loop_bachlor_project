@@ -24,7 +24,7 @@ const TechNavBar = () => {
   return (
     <nav 
       className="fixed bottom-0 left-0 right-0 bg-white border-t-[0.5px] border-[#E5E5E5] flex justify-around items-start pt-3 px-4 z-[100]"
-      style={{ height: 'calc(env(safe-area-inset-bottom) + 64px)', paddingBottom: 'env(safe-area-inset-bottom)' }}
+      style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
     >
       {tabs.map((tab) => {
         const isActive = location.pathname === tab.path;
