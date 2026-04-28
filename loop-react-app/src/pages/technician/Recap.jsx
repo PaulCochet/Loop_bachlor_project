@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { CheckCircle, TaskAlt } from 'lucide-react'; // TaskAlt is not in lucide, maybe CheckCircle or Check or CheckSquare
+import { CheckCircle } from 'lucide-react';
 import Button from '../../components/shared/Button';
 import ScreenLayout from '../../components/shared/ScreenLayout';
 import { useGlobalState } from '../../context/GlobalStateContext';
