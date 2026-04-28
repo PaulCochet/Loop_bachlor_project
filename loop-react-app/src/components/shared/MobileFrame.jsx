@@ -15,7 +15,15 @@ const MobileFrame = ({ children }) => {
 
   if (isMobile) {
     return (
-      <div className="relative w-full h-screen bg-white overflow-hidden flex flex-col">
+      <div 
+        className="relative w-full flex flex-col"
+        style={{
+          height: '100%',
+          minHeight: '100%',
+          backgroundColor: 'white',
+          overflow: 'hidden'
+        }}
+      >
         <div 
           className="flex-1 overflow-y-auto no-scrollbar pb-[34px]"
         >
