@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { CheckCircle, Wrench, RefreshCw, Trash2, Download } from 'lucide-react';
 import Button from '../../components/shared/Button';
@@ -8,6 +8,8 @@ import { useGlobalState } from '../../context/GlobalStateContext';
 
 const TechnicianRecap = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const photo = location.state?.photo;
   const { formData } = useGlobalState();
 
   const handleDownloadCertificate = () => {
@@ -62,9 +64,20 @@ const TechnicianRecap = () => {
             {/* Section Appareil */}
             <section className="space-y-4">
                 <h3 className="text-[10px] display-text uppercase tracking-widest text-[#8C8C8C]">Appareil</h3>
-                <div className="bg-[#F2F2F7] rounded-[24px] p-6 space-y-2">
-                    <p className="font-bold text-[#1a1c1b]">Lave-linge Samsung EcoBubble</p>
-                    <p className="text-sm font-medium text-[#8C8C8C]">Sophie M. — 12 rue des Lilas, Nantes</p>
+                <div className="bg-[#F2F2F7] rounded-[24px] p-6 space-y-4">
+                    <div className="flex gap-4 items-center">
+                        <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center overflow-hidden border border-[#E5E5E5]">
+                            {photo ? (
+                            <img src={photo} alt="Appareil" className="w-full h-full object-cover" />
+                            ) : (
+                            <span className="material-symbols-outlined text-[#8C8C8C] text-2xl">image</span>
+                            )}
+                        </div>
+                        <div>
+                            <p className="font-bold text-[#1a1c1b]">Lave-linge Samsung EcoBubble</p>
+                            <p className="text-sm font-medium text-[#8C8C8C]">Sophie M. — 12 rue des Lilas</p>
+                        </div>
+                    </div>
                 </div>
             </section>
 

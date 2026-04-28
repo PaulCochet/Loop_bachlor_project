@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import Button from '../../components/shared/Button';
 import { MapContainer, TileLayer, Marker } from 'react-leaflet';
 import L from 'leaflet';
@@ -16,6 +16,8 @@ import ScreenLayout from '../../components/shared/ScreenLayout';
 
 const Recap = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const photo = location.state?.photo;
 
   return (
     <ScreenLayout
@@ -42,7 +44,11 @@ const Recap = () => {
             <p className="text-[10px] font-bold uppercase tracking-widest text-[#8C8C8C] mb-4">Votre appareil</p>
             <div className="flex gap-4 items-center">
               <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center overflow-hidden border border-[#E5E5E5] group active:scale-95 transition-transform cursor-pointer">
-                <span className="material-symbols-outlined text-[#8C8C8C] text-3xl">image</span>
+                {photo ? (
+                  <img src={photo} alt="Appareil" className="w-full h-full object-cover" />
+                ) : (
+                  <span className="material-symbols-outlined text-[#8C8C8C] text-3xl">image</span>
+                )}
               </div>
               <div>
                 <p className="font-bold text-[17px]">Lave-linge Samsung</p>

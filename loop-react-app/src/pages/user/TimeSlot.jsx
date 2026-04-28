@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import Button from '../../components/shared/Button';
 import ProgressBar from '../../components/shared/ProgressBar';
 import { useGlobalState } from '../../context/GlobalStateContext';
@@ -7,6 +7,8 @@ import ScreenLayout from '../../components/shared/ScreenLayout';
 
 const TimeSlot = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const photo = location.state?.photo;
   const { formData, updateFormData } = useGlobalState();
   const [selectedDay, setSelectedDay] = useState(22); // Default to 22nd
 
@@ -29,7 +31,7 @@ const TimeSlot = () => {
     <ScreenLayout
         actions={
             <div className="space-y-3 w-full">
-                <Button onClick={() => navigate('/recap')}>Continuer</Button>
+                <Button onClick={() => navigate('/recap', { state: { photo } })}>Continuer</Button>
                 <Button variant="ghost" onClick={() => navigate('/description')}>Retour</Button>
             </div>
         }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import Button from '../../components/shared/Button';
 import IOSOuiNonToggle from '../../components/shared/IOSOuiNonToggle';
 import IOSInput from '../../components/shared/IOSInput';
@@ -9,13 +9,15 @@ import ScreenLayout from '../../components/shared/ScreenLayout';
 
 const Description = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const photo = location.state?.photo;
   const { formData, updateFormData } = useGlobalState();
 
   return (
     <ScreenLayout
         actions={
             <div className="space-y-3 w-full">
-                <Button onClick={() => navigate('/slot')}>Continuer</Button>
+                <Button onClick={() => navigate('/slot', { state: { photo } })}>Continuer</Button>
                 <Button variant="ghost" onClick={() => navigate('/photo')}>Retour</Button>
             </div>
         }

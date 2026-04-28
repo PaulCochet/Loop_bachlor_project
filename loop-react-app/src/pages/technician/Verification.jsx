@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, ChevronLeft, Wrench, RefreshCw, Trash2 } from 'lucide-react';
 import Button from '../../components/shared/Button';
@@ -11,6 +11,7 @@ import { useGlobalState } from '../../context/GlobalStateContext';
 
 const TechnicianVerification = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const { formData, updateFormData, updateDiagnostic } = useGlobalState();
 
   const diagnosticLabels = {
@@ -33,7 +34,7 @@ const TechnicianVerification = () => {
     <ScreenLayout
         actions={
             <div className="space-y-3 w-full">
-                <Button onClick={() => navigate('/technician/recap')}>
+                <Button onClick={() => navigate('/technician/recap', { state: { photo: location.state?.photo } })}>
                     Valider le verdict <ArrowRight size={20} className="ml-2 inline-block" />
                 </Button>
                 <Button variant="ghost" onClick={() => navigate('/technician/diagnostic')}>
