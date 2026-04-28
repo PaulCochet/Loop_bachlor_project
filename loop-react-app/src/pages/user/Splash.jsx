@@ -7,9 +7,27 @@ const Splash = () => {
   const navigate = useNavigate();
 
   return (
-    <main className="h-screen w-full flex flex-col bg-white overflow-hidden">
-      {/* TOP 50% */}
-      <section className="h-[50dvh] flex flex-col items-center justify-center text-center px-6">
+    <main 
+      className="w-full bg-white overflow-hidden"
+      style={{
+        height: '100dvh',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        paddingBottom: 'env(safe-area-inset-bottom)'
+      }}
+    >
+      {/* Top section (logo + tagline) */}
+      <section 
+        className="text-center px-6"
+        style={{
+          flex: 1,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center'
+        }}
+      >
         <motion.div 
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -33,35 +51,38 @@ const Splash = () => {
         </motion.p>
       </section>
 
-      {/* BOTTOM 50% */}
-      <section className="h-[50dvh] flex flex-col items-center justify-center px-6">
-        <div className="w-full max-w-sm space-y-4">
-          {/* Primary Action */}
-          <Button onClick={() => navigate('/signup')} className="!bg-[#0A0A0A] !text-white">
-            Créer un compte
-          </Button>
+      {/* Bottom section (3 buttons) */}
+      <section 
+        style={{
+          padding: '0 24px 24px 24px',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '12px'
+        }}
+      >
+        <Button onClick={() => navigate('/signup')} className="!bg-[#0A0A0A] !text-white w-full">
+          Créer un compte
+        </Button>
 
-          {/* Secondary Action */}
-          <Button 
-            variant="outline"
-            onClick={() => navigate('/login')}
+        <Button 
+          variant="outline"
+          onClick={() => navigate('/login')}
+          className="w-full"
+        >
+          Se connecter
+        </Button>
+
+        <div className="pt-2 flex justify-center w-full">
+          <motion.button 
+            whileTap={{ scale: 0.95 }}
+            onClick={() => navigate('/technician/login')}
+            className="inline-flex items-center gap-2 text-[#8C8C8C] text-[10px] display-text uppercase tracking-[0.15em] hover:text-[#1a1c1b] transition-colors group"
           >
-            Se connecter
-          </Button>
-
-          {/* Tertiary Action */}
-          <div className="pt-2 flex justify-center">
-            <motion.button 
-              whileTap={{ scale: 0.95 }}
-              onClick={() => navigate('/technician/login')}
-              className="inline-flex items-center gap-2 text-[#8C8C8C] text-[10px] display-text uppercase tracking-[0.15em] hover:text-[#1a1c1b] transition-colors group"
-            >
-              Accès technicien
-              <span className="material-symbols-outlined !text-xs group-hover:translate-x-1 transition-transform">
-                arrow_forward
-              </span>
-            </motion.button>
-          </div>
+            Accès technicien
+            <span className="material-symbols-outlined !text-xs group-hover:translate-x-1 transition-transform">
+              arrow_forward
+            </span>
+          </motion.button>
         </div>
       </section>
     </main>

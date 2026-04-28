@@ -23,8 +23,23 @@ const TechNavBar = () => {
 
   return (
     <nav 
-      className="fixed bottom-0 left-0 right-0 bg-white border-t-[0.5px] border-[#E5E5E5] flex justify-around items-start pt-3 px-4 z-[100]"
-      style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
+      style={{ 
+        position: 'fixed',
+        bottom: 0,
+        left: 0,
+        width: '100%',
+        height: 'calc(60px + env(safe-area-inset-bottom))',
+        paddingBottom: 'env(safe-area-inset-bottom)',
+        paddingTop: 0,
+        margin: 0,
+        background: 'white',
+        borderTop: '0.5px solid #E5E5E5',
+        zIndex: 9999,
+        boxSizing: 'border-box',
+        display: 'flex',
+        alignItems: 'flex-start',
+        justifyContent: 'space-around'
+      }}
     >
       {tabs.map((tab) => {
         const isActive = location.pathname === tab.path;
@@ -33,7 +48,7 @@ const TechNavBar = () => {
             key={tab.id}
             whileTap={{ scale: 0.9 }}
             onClick={() => navigate(tab.path)}
-            className="flex flex-col items-center gap-1 relative min-w-[64px]"
+            className="flex flex-col items-center gap-1 relative min-w-[64px] mt-3"
             style={{ color: isActive ? activeColor : inactiveColor }}
           >
             <span 

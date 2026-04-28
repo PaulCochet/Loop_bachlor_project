@@ -25,7 +25,8 @@ const MobileFrame = ({ children }) => {
         }}
       >
         <div 
-          className="flex-1 overflow-y-auto no-scrollbar pb-[80px]"
+          className="flex-1 overflow-y-auto no-scrollbar"
+          style={{ paddingBottom: 'calc(60px + env(safe-area-inset-bottom) + 16px)' }}
         >
           {children}
         </div>
@@ -52,8 +53,10 @@ const MobileFrame = ({ children }) => {
           position: 'relative'
         }}
       >
-        {/* Content area */}
-        <div className="flex-1 overflow-y-auto no-scrollbar pb-[80px] relative">
+        <div 
+          className="flex-1 overflow-y-auto no-scrollbar relative"
+          style={{ paddingBottom: 'calc(60px + env(safe-area-inset-bottom) + 16px)' }}
+        >
           {children}
         </div>
       </div>

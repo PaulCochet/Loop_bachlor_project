@@ -5,16 +5,30 @@ const ScreenLayout = ({ children, actions, className = "" }) => {
     <div className={`h-full w-full flex flex-col bg-white overflow-hidden ${className}`}>
       {/* Scrollable Content Zone */}
       <div 
-        className="flex-1 overflow-y-auto no-scrollbar p-6 pb-[120px]"
-        style={{ paddingTop: 'env(safe-area-inset-top, 16px)' }}
+        className="flex-1 overflow-y-auto no-scrollbar p-6"
+        style={{ 
+          paddingTop: 'env(safe-area-inset-top, 16px)',
+          paddingBottom: 'calc(60px + env(safe-area-inset-bottom) + 16px)' 
+        }}
       >
         {children}
       </div>
       
       {/* Fixed Actions Zone */}
       <div 
-        className="fixed bottom-0 left-0 right-0 p-6 pt-4 bg-white border-t border-[#E5E5E5] shadow-[0_-4px_24px_rgba(0,0,0,0.02)] z-[100]"
-        style={{ paddingBottom: 'env(safe-area-inset-bottom, 16px)' }}
+        style={{
+          position: 'fixed',
+          bottom: 0,
+          left: 0,
+          width: '100%',
+          padding: '12px 24px',
+          paddingBottom: 'calc(12px + env(safe-area-inset-bottom))',
+          background: 'white',
+          borderTop: '0.5px solid #E5E5E5',
+          zIndex: 9999,
+          boxSizing: 'border-box',
+          margin: 0
+        }}
       >
         {actions}
       </div>
