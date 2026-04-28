@@ -54,7 +54,7 @@ const Splash = () => {
       {/* Bottom section (3 buttons) */}
       <section 
         style={{
-          padding: '0 24px 24px 24px',
+          padding: '0 24px 32px 24px',
           display: 'flex',
           flexDirection: 'column',
           gap: '12px'

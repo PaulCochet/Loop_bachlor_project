@@ -63,8 +63,8 @@ const InterventionSummary = () => {
         </div>
       </div>
 
-      {/* Actions */}
-      <div className="flex-shrink-0 p-6 pt-4 pb-[34px] bg-white border-t border-[#E5E5E5]">
+      {/* Sticky Footer */}
+      <div className="flex-shrink-0 p-6 pt-4 pb-0 bg-white border-t border-[#E5E5E5]">
         <Button onClick={() => navigate('/payment')}>
           Procéder au paiement
           <span className="material-symbols-outlined ml-1">payments</span>

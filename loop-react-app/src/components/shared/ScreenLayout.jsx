@@ -16,9 +16,11 @@ const ScreenLayout = ({ children, actions, className = "" }) => {
       
       {/* Fixed Actions Zone */}
       <div 
+        className="!bottom-0 !mb-0"
         style={{
           position: 'fixed',
           bottom: 0,
+          marginBottom: 0,
           left: 0,
           width: '100%',
           padding: '12px 24px',

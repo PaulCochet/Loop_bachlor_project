@@ -23,9 +23,11 @@ const TechNavBar = () => {
 
   return (
     <nav 
+      className="!bottom-0 !mb-0"
       style={{ 
         position: 'fixed',
         bottom: 0,
+        marginBottom: 0,
         left: 0,
         width: '100%',
         height: 'calc(60px + env(safe-area-inset-bottom))',
