@@ -12,22 +12,23 @@ const Signup = () => {
   };
 
   return (
-    <div 
-      className="flex flex-col h-full bg-white pt-12"
-      style={{ paddingTop: 'env(safe-area-inset-top, 16px)' }}
-    >
-      {/* iOS Navigation Header */}
-      <div className="px-6 py-2 flex items-center">
-        <button 
-          onClick={() => navigate(-1)}
-          className="flex items-center text-[#0D46F2] font-semibold text-[17px] active:opacity-50"
-        >
-          <span className="material-symbols-outlined !text-[24px]">chevron_left</span>
-          Retour
-        </button>
-      </div>
+    <div className="flex flex-col h-[100dvh] bg-white w-full">
+      {/* Content Area */}
+      <div 
+        className="flex-1 overflow-y-auto p-6 pb-[140px]"
+        style={{ paddingTop: 'calc(env(safe-area-inset-top, 16px) + 24px)' }}
+      >
+        {/* iOS Navigation Header */}
+        <div className="mb-8 flex items-center -ml-2">
+          <button 
+            onClick={() => navigate(-1)}
+            className="flex items-center text-[#0D46F2] font-semibold text-[17px] active:opacity-50"
+          >
+            <span className="material-symbols-outlined !text-[24px]">chevron_left</span>
+            Retour
+          </button>
+        </div>
 
-      <div className="px-6 pt-6 pb-8 flex-1 overflow-y-auto no-scrollbar">
         {/* Hero */}
         <div className="mb-10">
           <h1 className="text-4xl display-text tracking-tighter leading-tight mb-2 uppercase">
@@ -37,7 +38,7 @@ const Signup = () => {
         </div>
 
         {/* Form */}
-        <div className="flex-1 space-y-4">
+        <div className="space-y-4">
           <IOSInput 
             label="Prénom" 
             placeholder="Votre prénom" 
@@ -65,9 +66,23 @@ const Signup = () => {
             onChange={handleChange('address')} 
           />
         </div>
+      </div>
 
-        {/* Actions */}
-        <div className="mt-12 space-y-3">
+      {/* Footer */}
+      <div 
+        style={{
+          position: 'fixed',
+          bottom: 0,
+          left: 0,
+          width: '100%',
+          padding: '12px 24px',
+          paddingBottom: 'calc(12px + env(safe-area-inset-bottom))',
+          background: 'white',
+          boxSizing: 'border-box',
+          zIndex: 9999
+        }}
+      >
+        <div className="space-y-3">
           <Button onClick={() => navigate('/privacy')}>Suivant</Button>
           <Button variant="ghost" onClick={() => navigate('/onboarding')}>Annuler</Button>
         </div>

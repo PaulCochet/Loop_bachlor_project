@@ -6,8 +6,27 @@ import Button from '../../components/shared/Button';
 const Success = () => {
   const navigate = useNavigate();
 
+  React.useEffect(() => {
+    document.body.style.backgroundColor = '#0D46F2';
+    return () => {
+      document.body.style.backgroundColor = 'white';
+    };
+  }, []);
+
   return (
-    <div className="flex flex-col min-h-[100dvh] bg-[#0D46F2] relative overflow-hidden">
+    <div 
+      className="flex flex-col relative overflow-hidden"
+      style={{ 
+        minHeight: '100dvh', 
+        height: '100dvh', 
+        width: '100%', 
+        position: 'fixed', 
+        top: 0, 
+        left: 0, 
+        backgroundColor: '#0D46F2', 
+        overflowY: 'auto' 
+      }}
+    >
       <div className="flex-1 px-6 pt-24 pb-32 flex flex-col items-center text-center text-white">
         {/* Animated Checkmark */}
         <motion.div 

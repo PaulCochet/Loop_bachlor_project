@@ -6,8 +6,27 @@ import ScreenLayout from '../../components/shared/ScreenLayout';
 const InterventionSummary = () => {
   const navigate = useNavigate();
 
+  React.useEffect(() => {
+    document.body.style.backgroundColor = '#0D46F2';
+    return () => {
+      document.body.style.backgroundColor = 'white';
+    };
+  }, []);
+
   return (
-    <div className="h-full w-full flex flex-col bg-white overflow-hidden">
+    <div 
+      className="flex flex-col overflow-hidden"
+      style={{ 
+        minHeight: '100dvh', 
+        height: '100dvh', 
+        width: '100%', 
+        position: 'fixed', 
+        top: 0, 
+        left: 0, 
+        backgroundColor: '#0D46F2', 
+        overflowY: 'auto' 
+      }}
+    >
       {/* STATUS HERO - Full bleed colored background */}
       <div className="bg-[#0D46F2] pt-16 pb-12 px-6 flex flex-col items-center text-center text-white relative">
         <div className="w-20 h-20 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center mb-8">
@@ -20,7 +39,7 @@ const InterventionSummary = () => {
       </div>
 
       {/* PRODUCT/INTERVENTION SHEET - White background, structured data */}
-      <div className="flex-1 overflow-y-auto no-scrollbar px-6 py-10 space-y-8">
+      <div className="flex-1 overflow-y-auto no-scrollbar px-6 py-10 space-y-8 bg-white">
         <div className="space-y-6">
           <header className="flex items-center gap-4">
             <h3 className="text-[10px] display-text tracking-[0.2em] uppercase text-[#8C8C8C]">Fiche Intervention</h3>

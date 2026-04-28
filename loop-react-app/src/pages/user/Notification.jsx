@@ -23,6 +23,13 @@ const Notification = () => {
   const navigate = useNavigate();
   const [showPopup, setShowPopup] = useState(false);
 
+  React.useEffect(() => {
+    document.body.style.backgroundColor = 'black';
+    return () => {
+      document.body.style.backgroundColor = 'white';
+    };
+  }, []);
+
   // Debug log to trace navigation
   const handleNavigateToIntervention = () => {
     console.log('[DEBUG] Navigating to /intervention...');
@@ -31,8 +38,17 @@ const Notification = () => {
 
   return (
     <div 
-      className="relative w-full bg-black overflow-hidden select-none"
-      style={{ height: '100%', minHeight: '100%' }}
+      className="select-none"
+      style={{ 
+        minHeight: '100dvh', 
+        height: '100dvh', 
+        width: '100%', 
+        position: 'fixed', 
+        top: 0, 
+        left: 0, 
+        backgroundColor: 'black', 
+        overflowY: 'auto' 
+      }}
     >
       {/* Background Image (Lock Screen Wallpaper Style) */}
       <div 
