@@ -55,7 +55,7 @@ const TechnicianDashboard = () => {
           {[
             { icon: ClipboardList, label: 'Missions', value: '3' },
             { icon: Clock, label: 'Temps', value: '2h30' },
-            { icon: Route, label: 'Route', value: '1,2 km' }
+            { icon: Route, label: 'Route', value: '2,1 km' }
           ].map((item, i) => (
             <motion.div 
               key={i} 
@@ -88,18 +88,18 @@ const TechnicianDashboard = () => {
             <div className="p-8 space-y-6">
               <div className="flex justify-between items-start">
                 <div className="space-y-1">
-                  <h3 className="text-2xl display-text">Sophie M.</h3>
-                  <p className="text-[#8C8C8C] font-medium">{formData.brand || 'Appareil inconnu'}</p>
+                  <h3 className="text-2xl display-text">Marie D.</h3>
+                  <p className="text-[#8C8C8C] font-medium">{formData.brand || 'Lave-linge Bosch Serie 4'}</p>
                 </div>
                 <div className="bg-[#f2f2f0] px-3 py-1 rounded-full">
-                  <p className="text-[11px] font-bold text-[#1a1c1b]">9h00 — 11h00</p>
+                  <p className="text-[11px] font-bold text-[#1a1c1b]">10h00 — 12h00</p>
                 </div>
               </div>
               
               <div className="flex items-start gap-3 py-4 border-y border-[#eeeeec]">
                 <MapPin className="text-[#8C8C8C] mt-0.5" size={20} />
                 <div className="space-y-0.5">
-                  <p className="text-sm font-bold">12 rue des Lilas</p>
+                  <p className="text-sm font-bold">7 rue du Calvaire</p>
                   <p className="text-xs text-[#8C8C8C] font-medium uppercase tracking-wider">44000 Nantes</p>
                 </div>
               </div>

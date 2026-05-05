@@ -47,45 +47,45 @@ const TechnicianDiagnostic = () => {
           {/* Question 1 */}
           <section className="bg-white p-6 rounded-[24px] border border-gray-100 shadow-sm">
             <h3 className="text-base font-bold leading-snug text-[#1a1c1b] mb-6">
-              L'interrupteur d'alimentation réagit-il quand on appuie dessus ?
+              Y a-t-il de l'eau visible sous la machine ?
             </h3>
             <TechDiagnosticToggle 
-              value={formData.diagnosticResults?.switchReaction}
-              onChange={(val) => handleUpdateDiagnostic('switchReaction', val)}
+              value={formData.diagnosticResults?.visibleWater}
+              onChange={(val) => handleUpdateDiagnostic('visibleWater', val)}
             />
           </section>
 
           {/* Question 2 */}
           <section className="bg-white p-6 rounded-[24px] border border-gray-100 shadow-sm">
             <h3 className="text-base font-bold leading-snug text-[#1a1c1b] mb-6">
-              Y a-t-il de l'eau dans le réservoir ?
+              La fuite se produit-elle pendant le cycle de lavage ou à l'arrêt ?
             </h3>
             <TechDiagnosticToggle 
-              value={formData.diagnosticResults?.waterInTank}
-              onChange={(val) => handleUpdateDiagnostic('waterInTank', val)}
-              options={[{ label: 'Oui', value: 'Oui' }, { label: 'Non', value: 'Non' }, { label: 'Non accessible', value: 'Non accessible' }]}
+              value={formData.diagnosticResults?.leakTiming}
+              onChange={(val) => handleUpdateDiagnostic('leakTiming', val)}
+              options={[{ label: 'Cycle', value: 'Cycle' }, { label: 'Arrêt', value: 'Arrêt' }, { label: 'Les deux', value: 'Les deux' }]}
             />
           </section>
 
           {/* Question 3 */}
           <section className="bg-white p-6 rounded-[24px] border border-gray-100 shadow-sm">
             <h3 className="text-base font-bold leading-snug text-[#1a1c1b] mb-6">
-              Des voyants lumineux s'allument-ils lors de la mise sous tension ?
+              Le joint de hublot présente-t-il des signes d'usure ou de déchirure ?
             </h3>
             <TechDiagnosticToggle 
-              value={formData.diagnosticResults?.lightsOn}
-              onChange={(val) => handleUpdateDiagnostic('lightsOn', val)}
+              value={formData.diagnosticResults?.gasketWear}
+              onChange={(val) => handleUpdateDiagnostic('gasketWear', val)}
             />
           </section>
 
           {/* Question 4 */}
           <section className="bg-white p-6 rounded-[24px] border border-gray-100 shadow-sm">
             <h3 className="text-base font-bold leading-snug text-[#1a1c1b] mb-6">
-              Y a-t-il des signes visibles de brûlure ou de surchauffe ?
+              La machine affiche-t-elle le code erreur E18 ?
             </h3>
             <TechDiagnosticToggle 
-              value={formData.diagnosticResults?.burnSigns}
-              onChange={(val) => handleUpdateDiagnostic('burnSigns', val)}
+              value={formData.diagnosticResults?.errorCodeE18}
+              onChange={(val) => handleUpdateDiagnostic('errorCodeE18', val)}
             />
           </section>
         </div>

@@ -61,7 +61,7 @@ const Recap = () => {
           {/* Address & Map Card */}
           <section className="bg-[#F2F2F7] p-5 rounded-[24px] overflow-hidden">
             <p className="text-[10px] font-bold uppercase tracking-widest text-[#8C8C8C] mb-4">Lieu d'intervention</p>
-            <p className="font-bold text-[17px] mb-4 tracking-tight">4 rue Loop, Nantes</p>
+            <p className="font-bold text-[17px] mb-4 tracking-tight">12 rue des Lilas, 44000 Nantes</p>
             <div className="h-32 w-full rounded-[16px] overflow-hidden bg-white shadow-inner">
               <MapContainer 
                 center={[47.2181, -1.5528]} 

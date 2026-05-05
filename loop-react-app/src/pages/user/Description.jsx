@@ -38,7 +38,7 @@ const Description = () => {
         <div className="flex flex-col gap-8">
           <IOSInput 
             label="Marque de votre appareil"
-            placeholder="Samsung, Smeg..."
+            placeholder="De'Longhi, Nespresso..."
             value={formData.brand}
             onChange={(e) => updateFormData('brand', e.target.value)}
           />

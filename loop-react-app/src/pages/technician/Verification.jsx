@@ -15,10 +15,10 @@ const TechnicianVerification = () => {
   const { formData, updateFormData, updateDiagnostic } = useGlobalState();
 
   const diagnosticLabels = {
-    abnormalNoise: 'Bruit anormal',
-    powerStatus: 'Alimentation',
-    visibleLeak: 'Fuite visible',
-    drumRotation: 'Rotation tambour'
+    visibleWater: 'Eau visible',
+    leakTiming: 'Moment fuite',
+    gasketWear: 'État joint',
+    errorCodeE18: 'Code E18'
   };
 
   const getVerdictStyle = (verdict) => {
@@ -71,26 +71,26 @@ const TechnicianVerification = () => {
                     whileTap={{ scale: 0.98 }}
                     onClick={() => updateFormData('verdict', v.id)}
                     className={`relative flex items-start gap-4 p-5 rounded-[20px] border-2 transition-all w-full text-left ${
-                      isSelected 
+                      (formData.verdict === v.id || (!formData.verdict && v.id === 'à reprendre')) 
                         ? 'border-[#0D46F2] bg-[#E8EEFF]' 
                         : 'border-[#E5E5E5] bg-white'
                     }`}
                   >
-                    <div className={`p-3 rounded-full ${isSelected ? 'bg-[#0D46F2] text-white' : 'bg-[#F2F2F7] text-[#8C8C8C]'}`}>
+                    <div className={`p-3 rounded-full ${(formData.verdict === v.id || (!formData.verdict && v.id === 'à reprendre')) ? 'bg-[#0D46F2] text-white' : 'bg-[#F2F2F7] text-[#8C8C8C]'}`}>
                       <v.Icon size={24} />
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-1">
-                        <span className={`display-text uppercase font-bold text-lg ${isSelected ? 'text-[#0D46F2]' : 'text-[#1a1c1b]'}`}>
+                        <span className={`display-text uppercase font-bold text-lg ${(formData.verdict === v.id || (!formData.verdict && v.id === 'à reprendre')) ? 'text-[#0D46F2]' : 'text-[#1a1c1b]'}`}>
                           {v.label}
                         </span>
-                        {v.id === 'réparable' && (
+                        {v.id === 'à reprendre' && (
                           <span className="px-2 py-0.5 bg-[#0D46F2] text-white text-[9px] font-bold uppercase tracking-widest rounded-full">
                             Recommandé
                           </span>
                         )}
                       </div>
-                      <p className={`text-sm font-medium ${isSelected ? 'text-[#0D46F2]' : 'text-[#8C8C8C]'}`}>
+                      <p className={`text-sm font-medium ${(formData.verdict === v.id || (!formData.verdict && v.id === 'à reprendre')) ? 'text-[#0D46F2]' : 'text-[#8C8C8C]'}`}>
                         {v.description}
                       </p>
                     </div>

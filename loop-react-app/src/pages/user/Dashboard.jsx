@@ -17,8 +17,8 @@ const Dashboard = () => {
       status: 'Intervention terminée',
       date: 'Lundi 5 mai 2026',
       technician: 'Lucas M.',
-      parts: 'Pompe de vidange',
-      duration: '38 min',
+      parts: "Interrupteur De'Longhi",
+      duration: '25 min',
       co2: '218 kg',
       verdict: 'Réparable'
     },
