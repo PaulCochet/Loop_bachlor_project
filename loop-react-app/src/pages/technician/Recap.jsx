@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { CheckCircle, Wrench, RefreshCw, Trash2, Download, QrCode, ArrowRight, Send } from 'lucide-react';
+import { CheckCircle, Wrench, RefreshCw, Trash2, ArrowRight, Send, CreditCard } from 'lucide-react';
 import Button from '../../components/shared/Button';
 import ScreenLayout from '../../components/shared/ScreenLayout';
 import { useGlobalState } from '../../context/GlobalStateContext';
@@ -24,7 +24,7 @@ const TechnicianRecap = () => {
     return (
       <ScreenLayout
         actions={
-          <div className="space-y-3 w-full">
+          <div className="space-y-3 w-full bg-white pb-6 px-6">
             <Button className="!bg-[#0D46F2] !text-white" onClick={() => navigate('/technician/dashboard')}>
               Envoyer à Marie D.
               <Send size={18} className="ml-2" />
@@ -35,7 +35,7 @@ const TechnicianRecap = () => {
           </div>
         }
       >
-        <div className="pt-12 pb-12 text-center">
+        <div className="pt-12 pb-32 text-center">
           <motion.div 
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -52,33 +52,50 @@ const TechnicianRecap = () => {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="bg-[#0D46F2] rounded-[32px] p-8 text-white shadow-2xl shadow-[#0D46F2]/30 mb-10 relative overflow-hidden"
+            className="bg-[#0D46F2] rounded-[32px] p-10 text-white shadow-2xl shadow-[#0D46F2]/30 mb-8 relative overflow-hidden text-left"
           >
             <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16 blur-2xl"></div>
-            <p className="text-[11px] display-text uppercase tracking-[0.3em] opacity-80 mb-6">Bon d'achat reconditionneur</p>
-            <h2 className="text-7xl display-text tracking-tighter mb-2">50€</h2>
-            <p className="text-sm font-medium opacity-80">Valable 3 mois</p>
+            <h2 className="text-7xl display-text tracking-tighter mb-4 font-bold">-10%</h2>
+            <p className="text-lg display-text uppercase tracking-tight opacity-90 leading-tight mb-6">
+              sur votre prochain appareil reconditionné
+            </p>
+            <p className="text-[11px] font-bold opacity-70 uppercase tracking-widest">
+              Valable 3 mois — Non cumulable
+            </p>
           </motion.div>
 
-          {/* Partner Logos */}
+          {/* Add to Wallet Button */}
+          <motion.button
+            whileTap={{ scale: 0.98 }}
+            className="w-full py-4 px-6 bg-white border border-black rounded-[12px] flex items-center justify-center gap-3 mb-10 shadow-sm"
+          >
+            <CreditCard size={20} />
+            <span className="font-semibold text-black">Ajouter à Wallet</span>
+          </motion.button>
+
+          {/* Partner Section */}
           <div className="space-y-6 mb-10">
-            <p className="text-[10px] display-text uppercase tracking-widest text-[#8C8C8C]">Partenaires officiels</p>
-            <div className="flex justify-center gap-8 items-center opacity-40 grayscale">
-              <div className="flex flex-col items-center">
-                <div className="w-12 h-12 bg-gray-200 rounded-full mb-2"></div>
-                <p className="text-[9px] font-bold">Underdog Nantes</p>
+            <h3 className="text-[11px] display-text uppercase tracking-[0.2em] text-[#8C8C8C] text-left ml-1">Nos partenaires</h3>
+            <div className="grid grid-cols-2 gap-4">
+              {/* Partner 1 */}
+              <div className="bg-white border border-[#E5E5E5] rounded-[12px] p-4 text-left shadow-sm">
+                <div className="bg-[#F2F2F7] h-12 rounded-[8px] flex items-center justify-center mb-3">
+                  <span className="font-bold text-sm">Underdog</span>
+                </div>
+                <p className="text-[9px] font-bold text-[#8C8C8C] uppercase tracking-widest leading-tight">
+                  Reconditionnement Nantes
+                </p>
               </div>
-              <div className="flex flex-col items-center">
-                <div className="w-12 h-12 bg-gray-200 rounded-full mb-2"></div>
-                <p className="text-[9px] font-bold">Back Market</p>
+              {/* Partner 2 */}
+              <div className="bg-white border border-[#E5E5E5] rounded-[12px] p-4 text-left shadow-sm">
+                <div className="bg-[#F2F2F7] h-12 rounded-[8px] flex items-center justify-center mb-3">
+                  <span className="font-bold text-sm">Back Market</span>
+                </div>
+                <p className="text-[9px] font-bold text-[#8C8C8C] uppercase tracking-widest leading-tight">
+                  Reconditionné en ligne
+                </p>
               </div>
             </div>
-          </div>
-
-          {/* QR Code Placeholder */}
-          <div className="bg-[#F2F2F7] rounded-[24px] p-8 border-2 border-dashed border-[#D1D1D6] flex flex-col items-center gap-3">
-            <QrCode size={64} className="text-[#8C8C8C]" />
-            <p className="text-[10px] font-bold uppercase tracking-widest text-[#8C8C8C]">Scannez pour utiliser</p>
           </div>
         </div>
       </ScreenLayout>
@@ -168,7 +185,7 @@ const TechnicianRecap = () => {
                         </div>
                         <div>
                             <p className="text-[9px] font-bold text-[#8C8C8C] uppercase tracking-widest mb-1">Durée</p>
-                            <p className="text-xs font-bold">18 min</p>
+                            <p className="text-xs font-bold">44 min</p>
                         </div>
                     </div>
                 </div>
@@ -177,7 +194,7 @@ const TechnicianRecap = () => {
             {/* Section Financial Summary */}
             <section className="space-y-4">
                 <h3 className="text-[10px] display-text uppercase tracking-widest text-[#8C8C8C]">Récapitulatif financier</h3>
-                <div className="bg-[#F2F2F7] rounded-[24px] p-6 space-y-3">
+                <div className="bg-[#F2F2F7] rounded-[24px] p-6 space-y-4">
                     <div className="flex justify-between items-center text-sm">
                         <span className="text-[#8C8C8C] display-text uppercase tracking-widest text-[9px]">Diagnostic</span>
                         <span className="font-bold text-green-600">0€ (offert)</span>
@@ -186,13 +203,11 @@ const TechnicianRecap = () => {
                         <span className="text-[#8C8C8C] display-text uppercase tracking-widest text-[9px]">Estimation valeur revente</span>
                         <span className="font-bold text-[#1a1c1b]">80€</span>
                     </div>
-                    <div className="flex justify-between items-center text-sm">
-                        <span className="text-[#8C8C8C] display-text uppercase tracking-widest text-[9px]">Bon d'achat remis</span>
-                        <span className="font-bold text-[#0D46F2]">50€</span>
-                    </div>
-                    <div className="pt-4 border-t border-[#E5E5E5] flex justify-between items-center">
-                        <span className="display-text uppercase text-sm">Net pour l'usager</span>
-                        <span className="display-text tracking-tighter text-2xl text-[#0D46F2]">+50€</span>
+                    <div className="pt-3 border-t border-[#E5E5E5] space-y-1">
+                        <p className="text-[#8C8C8C] display-text uppercase tracking-widest text-[9px]">Bon de réduction</p>
+                        <p className="font-bold text-[#0D46F2] text-sm leading-tight">
+                            -10% sur votre prochain achat reconditionné chez nos partenaires
+                        </p>
                     </div>
                 </div>
             </section>
@@ -203,4 +218,5 @@ const TechnicianRecap = () => {
 };
 
 export default TechnicianRecap;
+
 
