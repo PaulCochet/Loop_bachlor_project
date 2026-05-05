@@ -5,9 +5,11 @@ import { Settings, ClipboardList, Clock, Route, MapPin, ArrowRight, ChevronRight
 import TechNavBar from '../../components/technician/TechNavBar';
 import IOSBottomSheet from '../../components/shared/IOSBottomSheet';
 import Button from '../../components/shared/Button';
+import { useGlobalState } from '../../context/GlobalStateContext';
 
 const TechnicianDashboard = () => {
   const navigate = useNavigate();
+  const { formData } = useGlobalState();
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [isIssueSheetOpen, setIsIssueSheetOpen] = useState(false);
   const [selectedIssue, setSelectedIssue] = useState(null);
@@ -87,7 +89,7 @@ const TechnicianDashboard = () => {
               <div className="flex justify-between items-start">
                 <div className="space-y-1">
                   <h3 className="text-2xl display-text">Sophie M.</h3>
-                  <p className="text-[#8C8C8C] font-medium">Lave-linge Samsung EcoBubble</p>
+                  <p className="text-[#8C8C8C] font-medium">{formData.brand || 'Appareil inconnu'}</p>
                 </div>
                 <div className="bg-[#f2f2f0] px-3 py-1 rounded-full">
                   <p className="text-[11px] font-bold text-[#1a1c1b]">9h00 — 11h00</p>

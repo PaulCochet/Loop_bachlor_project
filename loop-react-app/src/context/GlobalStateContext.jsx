@@ -12,6 +12,7 @@ export const GlobalStateProvider = ({ children }) => {
   const [formData, setFormData] = useState({
     // User Flow
     brand: '',
+    photo: null,
     problem: '',
     isPowerOn: null, // null, true, false
     hasErrorCode: null,

@@ -2,9 +2,11 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../../components/shared/Button';
 import ScreenLayout from '../../components/shared/ScreenLayout';
+import { useGlobalState } from '../../context/GlobalStateContext';
 
 const InterventionSummary = () => {
   const navigate = useNavigate();
+  const { formData } = useGlobalState();
 
   React.useEffect(() => {
     document.body.style.backgroundColor = '#0D46F2';
@@ -46,7 +48,7 @@ const InterventionSummary = () => {
             <div className="bg-white rounded-[28px] border border-[#F2F2F7] shadow-xl shadow-black/5 p-6 space-y-4">
               <div className="flex justify-between items-center py-2 border-b border-[#F2F2F7]">
                   <span className="text-[10px] display-text uppercase tracking-widest text-[#8C8C8C]">Appareil</span>
-                  <span className="font-bold text-[#0A0A0A]">Lave-linge Samsung</span>
+                  <span className="font-bold text-[#0A0A0A]">{formData.brand || 'Appareil inconnu'}</span>
               </div>
               <div className="flex justify-between items-center py-2 border-b border-[#F2F2F7]">
                   <span className="text-[10px] display-text uppercase tracking-widest text-[#8C8C8C]">Pièce remplacée</span>

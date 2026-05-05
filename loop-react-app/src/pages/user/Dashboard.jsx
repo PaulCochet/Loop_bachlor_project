@@ -3,9 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import Button from '../../components/shared/Button';
 import NavBar from '../../components/user/UserNavBar';
 import NotificationModal from '../../components/user/NotificationModal';
+import { useGlobalState } from '../../context/GlobalStateContext';
 
 const Dashboard = () => {
   const navigate = useNavigate();
+  const { formData } = useGlobalState();
   const [isNotifOpen, setIsNotifOpen] = useState(false);
 
   const historyItems = [
@@ -96,7 +98,7 @@ const Dashboard = () => {
           <div className="bg-white rounded-[24px] p-6 border border-[#F2F2F7] shadow-xl shadow-black/5 space-y-6">
             <div className="flex justify-between items-start">
               <div className="space-y-1">
-                <h4 className="text-xl display-text uppercase tracking-tight leading-none">Lave-linge Samsung</h4>
+                <h4 className="text-xl display-text uppercase tracking-tight leading-none">{formData.brand || 'Lave-linge Samsung'}</h4>
                 <div className="inline-flex px-3 py-1 bg-blue-50 rounded-full">
                   <p className="text-[10px] font-bold text-[#0D46F2] uppercase tracking-widest">En cours</p>
                 </div>

@@ -70,22 +70,23 @@ const IOSInput = ({
               {...props}
             />
           )}
-          
-          <AnimatePresence>
-            {value && value.length > 0 && !multiline && (
+        </div>
+
+        <AnimatePresence>
+          {value && value.length > 0 && !multiline && (
+            <div className="absolute inset-y-0 right-0 flex items-center pr-[12px] pointer-events-none">
               <motion.button 
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0, opacity: 0 }}
                 onClick={clearInput}
-                className="absolute right-[12px] top-1/2 -translate-y-1/2 w-6 h-6 bg-[#8E8E93]/20 rounded-full flex items-center justify-center text-[#8E8E93] hover:bg-[#8E8E93]/30 transition-colors z-10"
-                style={{ right: '12px', top: '50%', transform: 'translateY(-50%)' }}
+                className="w-6 h-6 bg-[#8E8E93]/20 rounded-full flex items-center justify-center text-[#8E8E93] hover:bg-[#8E8E93]/30 transition-colors z-10 pointer-events-auto"
               >
                 <span className="material-symbols-outlined !text-[16px] font-bold">close</span>
               </motion.button>
-            )}
-          </AnimatePresence>
-        </div>
+            </div>
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );

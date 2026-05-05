@@ -3,9 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import Button from '../../components/shared/Button';
 import ProgressBar from '../../components/shared/ProgressBar';
 import ScreenLayout from '../../components/shared/ScreenLayout';
+import { useGlobalState } from '../../context/GlobalStateContext';
 
 const Photo = () => {
   const navigate = useNavigate();
+  const { updateFormData } = useGlobalState();
   const videoRef = useRef(null);
   const fileInputRef = useRef(null);
   const [stream, setStream] = useState(null);
@@ -77,7 +79,8 @@ const Photo = () => {
   };
 
   const handleContinue = () => {
-    navigate('/description', { state: { photo } });
+    updateFormData('photo', photo);
+    navigate('/description');
   };
 
   return (

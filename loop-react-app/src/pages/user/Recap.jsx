@@ -13,11 +13,12 @@ const customIcon = new L.Icon({
 });
 
 import ScreenLayout from '../../components/shared/ScreenLayout';
+import { useGlobalState } from '../../context/GlobalStateContext';
 
 const Recap = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const photo = location.state?.photo;
+  const { formData } = useGlobalState();
 
   return (
     <ScreenLayout
@@ -44,15 +45,15 @@ const Recap = () => {
             <p className="text-[10px] font-bold uppercase tracking-widest text-[#8C8C8C] mb-4">Votre appareil</p>
             <div className="flex gap-4 items-center">
               <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center overflow-hidden border border-[#E5E5E5] group active:scale-95 transition-transform cursor-pointer">
-                {photo ? (
-                  <img src={photo} alt="Appareil" className="w-full h-full object-cover" />
+                {formData.photo ? (
+                  <img src={formData.photo} alt="Appareil" className="w-full h-full object-cover" />
                 ) : (
                   <span className="material-symbols-outlined text-[#8C8C8C] text-3xl">image</span>
                 )}
               </div>
               <div>
-                <p className="font-bold text-[17px]">Lave-linge Samsung</p>
-                <p className="text-xs text-[#8C8C8C]">Problème : S'arrête en cours</p>
+                <p className="font-bold text-[17px]">{formData.brand || 'Appareil inconnu'}</p>
+                <p className="text-xs text-[#8C8C8C]">Problème : {formData.problem || 'S\'arrête en cours'}</p>
               </div>
             </div>
           </section>

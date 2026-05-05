@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ChevronLeft, Clock, ArrowRight, AlertTriangle, Bug, User, Send, ChevronRight } from 'lucide-react';
 import IOSBottomSheet from '../../components/shared/IOSBottomSheet';
 import TechNavBar from '../../components/technician/TechNavBar';
 import Button from '../../components/shared/Button';
+import { useGlobalState } from '../../context/GlobalStateContext';
 
 const TechnicianMission = () => {
   const navigate = useNavigate();
+  const { formData } = useGlobalState();
   const [isIssueSheetOpen, setIsIssueSheetOpen] = useState(false);
   const [selectedIssue, setSelectedIssue] = useState(null);
   const [issueDescription, setIssueDescription] = useState('');
@@ -88,15 +90,15 @@ const TechnicianMission = () => {
               <div className="w-24 h-24 bg-white rounded-[16px] overflow-hidden flex-shrink-0 shadow-sm">
                 <img 
                   className="w-full h-full object-cover" 
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8S8Dr0r_4OpGBc7BLhqEv9Jy76X0meRhQZJkomxF4AoGERzrYJqvixXRY7ljakocC5jO8XVN1N9j5I9W3U3BxbyCR1T7ZiEtc9jQaUNtpcbZut59BjVI9oX1NnexbbnNa50xN4Cr62h4N45rh6DmwhxStpHPl47MqY9Qa95zTBrLOKP2J_0PbXAYeVX3_yenoW945UsBkSDox4-cQJoS6BQR9b6pYmL1v9V1_7XjS3opkr4Ib3kT0DMpaCLyeL-kpKrd-GzAYoUs"
-                  alt="Washing Machine"
+                  src={formData.photo || "https://lh3.googleusercontent.com/aida-public/AB6AXuD8S8Dr0r_4OpGBc7BLhqEv9Jy76X0meRhQZJkomxF4AoGERzrYJqvixXRY7ljakocC5jO8XVN1N9j5I9W3U3BxbyCR1T7ZiEtc9jQaUNtpcbZut59BjVI9oX1NnexbbnNa50xN4Cr62h4N45rh6DmwhxStpHPl47MqY9Qa95zTBrLOKP2J_0PbXAYeVX3_yenoW945UsBkSDox4-cQJoS6BQR9b6pYmL1v9V1_7XjS3opkr4Ib3kT0DMpaCLyeL-kpKrd-GzAYoUs"}
+                  alt="Appareil"
                 />
               </div>
               <div className="space-y-2">
-                <p className="text-lg display-text text-[#1a1c1b]">Lave-linge Samsung WW90</p>
+                <p className="text-lg display-text text-[#1a1c1b]">{formData.brand || 'Appareil inconnu'}</p>
                 <div className="space-y-1">
                   <p className="text-xs text-[#8C8C8C] display-text uppercase tracking-widest">Problème</p>
-                  <p className="text-sm font-medium text-[#464545]">S'arrête en cours de cycle</p>
+                  <p className="text-sm font-medium text-[#464545]">{formData.problem || 'S\'arrête en cours de cycle'}</p>
                 </div>
                 <div className="inline-flex items-center gap-2 px-2 py-1 bg-red-50 text-red-600 rounded text-[9px] display-text tracking-tighter ">
                   Error Code: E21
