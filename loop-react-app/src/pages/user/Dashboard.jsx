@@ -12,10 +12,10 @@ const Dashboard = () => {
 
   const historyItems = [
     {
-      id: 'samsung-lave-linge',
-      appliance: 'Lave-linge Samsung',
-      status: 'Réparé',
-      date: 'il y a 1 semaine',
+      id: 'delonghi-cafe',
+      appliance: "Machine à café De'Longhi",
+      status: 'Intervention terminée',
+      date: 'Lundi 5 mai 2026',
       technician: 'Lucas M.',
       parts: 'Pompe de vidange',
       duration: '38 min',
@@ -98,7 +98,7 @@ const Dashboard = () => {
           <div className="bg-white rounded-[24px] p-6 border border-[#F2F2F7] shadow-xl shadow-black/5 space-y-6">
             <div className="flex justify-between items-start">
               <div className="space-y-1">
-                <h4 className="text-xl display-text uppercase tracking-tight leading-none">{formData.brand || 'Lave-linge Samsung'}</h4>
+                <h4 className="text-xl display-text uppercase tracking-tight leading-none">{formData.brand || "Machine à café De'Longhi"}</h4>
                 <div className="inline-flex px-3 py-1 bg-blue-50 rounded-full">
                   <p className="text-[10px] font-bold text-[#0D46F2] uppercase tracking-widest">En cours</p>
                 </div>

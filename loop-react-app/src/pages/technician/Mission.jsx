@@ -79,7 +79,7 @@ const TechnicianMission = () => {
             </div>
             <div className="pt-4 border-t border-gray-100 flex items-center gap-2">
               <Clock className="text-[#0D46F2]" size={14} />
-              <p className="text-sm font-bold text-[#1a1c1b]">Demain 9h00 à 11h00</p>
+              <p className="text-sm font-bold text-[#1a1c1b]">Mercredi 6 mai — 16h00 à 18h00</p>
             </div>
           </section>
 
@@ -95,13 +95,13 @@ const TechnicianMission = () => {
                 />
               </div>
               <div className="space-y-2">
-                <p className="text-lg display-text text-[#1a1c1b]">{formData.brand || 'Appareil inconnu'}</p>
+                <p className="text-lg display-text text-[#1a1c1b]">{formData.brand || "Machine à café De'Longhi"}</p>
                 <div className="space-y-1">
                   <p className="text-xs text-[#8C8C8C] display-text uppercase tracking-widest">Problème</p>
-                  <p className="text-sm font-medium text-[#464545]">{formData.problem || 'S\'arrête en cours de cycle'}</p>
+                  <p className="text-sm font-medium text-[#464545]">Ne s'allume pas. L'interrupteur situé sur le côté droit semble défaillant.</p>
                 </div>
                 <div className="inline-flex items-center gap-2 px-2 py-1 bg-red-50 text-red-600 rounded text-[9px] display-text tracking-tighter ">
-                  Error Code: E21
+                  Panne identifiée: interrupteur
                 </div>
               </div>
             </div>
@@ -112,8 +112,8 @@ const TechnicianMission = () => {
             <h3 className="text-[10px] font-bold uppercase tracking-widest text-[#8C8C8C] mb-4 ml-1">Pièces à embarquer</h3>
             <ul className="space-y-3">
               {[
-                'Pompe de vidange Samsung WW',
-                'Carte électronique modèle E2x'
+                "Interrupteur de remplacement De'Longhi",
+                "Tournevis de précision + kit démontage"
               ].map((part, i) => (
                 <li key={i} className="flex items-start gap-3">
                   <span className="w-2 h-2 rounded-full bg-[#0D46F2] mt-1.5 flex-shrink-0"></span>

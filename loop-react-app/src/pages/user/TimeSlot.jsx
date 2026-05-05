@@ -23,8 +23,7 @@ const TimeSlot = () => {
   ];
 
   const slots = [
-    { id: 'morning', time: 'Demain 9h - 11h', tech: 'Lucas M. • 1,2 km' },
-    { id: 'afternoon', time: 'Demain 14h - 16h', tech: 'Sarah K. • 2,4 km' }
+    { id: 'afternoon', time: 'Mercredi 6 mai — 16h00 à 18h00', tech: 'Lucas M. — 1,2 km' }
   ];
 
   return (
@@ -50,7 +49,7 @@ const TimeSlot = () => {
         {/* Calendar Grid */}
         <section className="bg-[#F2F2F7] p-5 rounded-[24px] mb-8">
           <div className="flex justify-between items-center mb-6 px-2">
-            <h3 className="text-sm font-bold uppercase tracking-tight">Juin 2026</h3>
+            <h3 className="text-sm font-bold uppercase tracking-tight">Mai 2026</h3>
             <div className="flex gap-4">
               <span className="material-symbols-outlined text-sm">chevron_left</span>
               <span className="material-symbols-outlined text-sm">chevron_right</span>

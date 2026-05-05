@@ -49,9 +49,10 @@ import Button from '../../components/shared/Button';
           <h1 className="text-5xl display-text tracking-tighter uppercase italic mb-4 leading-none">
             Félicitations !
           </h1>
-          <p className="text-white/80 display-text uppercase tracking-[0.2em] text-xs mb-16">
+          <p className="text-white/80 display-text uppercase tracking-[0.2em] text-xs mb-4">
             Appareil sauvé
           </p>
+          <p className="text-white font-bold text-2xl display-text mb-16">36€</p>
   
           {/* Download Section (Glassmorphism cards) */}
           <div className="w-full space-y-4">

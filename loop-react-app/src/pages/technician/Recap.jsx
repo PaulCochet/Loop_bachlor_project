@@ -74,7 +74,7 @@ const TechnicianRecap = () => {
                             )}
                         </div>
                         <div>
-                            <p className="font-bold text-[#1a1c1b]">Lave-linge Samsung EcoBubble</p>
+                            <p className="font-bold text-[#1a1c1b]">Machine à café De'Longhi</p>
                             <p className="text-sm font-medium text-[#8C8C8C]">Sophie M. — 12 rue des Lilas</p>
                         </div>
                     </div>

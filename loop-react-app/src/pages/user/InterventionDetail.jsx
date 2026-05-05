@@ -8,12 +8,12 @@ const InterventionDetail = () => {
   const navigate = useNavigate();
   const { intervention } = location.state || {
     intervention: {
-      appliance: 'Lave-linge Samsung',
+      appliance: "Machine à café De'Longhi",
       status: 'Réparé',
-      date: 'il y a 1 semaine',
+      date: 'Lundi 5 mai 2026',
       technician: 'Lucas M.',
-      parts: 'Pompe de vidange',
-      duration: '38 min',
+      parts: "Interrupteur De'Longhi",
+      duration: '25 min',
       co2: '218 kg',
       verdict: 'Réparable'
     }

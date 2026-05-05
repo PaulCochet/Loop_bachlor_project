@@ -25,7 +25,7 @@ const Intervention = () => {
                     <span className="material-symbols-outlined text-[#0D46F2] animate-spin">settings</span>
                 </div>
                 <div>
-                    <p className="text-lg font-bold">Remplacement de la pompe</p>
+                    <p className="text-lg font-bold">Remplacement de l'interrupteur</p>
                     <p className="text-xs text-[#8C8C8C]">Installation de la pièce neuve</p>
                 </div>
             </div>

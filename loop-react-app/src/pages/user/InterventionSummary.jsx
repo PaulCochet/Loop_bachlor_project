@@ -48,15 +48,15 @@ const InterventionSummary = () => {
             <div className="bg-white rounded-[28px] border border-[#F2F2F7] shadow-xl shadow-black/5 p-6 space-y-4">
               <div className="flex justify-between items-center py-2 border-b border-[#F2F2F7]">
                   <span className="text-[10px] display-text uppercase tracking-widest text-[#8C8C8C]">Appareil</span>
-                  <span className="font-bold text-[#0A0A0A]">{formData.brand || 'Appareil inconnu'}</span>
+                  <span className="font-bold text-[#0A0A0A]">{formData.brand || "Machine à café De'Longhi"}</span>
               </div>
               <div className="flex justify-between items-center py-2 border-b border-[#F2F2F7]">
                   <span className="text-[10px] display-text uppercase tracking-widest text-[#8C8C8C]">Pièce remplacée</span>
-                  <span className="font-bold text-[#0D46F2]">Pompe de vidange</span>
+                  <span className="font-bold text-[#0D46F2]">Interrupteur De'Longhi</span>
               </div>
               <div className="flex justify-between items-center py-2 border-b border-[#F2F2F7]">
                   <span className="text-[10px] display-text uppercase tracking-widest text-[#8C8C8C]">Durée</span>
-                  <span className="font-bold text-[#0A0A0A]">38 min</span>
+                  <span className="font-bold text-[#0A0A0A]">25 min</span>
               </div>
               <div className="flex justify-between items-center py-2 pt-4">
                   <span className="text-[10px] display-text uppercase tracking-widest text-[#8C8C8C]">Technicien</span>

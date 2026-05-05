@@ -47,45 +47,45 @@ const TechnicianDiagnostic = () => {
           {/* Question 1 */}
           <section className="bg-white p-6 rounded-[24px] border border-gray-100 shadow-sm">
             <h3 className="text-base font-bold leading-snug text-[#1a1c1b] mb-6">
-              La pompe de vidange émet-elle un bruit anormal ?
+              L'interrupteur d'alimentation réagit-il quand on appuie dessus ?
             </h3>
             <TechDiagnosticToggle 
-              value={formData.diagnosticResults?.abnormalNoise}
-              onChange={(val) => handleUpdateDiagnostic('abnormalNoise', val)}
+              value={formData.diagnosticResults?.switchReaction}
+              onChange={(val) => handleUpdateDiagnostic('switchReaction', val)}
             />
           </section>
 
           {/* Question 2 */}
           <section className="bg-white p-6 rounded-[24px] border border-gray-100 shadow-sm">
             <h3 className="text-base font-bold leading-snug text-[#1a1c1b] mb-6">
-              L'alimentation électrique est-elle correcte ?
+              Y a-t-il de l'eau dans le réservoir ?
             </h3>
             <TechDiagnosticToggle 
-              value={formData.diagnosticResults?.powerStatus}
-              onChange={(val) => handleUpdateDiagnostic('powerStatus', val)}
-              options={[{ label: 'OK', value: 'OK' }, { label: 'Non', value: 'Non' }, { label: 'Non accessible', value: 'Non accessible' }]}
+              value={formData.diagnosticResults?.waterInTank}
+              onChange={(val) => handleUpdateDiagnostic('waterInTank', val)}
+              options={[{ label: 'Oui', value: 'Oui' }, { label: 'Non', value: 'Non' }, { label: 'Non accessible', value: 'Non accessible' }]}
             />
           </section>
 
           {/* Question 3 */}
           <section className="bg-white p-6 rounded-[24px] border border-gray-100 shadow-sm">
             <h3 className="text-base font-bold leading-snug text-[#1a1c1b] mb-6">
-              Y a-t-il des signes visibles de fuite ?
+              Des voyants lumineux s'allument-ils lors de la mise sous tension ?
             </h3>
             <TechDiagnosticToggle 
-              value={formData.diagnosticResults?.visibleLeak}
-              onChange={(val) => handleUpdateDiagnostic('visibleLeak', val)}
+              value={formData.diagnosticResults?.lightsOn}
+              onChange={(val) => handleUpdateDiagnostic('lightsOn', val)}
             />
           </section>
 
           {/* Question 4 */}
           <section className="bg-white p-6 rounded-[24px] border border-gray-100 shadow-sm">
             <h3 className="text-base font-bold leading-snug text-[#1a1c1b] mb-6">
-              Le tambour tourne-t-il correctement ?
+              Y a-t-il des signes visibles de brûlure ou de surchauffe ?
             </h3>
             <TechDiagnosticToggle 
-              value={formData.diagnosticResults?.drumRotation}
-              onChange={(val) => handleUpdateDiagnostic('drumRotation', val)}
+              value={formData.diagnosticResults?.burnSigns}
+              onChange={(val) => handleUpdateDiagnostic('burnSigns', val)}
             />
           </section>
         </div>

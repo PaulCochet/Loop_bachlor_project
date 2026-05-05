@@ -40,7 +40,7 @@ const Payment = () => {
               className="!bg-[#0A0A0A] !text-white"
               onClick={handleValidatePayment}
             >
-              Valider le paiement — 12€
+              Valider le paiement — 36€
             </Button>
         }
     >
