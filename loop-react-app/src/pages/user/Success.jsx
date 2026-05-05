@@ -82,7 +82,7 @@ const Success = () => {
       >
         <Button 
           variant="black" 
-          onClick={() => navigate('/dashboard')}
+          onClick={() => navigate('/rate-technician')}
         >
           Retour à l'accueil
         </Button>

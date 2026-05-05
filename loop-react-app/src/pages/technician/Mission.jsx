@@ -1,12 +1,28 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ChevronLeft, Clock, ArrowRight } from 'lucide-react';
+import { ChevronLeft, Clock, ArrowRight, AlertTriangle, Bug, User, Send, ChevronRight } from 'lucide-react';
+import IOSBottomSheet from '../../components/shared/IOSBottomSheet';
 import TechNavBar from '../../components/technician/TechNavBar';
 import Button from '../../components/shared/Button';
 
 const TechnicianMission = () => {
   const navigate = useNavigate();
+  const [isIssueSheetOpen, setIsIssueSheetOpen] = useState(false);
+  const [selectedIssue, setSelectedIssue] = useState(null);
+  const [issueDescription, setIssueDescription] = useState('');
+
+  const issueTypes = [
+    { id: 'tech', label: 'Problème technique', icon: 'Bug' },
+    { id: 'user', label: 'Problème avec l\'usager', icon: 'User' },
+    { id: 'urgent', label: 'Urgence mission', icon: 'AlertTriangle' }
+  ];
+
+  const handleSendIssue = () => {
+    setIsIssueSheetOpen(false);
+    setSelectedIssue(null);
+    setIssueDescription('');
+  };
 
   return (
     <div className="bg-white min-h-screen pb-32">
@@ -112,10 +128,71 @@ const TechnicianMission = () => {
             Démarrer la mission
             <ArrowRight size={20} />
           </Button>
+          
+          <Button 
+            variant="ghost" 
+            className="w-full mt-4 !border-[#E5E5E5] !text-[#8C8C8C]"
+            onClick={() => setIsIssueSheetOpen(true)}
+          >
+            <AlertTriangle size={18} className="mr-2" />
+            Signaler un problème
+          </Button>
         </div>
       </main>
 
       <TechNavBar />
+
+      <IOSBottomSheet 
+        isOpen={isIssueSheetOpen} 
+        onClose={() => {
+          setIsIssueSheetOpen(false);
+          setSelectedIssue(null);
+        }}
+        title="Contacter Loop"
+      >
+        <div className="space-y-6 p-2">
+          {!selectedIssue ? (
+            <div className="space-y-3">
+              {issueTypes.map((type) => {
+                const Icon = { Bug, User, AlertTriangle }[type.icon];
+                return (
+                  <button 
+                    key={type.id}
+                    onClick={() => setSelectedIssue(type)}
+                    className="w-full p-5 bg-[#F2F2F7] rounded-2xl flex items-center gap-4 active:scale-[0.98] transition-all"
+                  >
+                    <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-[#0D46F2] shadow-sm">
+                      <Icon size={20} />
+                    </div>
+                    <span className="font-bold text-sm text-[#1a1c1b]">{type.label}</span>
+                    <ChevronRight size={18} className="ml-auto text-[#8C8C8C]" />
+                  </button>
+                );
+              })}
+            </div>
+          ) : (
+            <div className="space-y-6">
+              <div className="flex items-center gap-3 p-4 bg-[#F2F2F7] rounded-xl">
+                <button onClick={() => setSelectedIssue(null)} className="text-[#0D46F2]">
+                  <ChevronRight size={20} className="rotate-180" />
+                </button>
+                <span className="font-bold text-sm">{selectedIssue.label}</span>
+              </div>
+              <textarea 
+                autoFocus
+                placeholder="Décrivez le problème..."
+                className="w-full h-32 p-4 bg-[#F2F2F7] rounded-2xl border-none focus:ring-2 focus:ring-[#0D46F2]/20 resize-none"
+                value={issueDescription}
+                onChange={(e) => setIssueDescription(e.target.value)}
+              />
+              <Button onClick={handleSendIssue} className="w-full !bg-[#0D46F2] !text-white">
+                Envoyer à Loop
+                <Send size={18} className="ml-2" />
+              </Button>
+            </div>
+          )}
+        </div>
+      </IOSBottomSheet>
     </div>
   );
 };

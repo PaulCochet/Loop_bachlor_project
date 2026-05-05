@@ -61,7 +61,7 @@ const Notification = () => {
       <div className="relative z-10 h-full flex flex-col items-center justify-between pb-12 pt-20 px-6">
         {/* Date & Time */}
         <div className="text-center">
-          <p className="text-white/90 text-sm font-semibold uppercase tracking-[0.2em] mb-1">Mardi 21 Avril</p>
+          <p className="text-white/90 text-sm font-semibold uppercase tracking-[0.2em] mb-1">Mercredi 4 juin 2026</p>
           <p className="text-white text-[80px] font-bold tracking-tighter leading-none">08:47</p>
         </div>
 

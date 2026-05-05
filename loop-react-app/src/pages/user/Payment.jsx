@@ -40,7 +40,7 @@ const Payment = () => {
               className="!bg-[#0A0A0A] !text-white"
               onClick={handleValidatePayment}
             >
-              Valider le paiement — 10€
+              Valider le paiement — 12€
             </Button>
         }
     >
@@ -77,27 +77,24 @@ const Payment = () => {
         <div className="space-y-8 pr-1">
           <section className="bg-[#F2F2F7] p-8 rounded-[32px] space-y-6">
             <div className="flex justify-between items-center text-sm">
-              <span className="text-[#8C8C8C] display-text uppercase tracking-widest text-[10px]">Intervention</span>
-              <span className="font-bold text-[#1a1c1b]">Lave-linge Samsung</span>
+              <span className="text-[#8C8C8C] display-text uppercase tracking-widest text-[10px]">Intervention (HT)</span>
+              <span className="font-bold text-[#1a1c1b]">20€</span>
             </div>
             <div className="flex justify-between items-center text-sm">
-              <span className="text-[#8C8C8C] display-text uppercase tracking-widest text-[10px]">Déplacement & MO</span>
-              <span className="font-bold text-[#0D46F2]">Inclus</span>
-            </div>
-            <div className="flex flex-col gap-1">
-              <div className="flex justify-between items-center text-sm">
-                <span className="text-[#8C8C8C] display-text uppercase tracking-widest text-[10px]">Consigne pièces</span>
-                <span className="font-bold text-[#1a1c1b]">20€</span>
-              </div>
-              <p className="text-[9px] text-[#8C8C8C] italic">Remboursable si pièces non utilisées</p>
+              <span className="text-[#8C8C8C] display-text uppercase tracking-widest text-[10px]">TVA 20% (MO)</span>
+              <span className="font-bold text-[#1a1c1b]">4€</span>
             </div>
             <div className="flex justify-between items-center text-sm">
-              <span className="text-[#8C8C8C] display-text uppercase tracking-widest text-[10px]">Supplément final</span>
+              <span className="text-[#8C8C8C] display-text uppercase tracking-widest text-[10px]">Supplément pièces (HT)</span>
               <span className="font-bold text-[#1a1c1b]">10€</span>
             </div>
+            <div className="flex justify-between items-center text-sm">
+              <span className="text-[#8C8C8C] display-text uppercase tracking-widest text-[10px]">TVA 20% (Pièces)</span>
+              <span className="font-bold text-[#1a1c1b]">2€</span>
+            </div>
             <div className="pt-6 border-t border-[#E5E5E5] flex justify-between items-center">
-              <span className="display-text uppercase text-xl">Total</span>
-              <span className="display-text tracking-tighter text-3xl">10€</span>
+              <span className="display-text uppercase text-xl">Total TTC</span>
+              <span className="display-text tracking-tighter text-3xl">36€</span>
             </div>
           </section>
 

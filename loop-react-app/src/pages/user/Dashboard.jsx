@@ -97,17 +97,19 @@ const Dashboard = () => {
             <div className="flex justify-between items-start">
               <div className="space-y-1">
                 <h4 className="text-xl display-text uppercase tracking-tight leading-none">Lave-linge Samsung</h4>
-                <p className="text-[10px] font-bold text-[#0D46F2] uppercase tracking-widest">Intervention terminée</p>
+                <div className="inline-flex px-3 py-1 bg-blue-50 rounded-full">
+                  <p className="text-[10px] font-bold text-[#0D46F2] uppercase tracking-widest">En cours</p>
+                </div>
               </div>
               <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center">
-                <span className="material-symbols-outlined text-[#0D46F2] !text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>check_circle</span>
+                <span className="material-symbols-outlined text-[#0D46F2] !text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>schedule</span>
               </div>
             </div>
             
             <div className="flex gap-3">
-              <Button variant="outline" className="flex-1 !py-3 !text-[11px]" onClick={() => navigate('/intervention-summary')}>
-                <span className="material-symbols-outlined !text-lg">description</span>
-                DÉTAILS
+              <Button className="flex-1" onClick={() => navigate('/tracking')}>
+                Suivre l'intervention
+                <span className="material-symbols-outlined !text-lg ml-1">navigation</span>
               </Button>
             </div>
           </div>

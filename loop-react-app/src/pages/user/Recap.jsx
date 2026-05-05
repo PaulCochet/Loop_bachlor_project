@@ -85,7 +85,7 @@ const Recap = () => {
                 <span className="material-symbols-outlined">event</span>
               </div>
               <div>
-                <p className="font-bold text-[17px]">Demain 22 Avril</p>
+                <p className="font-bold text-[17px]">Mercredi 4 juin 2026</p>
                 <p className="text-xs text-[#8C8C8C]">9:00 - 11:00 • Lucas M.</p>
               </div>
             </div>

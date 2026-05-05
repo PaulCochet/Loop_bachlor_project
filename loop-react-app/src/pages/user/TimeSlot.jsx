@@ -10,16 +10,16 @@ const TimeSlot = () => {
   const location = useLocation();
   const photo = location.state?.photo;
   const { formData, updateFormData } = useGlobalState();
-  const [selectedDay, setSelectedDay] = useState(22); // Default to 22nd
-
+  const [selectedDay, setSelectedDay] = useState(4); // Default to 4th
+  
   const days = [
-    { label: 'Lun', num: 20 },
-    { label: 'Mar', num: 21 },
-    { label: 'Mer', num: 22 },
-    { label: 'Jeu', num: 23 },
-    { label: 'Ven', num: 24 },
-    { label: 'Sam', num: 25 },
-    { label: 'Dim', num: 26 },
+    { label: 'Lun', num: 1 },
+    { label: 'Mar', num: 2 },
+    { label: 'Mer', num: 3 },
+    { label: 'Jeu', num: 4 },
+    { label: 'Ven', num: 5 },
+    { label: 'Sam', num: 6 },
+    { label: 'Dim', num: 7 },
   ];
 
   const slots = [
@@ -50,7 +50,7 @@ const TimeSlot = () => {
         {/* Calendar Grid */}
         <section className="bg-[#F2F2F7] p-5 rounded-[24px] mb-8">
           <div className="flex justify-between items-center mb-6 px-2">
-            <h3 className="text-sm font-bold uppercase tracking-tight">Avril 2026</h3>
+            <h3 className="text-sm font-bold uppercase tracking-tight">Juin 2026</h3>
             <div className="flex gap-4">
               <span className="material-symbols-outlined text-sm">chevron_left</span>
               <span className="material-symbols-outlined text-sm">chevron_right</span>

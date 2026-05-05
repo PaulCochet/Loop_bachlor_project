@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronLeft } from 'lucide-react';
 import TechNavBar from '../../components/technician/TechNavBar';
 import Button from '../../components/shared/Button';
 
@@ -35,7 +36,7 @@ const TechnicianMessages = () => {
             onClick={() => navigate('/technician/dashboard')}
             className="p-1 rounded-full active:bg-gray-100 transition-colors"
           >
-            <span className="material-symbols-outlined text-[#0D46F2] display-text">chevron_left</span>
+            <ChevronLeft className="text-[#0D46F2]" size={24} />
           </motion.button>
           <h1 className="text-lg display-text uppercase tracking-wider">Messages</h1>
         </div>

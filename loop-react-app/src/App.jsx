@@ -25,6 +25,7 @@ import Login from './pages/user/Login';
 import QRPage from './pages/user/QRPage';
 import InterventionDetail from './pages/user/InterventionDetail';
 import TechnicianProfile from './pages/user/TechnicianProfile';
+import RateTechnician from './pages/user/RateTechnician';
 
 // Technician Pages
 import TechnicianLogin from './pages/technician/Login';
@@ -78,6 +79,7 @@ export default function App() {
                 <Route path="/success" element={<Success />} />
                 <Route path="/intervention-detail" element={<InterventionDetail />} />
                 <Route path="/technician-profile" element={<TechnicianProfile />} />
+                <Route path="/rate-technician" element={<RateTechnician />} />
                 
                 {/* Legacy Redirects */}
                 <Route path="/verdict" element={<Navigate to="/intervention-summary" replace />} />

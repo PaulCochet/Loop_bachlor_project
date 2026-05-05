@@ -99,15 +99,27 @@ const TechnicianRecap = () => {
 
             {/* Section Intervention */}
             <section className="space-y-4">
-                <h3 className="text-[10px] display-text uppercase tracking-widest text-[#8C8C8C]">Intervention</h3>
-                <div className="bg-[#F2F2F7] rounded-[24px] p-6 space-y-4">
+                <h3 className="text-[10px] display-text uppercase tracking-widest text-[#8C8C8C]">Récapitulatif financier</h3>
+                <div className="bg-[#F2F2F7] rounded-[24px] p-6 space-y-3">
                     <div className="flex justify-between items-center text-sm">
-                        <span className="text-[#8C8C8C] display-text uppercase tracking-widest text-[9px]">Durée</span>
-                        <span className="font-bold italic text-[#0D46F2]">38 min</span>
+                        <span className="text-[#8C8C8C] display-text uppercase tracking-widest text-[9px]">Main d'oeuvre (HT)</span>
+                        <span className="font-bold text-[#1a1c1b]">20€</span>
                     </div>
                     <div className="flex justify-between items-center text-sm">
-                        <span className="text-[#8C8C8C] display-text uppercase tracking-widest text-[9px]">Technicien</span>
-                        <span className="font-bold">Lucas M.</span>
+                        <span className="text-[#8C8C8C] display-text uppercase tracking-widest text-[9px]">TVA 20% (MO)</span>
+                        <span className="font-bold text-[#1a1c1b]">4€</span>
+                    </div>
+                    <div className="flex justify-between items-center text-sm">
+                        <span className="text-[#8C8C8C] display-text uppercase tracking-widest text-[9px]">Supplément pièces (HT)</span>
+                        <span className="font-bold text-[#1a1c1b]">10€</span>
+                    </div>
+                    <div className="flex justify-between items-center text-sm">
+                        <span className="text-[#8C8C8C] display-text uppercase tracking-widest text-[9px]">TVA 20% (Pièces)</span>
+                        <span className="font-bold text-[#1a1c1b]">2€</span>
+                    </div>
+                    <div className="pt-4 border-t border-[#E5E5E5] flex justify-between items-center">
+                        <span className="display-text uppercase text-sm">Total TTC</span>
+                        <span className="display-text tracking-tighter text-2xl text-[#0D46F2]">36€</span>
                     </div>
                 </div>
             </section>

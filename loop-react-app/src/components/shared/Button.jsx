@@ -19,8 +19,9 @@ const Button = ({
     black: "bg-[#0A0A0A] text-white disabled:bg-[#F2F2F7] disabled:text-[#8E8E93]"
   };
 
-  const rounded = "rounded-[14px]";
-  const padding = "py-[18px] px-6";
+  const rounded = "rounded-[16px]";
+  const padding = "px-6";
+  const height = "h-[52px]";
   const width = fullWidth ? "w-full" : "w-auto";
 
   return (
@@ -30,7 +31,7 @@ const Button = ({
         transition={{ type: 'spring', damping: 15, stiffness: 300 }}
         onClick={disabled ? undefined : onClick}
         disabled={disabled}
-        className={`${baseStyles} ${variants[variant]} ${rounded} ${padding} ${width} ${className}`}
+        className={`${baseStyles} ${variants[variant]} ${rounded} ${padding} ${height} ${width} ${className}`}
         {...props}
       >
         {children}

@@ -4,142 +4,106 @@
 @tailwind utilities;
 
 :root {
-  /* iOS Design Tokens */
+  /* iOS Design Tokens - Harmonized */
   --bg-color: #FFFFFF;
   --primary-accent: #0D46F2;
   --text-primary: #000000;
-  --surface-color: #F2F2F7; /* iOS System Gray 6 */
-  --text-secondary: #8E8E93; /* iOS System Gray */
-  --border-style: 0.5px solid rgba(0, 0, 0, 0.1);
-  --radius-card: 20px;
-  --radius-button: 14px;
+  --surface-color: #F2F2F7;
+  --text-secondary: #8C8C8C;
+  --inactive-color: #8C8C8C;
+  --border-color: #E5E5E5;
+  --border-style: 1px solid var(--border-color);
+  
+  --radius-card: 16px;
+  --radius-button: 12px;
+  --button-height: 52px;
+  --input-height: 52px;
+  
+  /* Font Sizes */
+  --font-h1: 40px;
+  --font-h2: 28px;
+  --font-body: 16px;
+  --font-label: 13px;
+  --font-small: 10px;
+  
+  /* Spacing */
+  --section-spacing: 24px;
+  
   /* SF Pro System stack */
   --font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", sans-serif;
 
   /* iOS Safe Areas */
   --safe-top: 44px;
   --safe-bottom: 34px;
-  
-  /* App Dimensions (Desktop view) */
-  --app-width: 390px;
-  --app-height: 844px;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  -webkit-tap-highlight-color: transparent; /* Disable browser tap highlight */
-}
+/* Typography Overrides */
+h1, .text-4xl { font-size: var(--font-h1) !important; line-height: 1.1; }
+h2, .text-3xl, .text-2xl { font-size: var(--font-h2) !important; line-height: 1.2; }
+p, .text-base, .text-sm { font-size: var(--font-body) !important; }
+label, .text-\[13px\] { font-size: var(--font-label) !important; }
+.text-\[10px\], .text-\[9px\] { font-size: var(--font-small) !important; }
 
-html {
-  height: 100%;
-  background-color: white;
-}
-
-#root {
-  height: 100%;
-  min-height: 100%;
-  background-color: white;
-  overflow: hidden;
-}
-
-/* Hide Scrollbar for Chrome, Safari and Opera */
-*::-webkit-scrollbar {
-  display: none;
-}
-
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  background-color: white;
-  overflow: hidden;
-  font-family: var(--font-family);
-  color: var(--text-primary);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  line-height: 1.2;
-}
-
-/* Scroll Container with Momentum */
-.scroll-container {
-  overflow-y: auto;
-  overflow-x: hidden;
-  -webkit-overflow-scrolling: touch;
-  scroll-behavior: smooth;
-  height: 100%;
-  padding-bottom: var(--safe-bottom);
-}
-
-/* Hide Scrollbar for clean iOS look */
-.scroll-container::-webkit-scrollbar {
-  display: none;
-}
-
-/* Typography */
-h1, h2, h3 {
-  font-weight: 800;
-  font-style: italic;
-  letter-spacing: -0.02em;
-}
-
-/* Utility Class for Native Display Font */
 .display-text {
   font-family: var(--font-family);
   font-weight: 800;
   font-style: italic;
 }
 
-/* Global Micro-Interactions */
-button, .ios-tappable {
-  transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1);
-  border: none;
-  background: none;
-  outline: none;
+/* Global Section Spacing */
+section, .space-y-10, .space-y-12, .space-y-8 {
+  margin-top: var(--section-spacing) !important;
+  margin-bottom: var(--section-spacing) !important;
 }
 
-button:active, .ios-tappable:active {
-  transform: scale(0.96);
+/* Button & Input Harmonization */
+button.btn-primary, button.btn-secondary, .btn-height-harmonized {
+  height: var(--button-height) !important;
 }
 
-.card:active {
-  transform: scale(0.98);
-  transition: transform 0.15s ease;
-}
-
-/* Input Styles */
 input, textarea {
+  height: var(--input-height);
+  border: var(--border-style) !important;
+  border-radius: 12px !important;
+  font-size: var(--font-body) !important;
+  padding: 0 16px;
+}
+
+/* Card Harmonization */
+.rounded-\[24px\], .rounded-\[20px\], .rounded-\[28px\], .rounded-\[32px\] {
+  border-radius: var(--radius-card) !important;
+}
+
+/* Colors */
+.text-\[\#8C8C8C\] { color: var(--inactive-color) !important; }
+.bg-\[\#F2F2F7\] { background-color: var(--surface-color) !important; }
+.border-\[\#E5E5E5\], .border-\[\#F2F2F7\] { border-color: var(--border-color) !important; }
+.text-\[\#0D46F2\] { color: var(--primary-accent) !important; }
+
+/* ... existing styles ... */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body, #root {
+  height: 100%;
+  background-color: white;
+  overflow: hidden;
   font-family: var(--font-family);
-  border: 1px solid #E5E5E5;
-  border-radius: 12px;
-  background: white;
-  transition: border-color 0.2s ease;
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.2;
 }
 
-input:focus, textarea:focus {
-  outline: none;
-  border-color: var(--primary-accent);
+.scroll-container {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  height: 100%;
+  padding-bottom: var(--safe-bottom);
 }
+.scroll-container::-webkit-scrollbar { display: none; }
 
-/* iOS Shadow */
-.ios-shadow {
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-}
-
-/* Standard Padding Utility (24px alignment) */
-.px-ios {
-  padding-left: 24px;
-  padding-right: 24px;
-}
-
-.mx-ios {
-  margin-left: 24px;
-  margin-right: 24px;
-}
-
-/* Ensure inputs take 100% width minus padding */
-.input-full-width {
-  width: calc(100% - 48px);
-  margin-left: 24px;
-}
+button:active { transform: scale(0.96); transition: transform 0.1s; }
