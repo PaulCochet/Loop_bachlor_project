@@ -24,7 +24,7 @@ const ScreenLayout = ({ children, actions, className = "" }) => {
           left: 0,
           width: '100%',
           padding: '12px 24px',
-          paddingBottom: 'calc(12px + env(safe-area-inset-bottom))',
+          paddingBottom: 'calc(24px + env(safe-area-inset-bottom))',
           background: 'white',
           borderTop: '0.5px solid #E5E5E5',
           zIndex: 9999,
